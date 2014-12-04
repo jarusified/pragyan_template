@@ -1,4 +1,5 @@
 !function($){
+	console.log('asf')
 	var sections = $('.section');
 	console.log(sections);
 	var press =false;
@@ -19,5 +20,11 @@
 			}
 		}
 	}
-
+	$('#toggle').click(function(){
+		console.log('sdfg');
+		$("#sub-menu").hide().fadeIn();
+	});
+	$('.section').click(function(){
+		console.log('sd');
+	});
 }(window.jQuery);
