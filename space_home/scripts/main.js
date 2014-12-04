@@ -1,11 +1,25 @@
 !function($){
-	console.log('asf')
 	var sections = $('.section');
-	console.log(sections);
 	var press =false;
+	var menuOpen=false;
 
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
+			$('.section').bind('click',function(){
+				$('#menu').animate({top:"4%",opacity:0.05},500,function(){
+					$("#box").hide().fadeIn();
+				});
+		});
+		$('#toggle').click(function(){
+			if(menuOpen){
+				$('#sub-menu').hide();
+				menuOpen=false;
+			}
+			else{
+				$("#sub-menu").hide().fadeIn();
+				menuOpen=true;
+			}
+		});
 	}
 
 	function onkeydown(event){
@@ -20,11 +34,6 @@
 			}
 		}
 	}
-	$('#toggle').click(function(){
-		console.log('sdfg');
-		$("#sub-menu").hide().fadeIn();
-	});
-	$('.section').click(function(){
-		console.log('sd');
-	});
+	
+	
 }(window.jQuery);

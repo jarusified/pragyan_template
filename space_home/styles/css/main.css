@@ -50,7 +50,7 @@ html,body{
     margin-top: 5%;
 	margin-left: 5%;
 	margin-bottom: 15%;
-	border-radius: 3%;
+	border-radius: 5%;
     width:300px;
 	height:300px;
 	cursor: pointer;
@@ -72,10 +72,17 @@ html,body{
     transition: all .2s ease; 
 }
 .section:hover{
-	-webkit-transform:scale(1.05);
-	-moz-transform:scale(1.05);
-	-o-transform:scale(1.05);
-	transform: scale(1.05);
+	box-shadow: 
+		inset 30px 0px 10px #fff,
+		inset 0px 10px 10px #228DFF,
+		inset -20px 0px 300px #3B94B6,
+		0 0 50px #228dff,
+		-10px 0 80px #fff;
+
+	-webkit-transform:scale(1.2);
+	-moz-transform:scale(1.2);
+	-o-transform:scale(1.2);
+	transform: scale(1.2);
 	-webkit-animation:glow 1s ease-in-out infinite alternate;
 	-moz-animation:glow 1s ease-in-out infinite alternate;
 	-o-animation:glow 1s ease-in-out infinite alternate;
@@ -100,7 +107,7 @@ html,body{
 
 #sub-menu{
 	position: absolute;
-	z-index: 2;
+	z-index: 4;
 	width:20%;
 	height: 100%;
 	box-shadow: 
@@ -113,40 +120,54 @@ html,body{
 	background-color: rgb(15, 52, 92);
 	display: none;
 }
-/*.glow{
-	border-color: hsl(180, 100%, 50%);
-  	color: hsl(180, 100%, 50%);
-  	text-shadow: 0 0 10px hsla(180, 100%, 50%, 1);
-  	
+.sub-section{
+	position: relative;
+	float: top;
+	top: 10%;
+	width:100%;
+	height: 7%;
+	z-index:4;
+	margin-bottom: 2px;
+	color: rgb(233, 232, 245);
+	white-space: nowrap;
+	font-family: Phantom;
+	font-size: 1em;
+	text-align: center;
+	margin-top:5%;
+	vertical-align: middle;
+	line-height:7%;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	cursor: pointer;
 }
-
-#container{
+.sub-section:hover{
+    background-color: rgba(3, 23, 65, 0.73);
+    box-shadow: 
+		inset 0 0 5px  rgb(15, 52, 92),
+		inset 0px 0 20px #228DFF,
+		inset 0px 0 30px #152D5F;
+}
+.sub-section p{
+	text-align: center;
+}
+#box{
 	position: absolute;
-	top:2%;
-	left:5%;
-	width:200px;
-	margin: auto;
-	z-index: 5;
-
+	width:80%;
+	height: 60%;
+	top:20%;
+	left:10%;
+	right: 10%;
+	z-index: 3;
+	box-shadow: 
+		inset 0 0 5px #122c36,
+		inset 0px 0 20px #228DFF,
+		inset 0px 0 30px #fff,
+		0 0 40px #3D4469,
+		20px 0 80px #122c36,
+		-10px 0 80px #fff;
+	display: none;
 }
-.halo{
-	text-align:center;
-  	margin:20px 0 20px 0;
-  	text-decoration:none; 
-  	-webkit-transition: all 0.5s;
-  	-moz-transition: all 0.5s;
-  	transition: all 0.5s;
-}
-#container p{
-	font-family: Geosans;
-	font-size:3em;
-  	color:#228DFF;
-}
-#container p:hover{
-	-webkit-animation: pulseGlow 1.5s ease-in-out infinite alternate;
-  	-moz-animation: pulseGlow 1.5s ease-in-out infinite alternate;
-  	animation: pulseGlow 1.5s ease-in-out infinite alternate;
-}*/
 
 .scrollable::-webkit-scrollbar {
 	display: none;
@@ -196,9 +217,8 @@ html,body{
 }
 
 #toggle{
-	z-index: 3;
+	z-index: 5;
 	position: absolute;
-	height: 5%;
 
 }
 #toggle button {
@@ -265,3 +285,16 @@ html,body{
   top: -.74286rem;
 }
 
+#line{
+	position: absolute;
+	z-index: 4;
+	color:#000;
+	background:#5074A3;
+	width:90%;
+	left:5%;
+	right: 5%;
+	height: 3px;
+	box-shadow: 
+		inset 0 0 5px #122c36, inset 0px 0 20px #132E5F, inset 0px 0 30px #14CBF8, 0 0 40px #E8EDF3, 20px 0 80px #122c36, -10px 0 80px #fff;
+	top:75%;
+}
