@@ -5,16 +5,15 @@ html,body{
 	height: 100%;
 	overflow: hidden;
 }
-
 @font-face{
-  font-family: Phantom;
-  src: url('../fonts/Phantom.otf');
+  font-family: Voyager grotesque;
+  src: url('../fonts/voyager.ttf');
 }
 @font-face{
   font-family: Geosans;
-  	font-weight: 40px
   src: url('../fonts/Geosans.ttf');  
 }
+
 #bg{
 	z-index: 1;
 	width: 100%;
@@ -69,7 +68,7 @@ html,body{
     -webkit-transition:all 0.2s ease;
     -moz-transition:all 0.2s ease;
     -o-transition:all 0.2s ease;
-    transition: all .2s ease; 
+    transition: all 0.2s ease; 
 }
 .section:hover{
 	box-shadow: 
@@ -78,17 +77,17 @@ html,body{
 		inset -20px 0px 300px #3B94B6,
 		0 0 50px #228dff,
 		-10px 0 80px #fff;
-
 	-webkit-transform:scale(1.2);
 	-moz-transform:scale(1.2);
 	-o-transform:scale(1.2);
 	transform: scale(1.2);
-	-webkit-animation:glow 1s ease-in-out infinite alternate;
-	-moz-animation:glow 1s ease-in-out infinite alternate;
-	-o-animation:glow 1s ease-in-out infinite alternate;
-	animation:glow 1s ease-in-out infinite alrenate;
 }
-
+.section img{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	z-index: 1;
+}
 #logo{
 	position: absolute;
 	right:0;
@@ -117,7 +116,7 @@ html,body{
 		0 0 40px #3D4469,
 		20px 0 80px #122c36,
 		-10px 0 80px #fff;
-	background-color: rgb(15, 52, 92);
+	background-color: #101c2c;
 	display: none;
 }
 .sub-section{
@@ -128,9 +127,9 @@ html,body{
 	height: 7%;
 	z-index:4;
 	margin-bottom: 2px;
-	color: rgb(233, 232, 245);
+	color: 	#8fc3f9;
 	white-space: nowrap;
-	font-family: Phantom;
+	font-family:  Voyager grotesque;
 	font-size: 1em;
 	text-align: center;
 	margin-top:5%;
