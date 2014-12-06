@@ -52,6 +52,20 @@ html,body{
     overflow-y: hidden;
     white-space: nowrap;
 }
+#switch-menu{
+	z-index: 1;
+	position: absolute;
+    width: 975px;
+    margin-left: -487px;
+    padding: 5px 10px;
+    top: 75%;
+	left: 50%;	
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: none;
+}
 .section {
 	position: relative;
     display: inline-block;
@@ -185,7 +199,7 @@ html,body{
 #box{
 	position: absolute;
 	width:80%;
-	height: 60%;
+	height: 50%;
 	top:20%;
 	left:10%;
 	right: 10%;

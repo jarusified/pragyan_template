@@ -8,6 +8,10 @@
 			$('.section').bind('click',function(){
 				$('#menu').animate({top:"4%",opacity:0.05},500,function(){
 					$("#box").hide().fadeIn();
+					$('#switch-menu').delay(400).queue(function(next){
+						$(this).hide().fadeIn();
+						next();
+					});
 				});
 		});
 		$('#toggle').click(function(){
