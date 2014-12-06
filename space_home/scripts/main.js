@@ -6,14 +6,15 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 			$('.section').bind('click',function(){
-				$('#menu').animate({top:"4%",opacity:0.05},200,function(){
-					$("#box").hide().fadeIn();
-					$('#switch-menu').delay(100).queue(function(next){
-						$(this).hide().fadeIn();
-						next();
+				$('#menu').animate({top:"4%",opacity:0.5},200);
+				$(this).children(".cluster-menu").delay(100).queue(function(next){
+					console.log($(this).children('.cluster-section'));
+					$(this).children('.cluster-section').hide().fadeIn(function(){
+						console.log('sdf');
 					});
+					next();
 				});
-		});
+			});
 		$('#toggle').click(function(){
 			if(menuOpen){
 				$('#sub-menu').hide();
