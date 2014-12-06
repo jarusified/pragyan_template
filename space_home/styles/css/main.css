@@ -42,8 +42,8 @@ html,body{
 #menu{
 	z-index: 1;
 	position: absolute;
-    width: 875px;
-    margin-left: -437px;
+    width: 975px;
+    margin-left: -487px;
     padding: 5px 10px;
     top: 25%;
 	left: 50%;	
@@ -59,8 +59,8 @@ html,body{
     margin-top: 5%;
 	margin-left: 0px;
 	margin-bottom: 15%;
-	width:160px;
-	height:160px;
+	width:180px;
+	height:180px;
 	cursor: pointer;
 	box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF;	
 	background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25)), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25));
