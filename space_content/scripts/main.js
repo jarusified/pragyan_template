@@ -6,12 +6,8 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 			$('.section').bind('click',function(){
-				$('#menu').animate({top:"4%",opacity:0.05},200,function(){
+				$('#menu').animate({top:"4%",opacity:0.05},500,function(){
 					$("#box").hide().fadeIn();
-					$('#switch-menu').delay(100).queue(function(next){
-						$(this).hide().fadeIn();
-						next();
-					});
 				});
 		});
 		$('#toggle').click(function(){
