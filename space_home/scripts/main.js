@@ -2,15 +2,23 @@
 	var sections = $('.section');
 	var press =false;
 	var menuOpen=false;
-
+	var mapper={
+		0:"a",
+		1:"b",
+		2:"c",
+		3:"d",
+		4:"e"
+	};
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 			$('.section').bind('click',function(){
+				var value =$(this).index();
+				var selector = mapper[value];
 				$('#menu').animate({top:"4%",opacity:0.5},200);
-				$(this).children(".cluster-menu").delay(100).queue(function(next){
-					console.log($(this).children('.cluster-section'));
-					$(this).children('.cluster-section').hide().fadeIn(function(){
-						console.log('sdf');
+				$("#cluster-menu").delay(100).queue(function(next){
+					console.log($("#"+mapper[value]));
+					$("div[id*=selector]").hide().fadeIn(function(){
+						console.log($(this));
 					});
 					next();
 				});

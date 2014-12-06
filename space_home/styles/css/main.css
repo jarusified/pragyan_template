@@ -52,17 +52,21 @@ html,body{
     overflow-y: hidden;
     white-space: nowrap;
 }
-.cluster-menu{
+#cluster-menu{
 	position: absolute;
 	width: 975px;
     margin-left: -487px;
     padding: 5px 10px;
-    top: 90%;
+    top: 60%;
 	left: 50%;	
     height: auto;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+}
+#a,#b,#c,#d,#e,#f{
+	z-index: 3;
+	display: none;
 }
 .cluster-section{
 	position: relative;
@@ -93,7 +97,6 @@ html,body{
 	-moz-transform:scale(0.9);
 	-o-transform:scale(0.9);
 	transform: scale(0.9); 
-	display: none;
 }
 .cluster-section:hover{
 	box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;	
