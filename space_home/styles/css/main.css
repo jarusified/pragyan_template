@@ -164,6 +164,18 @@ html,body{
 	-o-transform:scale(1.1);
 	transform: scale(1.1); 
 }
+#controls{
+	position: absolute;
+	z-index: 5;
+	top:80%;
+	left:20%;
+	width: 5%;
+	height: auto;
+	font-family: Geosans;
+	font-size: 18px;
+	cursor: crosshair;
+	color:white;
+}
 .icon-normal{
 	-webkit-transition: visibility 0.5s ease-out;
     -moz-transition: visibility 0.5s ease-out;

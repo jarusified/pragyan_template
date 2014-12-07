@@ -5,11 +5,6 @@
 
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
-			$('.section').bind('click',function(){
-				$('#menu').animate({top:"4%",opacity:0.05},500,function(){
-					$("#box").hide().fadeIn();
-				});
-		});
 		$('#toggle').click(function(){
 			if(menuOpen){
 				$('#sub-menu').hide();
@@ -21,6 +16,12 @@
 			}
 		});
 	}
+	function back(){
+			$('#sub-menu').delay(500).hide();
+			menuOpen=false;
+			$("#menu").css({"top":"25%","opacity":"1.0"});
+			press=false;
+	}
 
 	function onkeydown(event){
 		if(!press){
@@ -31,6 +32,10 @@
 			else if(event.keyCode==39){
 				console.log('ef');
 				press=true;
+			}
+			else if(event.keyCode==66){
+				press=true;
+				back();
 			}
 		}
 	}

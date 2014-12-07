@@ -24,7 +24,7 @@
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
-				$('#sub-menu').hide();
+				$('#sub-menu').delay(500).hide();
 				menuOpen=false;
 			}
 			else{
@@ -34,6 +34,16 @@
 		});
 	}
 
+	function back(){
+			$('#sub-menu').delay(500).hide();
+			menuOpen=false;
+			$("#menu").css({"top":"25%","opacity":"1.0"});
+			for(var i=0;i<5;i++){
+				$('[id='+mapper[i]+']').css("display","none");
+				//$('[id='+mapper[i]+']').css({"display":"none","opacity":"0"});
+			}
+			press=false;
+	}
 	function onkeydown(event){
 		if(!press){
 			if(event.keyCode==37){
