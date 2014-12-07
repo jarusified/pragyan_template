@@ -115,7 +115,7 @@
 				press=true;
 				toggleDown(index[0]);
 			}
-			else if(event.keyCode==66){
+			else if(event.keyCode==66 || event.keyCode==27){
 				press=true;
 				back();
 			}
