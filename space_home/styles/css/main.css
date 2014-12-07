@@ -51,6 +51,10 @@ html,body{
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 #cluster-menu{
 	position: absolute;
@@ -63,6 +67,10 @@ html,body{
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
 }
 #events-cluster,#workshops-cluster,#gl-cluster,#exhibitions-cluster,#sponsorships-cluster{
 	z-index: 3;
@@ -96,7 +104,7 @@ html,body{
     -webkit-transform:scale(0.9);
 	-moz-transform:scale(0.9);
 	-o-transform:scale(0.9);
-	transform: scale(0.9); 
+	transform: scale(0.9);
 }
 .cluster-section:hover{
 	box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;	
@@ -126,6 +134,7 @@ html,body{
     border-radius: 2px;
     border: 1px solid gray;
     border-left-width: 10px;
+    border-left-color: #122c36;
     -webkit-transition: -webkit-transform 0.5s ease-out;
     -moz-transition: -moz-transform 0.5s ease-out;
     -o-transition: -o-transform 0.5s ease-out;
@@ -332,4 +341,30 @@ html,body{
 }
 .lines-button:hover .lines:after {
   top: -.64rem;
+}
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+            transform: translate3d(0, 2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInUpBig {
+	display: block;
+  -webkit-animation-name: fadeInUpBig;
+          animation-name: fadeInUpBig;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
