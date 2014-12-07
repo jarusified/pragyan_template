@@ -12,13 +12,15 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
+			$('#menu').css({"top":"4%","opacity":"0.3"});
 			for(var i=0;i<5;i++){
 				$('[id='+mapper[i]+']').css("display","none");
+				//$('[id='+mapper[i]+']').css({"display":"none","opacity":"0"});
 			}
 			var value =$(this).index();
 			var selector = mapper[value];
-			$('#cluster-menu').hide().fadeIn();
-			$('[id='+selector+']').hide().fadeIn(300);
+			$('[id='+selector+']').delay(500).hide().fadeIn(1000);
+			//$('[id='+selector+']').css({"display":"block","opacity":"1","top":"-20%"});
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
