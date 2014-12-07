@@ -17,12 +17,10 @@
 			$('#menu').css({"top":"4%","opacity":"0.3"});
 			for(var i=0;i<5;i++){
 				$('[id='+mapper[i]+']').css("display","none");
-				//$('[id='+mapper[i]+']').css({"display":"none","opacity":"0"});
 			}
 			var value =$(this).index();
 			var selector = mapper[value];
 			$('[id='+selector+']').delay(500).hide().fadeIn(1000);
-			//$('[id='+selector+']').css({"display":"block","opacity":"1","top":"-20%"});
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
@@ -51,7 +49,6 @@
 	function toggleLeft(arr,index,count){
 		for(i=0; i<count; i++)
 			arr.unshift(arr.pop());
-			console.log(index);
 			index.unshift(index.pop());
 		return arr;
 	}
@@ -78,7 +75,7 @@
 		});
 		press=false;
 	}
-	
+
 	function toggleDown(value){
 		console.log(value);
 		$('#menu').css({"top":"4%","opacity":"0.3"});
@@ -98,14 +95,11 @@
 		press=false;
 	}
 	
-	
-
 	function onkeydown(event){
 		if(!press){
 			if(event.keyCode==37){
 				press=true;
 				menu=toggleLeft(menu,index,1);
-				//index=toggleLeft(index,1);
 				left(menu);
 			}
 			else if(event.keyCode==38){
@@ -115,7 +109,6 @@
 			else if(event.keyCode==39){
 				press=true;
 				menu=toggleRight(menu,index,1);
-				//index=toggleRight(menu,1);
 				right(menu);
 			}	
 			else if(event.keyCode==40){
@@ -128,6 +121,4 @@
 			}
 		}
 	}
-	
-	
 }(window.jQuery);
