@@ -3,25 +3,20 @@
 	var press =false;
 	var menuOpen=false;
 	var mapper={
-		0:"a",
-		1:"b",
-		2:"c",
-		3:"d",
-		4:"e"
+		0:"events-cluster",
+		1:"workshops-cluster",
+		2:"gl-cluster",
+		3:"exhibitions-cluster",
+		4:"sponsorships-cluster"
 	};
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 			$('.section').bind('click',function(){
 				var value =$(this).index();
 				var selector = mapper[value];
-				$('#menu').animate({top:"4%",opacity:0.5},200);
-				$("#cluster-menu").delay(100).queue(function(next){
-					console.log($("#"+mapper[value]));
-					$("div[id*=selector]").hide().fadeIn(function(){
-						console.log($(this));
-					});
-					next();
-				});
+				$('#menu').animate({top:"4%",opacity:0.3},200);
+					console.log(selector);
+				$('[id='+selector+']').css("display","block");
 			});
 		$('#toggle').click(function(){
 			if(menuOpen){

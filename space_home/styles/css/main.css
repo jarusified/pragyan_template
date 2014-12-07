@@ -47,7 +47,7 @@ html,body{
     padding: 5px 10px;
     top: 25%;
 	left: 50%;	
-    height: 80%;
+    height: 60%;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -57,14 +57,14 @@ html,body{
 	width: 975px;
     margin-left: -487px;
     padding: 5px 10px;
-    top: 60%;
+    top: 40%;
 	left: 50%;	
-    height: auto;
+    height: 40%;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
 }
-#a,#b,#c,#d,#e,#f{
+#events-cluster,#workshops-cluster,#gl-cluster,#exhibitions-cluster,#sponsorships-cluster{
 	z-index: 3;
 	display: none;
 }
