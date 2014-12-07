@@ -9,6 +9,8 @@
 		3:"exhibitions-cluster",
 		4:"sponsorships-cluster"
 	};
+	var menu=['events','workshops','gl','exhibitions','sponsorships'];
+	var index=[0,1,2,3,4];
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
@@ -32,26 +34,94 @@
 				menuOpen=true;
 			}
 		});
+		
+
 	}
 
 	function back(){
-			$('#sub-menu').delay(500).hide();
-			menuOpen=false;
-			$("#menu").css({"top":"25%","opacity":"1.0"});
+		$('#sub-menu').delay(500).hide();
+		menuOpen=false;
+		$("#menu").css({"top":"25%","opacity":"1.0"});
+		for(var i=0;i<5;i++){
+			$('[id='+mapper[i]+']').css("display","none");
+		}
+		press=false;
+	}
+
+	function toggleLeft(arr,index,count){
+		for(i=0; i<count; i++)
+			arr.unshift(arr.pop());
+			console.log(index);
+			index.unshift(index.pop());
+		return arr;
+	}
+
+	function left(arr){
+		$('#'+arr[0]).removeClass('section').addClass('hover');
+		$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+			$(this).removeClass('hover').addClass('section');
+		});
+		press=false;
+	}
+
+	function toggleRight(arr,index,count){
+		for(i=0; i<count; i++)
+			arr.push(arr.shift(arr[0]));
+			index.push(index.shift(index[0]));
+		return arr;
+	}
+
+	function right(arr){
+		$('#'+arr[0]).removeClass('section').addClass('hover');
+		$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+			$(this).removeClass('hover').addClass('section');
+		});
+		press=false;
+	}
+	
+	function toggleDown(value){
+		console.log(value);
+		$('#menu').css({"top":"4%","opacity":"0.3"});
 			for(var i=0;i<5;i++){
 				$('[id='+mapper[i]+']').css("display","none");
-				//$('[id='+mapper[i]+']').css({"display":"none","opacity":"0"});
 			}
-			press=false;
+			var selector = mapper[value];
+			$('[id='+selector+']').delay(500).hide().fadeIn(1000);
+		press=false;
 	}
+
+	function toggleUp(){
+		$("#menu").css({"top":"25%","opacity":"1.0"});
+		for(var i=0;i<5;i++){
+			$('[id='+mapper[i]+']').css("display","none");
+		}
+		press=false;
+	}
+	
+	
+
 	function onkeydown(event){
 		if(!press){
 			if(event.keyCode==37){
 				press=true;
+				menu=toggleLeft(menu,index,1);
+				//index=toggleLeft(index,1);
+				left(menu);
+			}
+			else if(event.keyCode==38){
+				press=true;
+				toggleUp();
 			}
 			else if(event.keyCode==39){
 				press=true;
+				menu=toggleRight(menu,index,1);
+				//index=toggleRight(menu,1);
+				right(menu);
 			}	
+			else if(event.keyCode==40){
+				press=true;
+				toggleDown(index[0]);
+			}
 			else if(event.keyCode==66){
 				press=true;
 				back();
