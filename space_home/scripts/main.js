@@ -14,8 +14,7 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
-			$("#menua").css({"top":"25%","opacity":"1.0"});
-			$('#menu').css({"top":"4%","opacity":"0.3"});
+			$('#menu').css({"top":"4%","opacity":"0.4"});
 			for(var i=0;i<5;i++){
 				$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 			}
@@ -25,11 +24,11 @@
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
-				$('#sub-menu').delay(500).hide();
+				$('#sub-menu').css("opacity","0");
 				menuOpen=false;
 			}
 			else{
-				$("#sub-menu").hide().fadeIn();
+				$("#sub-menu").css("opacity","1");
 				menuOpen=true;
 			}
 		});
