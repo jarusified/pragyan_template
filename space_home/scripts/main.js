@@ -14,13 +14,29 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
-			$('#menu').css({"top":"4%","opacity":"0.4"});
-			for(var i=0;i<5;i++){
-				$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+			if($('#menu').css("opacity")!=1.0){
+				for(var i=0;i<5;i++){
+					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+				}
+				$('#menu').css("top","25%");
+				$('#cluster-menu').css("visibility","hidden");
+				var value =$(this).index();
+				var selector = mapper[value];
+				$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+					$(this).css({"top":"4%","opacity":"0.4"});
+					$('#cluster-menu').css("visibility","visible");
+					$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
+				});
 			}
-			var value =$(this).index();
-			var selector = mapper[value];
-			$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
+			else{
+				$('#menu').css({"top":"4%","opacity":"0.4"});
+				for(var i=0;i<5;i++){
+					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+				}
+				var value =$(this).index();
+				var selector = mapper[value];
+				$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
+			}
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
@@ -37,7 +53,7 @@
 	}
 
 	function back(){
-		$('#sub-menu').delay(500).hide();
+		$('#sub-menu').css("opacity","0");
 		menuOpen=false;
 		$("#menu").css({"top":"25%","opacity":"1.0"});
 		for(var i=0;i<5;i++){
@@ -77,7 +93,6 @@
 	}
 
 	function toggleDown(value){
-		console.log(value);
 		$('#menu').css({"top":"4%","opacity":"0.3"});
 			for(var i=0;i<5;i++){
 				$('[id='+mapper[i]+']').css("display","none");

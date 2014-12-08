@@ -22,10 +22,12 @@ html,body{
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
+  	-ms-background-size:cover;
   	background-size: cover;
   	-webkit-filter: blur(1px);
   	-moz-filter: blur(1px);
   	-o-filter: blur(1px);
+  	-ms-filter:blur(1px);
   	filter: blur(1px);
 }
 
@@ -46,7 +48,8 @@ html,body{
     margin-left: -487px;
     padding: 5px 10px;
     top: 25%;
-	left: 50%;	
+	left: 50%;
+	opacity: 1;	
     height: auto;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -54,6 +57,7 @@ html,body{
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 .section {
@@ -79,10 +83,12 @@ html,body{
     -webkit-transition: -webkit-transform 0.5s ease-out;
     -moz-transition: -moz-transform 0.5s ease-out;
     -o-transition: -o-transform 0.5s ease-out;
+    -ms-transition: -o-transform 0.5s ease-out;
     transition: transform 0.5s ease-out;
     -webkit-transform:scale(0.9);
 	-moz-transform:scale(0.9);
 	-o-transform:scale(0.9);
+	-ms-transform:scale(1.1);
 	transform: scale(0.9); 
 }
 .section:hover{
@@ -92,6 +98,7 @@ html,body{
     -webkit-transform:scale(1.1);
 	-moz-transform:scale(1.1);
 	-o-transform:scale(1.1);
+	-ms-transform:scale(1.1);
 	transform: scale(1.1); 
 }
 .hover{
@@ -112,10 +119,12 @@ html,body{
 	-webkit-transition: -webkit-transform 0.5s ease-out;
     -moz-transition: -moz-transform 0.5s ease-out;
     -o-transition: -o-transform 0.5s ease-out;
+    -ms-transition: -ms-transform 0.5s ease-out;
     transition: transform 0.5s ease-out;
     -webkit-transform:scale(1.1);
 	-moz-transform:scale(1.1);
 	-o-transform:scale(1.1);
+	-ms-transform:scale(1.1);
 	transform: scale(1.1)
 }
 .hover .icon-normal{
@@ -135,6 +144,7 @@ html,body{
 	-webkit-transition: visibility 0.5s ease-out;
     -moz-transition: visibility 0.5s ease-out;
     -o-transition: visibility 0.5s ease-out;
+    -ms-transition: visibility  0.5s ease-out;
     transition: visibility 0.5s ease-out;
 }
 .icon-normal{
@@ -161,20 +171,23 @@ html,body{
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out
+    visibility: visible;
+    -webkit-transition: all 1.5s ease-out;
+    -moz-transition: all 1.5s ease-out;
+    -o-transition: all 1.5s ease-out;
+    -ms-transition: all  1.5s ease-out;
+    transition: all 1.5s ease-out
    
 }
 #events-cluster,#workshops-cluster,#gl-cluster,#exhibitions-cluster,#sponsorships-cluster{
 	z-index: 3;
 	opacity: 0;
 	display: none;
-	-webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
+	-webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -ms-transition: all  1s ease-out;
+    transition: all 1s ease-out;
 }
 
 .cluster-section{
@@ -199,10 +212,12 @@ html,body{
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all  0.5s ease-out;
+    -ms-transition: all  0.5s ease-out;
     transition: all 0.5s ease-out;
     -webkit-transform:scale(0.9);
 	-moz-transform:scale(0.9);
 	-o-transform:scale(0.9);
+	-ms-transform:scale(0.9);
 	transform: scale(0.9);
 }
 .cluster-section:hover{
@@ -212,6 +227,7 @@ html,body{
     -webkit-transform:scale(1.1);
 	-moz-transform:scale(1.1);
 	-o-transform:scale(1.1);
+	-ms-transform:scale(1.1);
 	transform: scale(1.1); 
 }
 #controls{
