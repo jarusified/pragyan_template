@@ -75,7 +75,7 @@
 		menuOpen=false;
 		$("#menu").css({"top":"25%","opacity":"1.0"});
 		for(var i=0;i<5;i++){
-			$('[id='+mapper[i]+']').css("display","none");
+			$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 		}
 		press=false;
 	}
@@ -111,17 +111,27 @@
 	}
 
 	function toggleDown(value){
-		$('#menu').css({"top":"4%","opacity":"0.3"});
-			for(var i=0;i<5;i++){
-				$('[id='+mapper[i]+']').css("display","none");
-			}
-			var selector = mapper[value];
-			$('[id='+selector+']').delay(500).hide().fadeIn(500);
+		$('#menu').css('-webkit-transform', 'translateY(4%)');
+		$('#menu').css('-moz-transform', 'translateY(4%)');
+		$('#menu').css('-o-transform', 'translateY(4%)');
+		$('#menu').css('-ms-transform', 'translateY(4%)');
+		$('#menu').css('transform', 'translateY(4%)');
+		$('#menu').css("opacity","0.4");
+		for(var i=0;i<5;i++){
+			$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+		}
+		var selector = mapper[value];
+		$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
 		press=false;
 	}
 
 	function toggleUp(){
-		$("#menu").css({"top":"25%","opacity":"1.0"});
+		$('#menu').css('-webkit-transform', 'translateY(40%)');
+		$('#menu').css('-moz-transform', 'translateY(40%)');
+		$('#menu').css('-o-transform', 'translateY(40%)');
+		$('#menu').css('-ms-transform', 'translateY(40%)');
+		$('#menu').css('transform', 'translateY(40%)');
+		$('#menu').css('opacity',1);
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css("display","none");
 		}
