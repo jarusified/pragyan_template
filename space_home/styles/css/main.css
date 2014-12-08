@@ -170,6 +170,7 @@ html,body{
 #events-cluster,#workshops-cluster,#gl-cluster,#exhibitions-cluster,#sponsorships-cluster{
 	z-index: 3;
 	opacity: 0;
+	display: none;
 	-webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;

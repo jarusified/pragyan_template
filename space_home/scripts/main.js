@@ -17,11 +17,11 @@
 			$("#menua").css({"top":"25%","opacity":"1.0"});
 			$('#menu').css({"top":"4%","opacity":"0.3"});
 			for(var i=0;i<5;i++){
-				$('[id='+mapper[i]+']').css("opacity",0);
+				$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 			}
 			var value =$(this).index();
 			var selector = mapper[value];
-			$('[id='+selector+']').css("opacity",1)
+			$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
