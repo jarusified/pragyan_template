@@ -14,13 +14,14 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
+			$("#menua").css({"top":"25%","opacity":"1.0"});
 			$('#menu').css({"top":"4%","opacity":"0.3"});
 			for(var i=0;i<5;i++){
-				$('[id='+mapper[i]+']').css("display","none");
+				$('[id='+mapper[i]+']').css("opacity",0);
 			}
 			var value =$(this).index();
 			var selector = mapper[value];
-			$('[id='+selector+']').delay(500).hide().fadeIn(1000);
+			$('[id='+selector+']').css("opacity",1)
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
@@ -83,7 +84,7 @@
 				$('[id='+mapper[i]+']').css("display","none");
 			}
 			var selector = mapper[value];
-			$('[id='+selector+']').delay(500).hide().fadeIn(1000);
+			$('[id='+selector+']').delay(500).hide().fadeIn(500);
 		press=false;
 	}
 

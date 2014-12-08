@@ -151,7 +151,7 @@ html,body{
 }
 #cluster-menu{
 	z-index: 3;
-	position:absolute;
+	position: fixed;
     width: 975px;
     margin-left: -487px;
     padding: 5px 10px;
@@ -169,16 +169,16 @@ html,body{
 }
 #events-cluster,#workshops-cluster,#gl-cluster,#exhibitions-cluster,#sponsorships-cluster{
 	z-index: 3;
-	display: none;
+	opacity: 0;
 	-webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
+
 .cluster-section{
     display: inline-block;
     vertical-align: middle;
-    float: left;
     margin-top: 5%;
 	margin-left: 0px;
 	margin-bottom: 15%;
