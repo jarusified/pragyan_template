@@ -176,11 +176,11 @@ html,body{
     overflow-y: hidden;
     white-space: nowrap;
     visibility: visible;
-    -webkit-transition: all 1.5s ease-out;
-    -moz-transition: all 1.5s ease-out;
-    -o-transition: all 1.5s ease-out;
-    -ms-transition: all  1.5s ease-out;
-    transition: all 1.5s ease-out
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    -ms-transition: all  .5s ease-out;
+    transition: all .5s ease-out
    
 }
 #events-cluster,#workshops-cluster,#gl-cluster,#exhibitions-cluster,#sponsorships-cluster{

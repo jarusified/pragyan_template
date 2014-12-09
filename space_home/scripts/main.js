@@ -11,6 +11,8 @@
 	};
 	var menu=['events','workshops','gl','exhibitions','sponsorships'];
 	var index=[0,1,2,3,4];
+	var level=false;
+	var count =0;
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
@@ -88,10 +90,18 @@
 	}
 
 	function left(arr){
-		$('#'+arr[0]).removeClass('section').addClass('hover');
-		$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-			$(this).removeClass('hover').addClass('section');
-		});
+			if($('#'+arr[0]).hasClass('section')){
+			$('#'+arr[0]).removeClass('section').addClass('hover');
+			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+				$(this).removeClass('hover').addClass('section');
+			});
+		}
+		else{
+			$('#'+arr[0]).removeClass('cluster-section').addClass('hover');
+			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+				$(this).removeClass('hover').addClass('cluster-section');
+			});
+		}
 		press=false;
 	}
 
@@ -103,13 +113,23 @@
 	}
 
 	function right(arr){
-		$('#'+arr[0]).removeClass('section').addClass('hover');
-		$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-			$(this).removeClass('hover').addClass('section');
-		});
+		if($('#'+arr[0]).hasClass('section')){
+			$('#'+arr[0]).removeClass('section').addClass('hover');
+			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+				$(this).removeClass('hover').addClass('section');
+			});
+		}
 		press=false;
 	}
 
+	function cluster(arr,pos,elem){
+		console.log(elem);
+		elem.removeClass('cluster-section').addClass('hover');
+		elem.bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+			$(this).removeClass('hover').addClass('cluster-section');
+		});
+		press=false;
+	}
 	function toggleDown(value){
 		$('#menu').css('-webkit-transform', 'translateY(4%)');
 		$('#menu').css('-moz-transform', 'translateY(4%)');
@@ -122,7 +142,14 @@
 		}
 		var selector = mapper[value];
 		$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
+		var length = $('[id='+selector+']').length;
+		var id = $('[id='+selector+']').attr('id');
+		menu1=[];
+		for(var i=0;i<length;i++){
+			menu1[i]=id;
+		}
 		press=false;
+		return menu1;
 	}
 
 	function toggleUp(){
@@ -136,27 +163,47 @@
 			$('[id='+mapper[i]+']').css("display","none");
 		}
 		press=false;
+		return menu;
 	}
 	
 	function onkeydown(event){
 		if(!press){
 			if(event.keyCode==37){
 				press=true;
-				menu=toggleLeft(menu,index,1);
-				left(menu);
+				if(!level){
+					menu=toggleLeft(menu,index,1);
+					left(menu);
+				}
+				else{
+					count++;
+					pos=count%menu1.length;
+					cluster(menu1,pos);
+					elem=elem.prev();
+				}
 			}
 			else if(event.keyCode==38){
 				press=true;
-				toggleUp();
+				level=false;
+				menu=toggleUp();
 			}
 			else if(event.keyCode==39){
 				press=true;
-				menu=toggleRight(menu,index,1);
-				right(menu);
+				if(!level){
+					menu=toggleRight(menu,index,1);
+					right(menu);
+				}
+				else{
+					count++;
+					pos=count%menu1.length;
+					cluster(menu1,pos,elem);
+					elem=elem.next();
+				}
 			}	
 			else if(event.keyCode==40){
 				press=true;
-				toggleDown(index[0]);
+				level=true;
+				menu1=toggleDown(index[0]);
+				elem=$('#'+menu1[0]);
 			}
 			else if(event.keyCode==66 || event.keyCode==27){
 				press=true;
