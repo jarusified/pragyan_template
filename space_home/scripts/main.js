@@ -122,13 +122,21 @@
 		press=false;
 	}
 
-	function cluster(arr,pos,elem){
+	function cluster(arr,pos,elem,dir){
 		console.log(elem);
 		elem.removeClass('cluster-section').addClass('hover');
 		elem.bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
 			$(this).removeClass('hover').addClass('cluster-section');
 		});
 		press=false;
+		if(dir){
+			elem=elem.next();
+		}
+		else{
+			elem=elem.prev();
+		}
+		return elem;
+
 	}
 	function toggleDown(value){
 		$('#menu').css('-webkit-transform', 'translateY(4%)');
@@ -177,8 +185,9 @@
 				else{
 					count++;
 					pos=count%menu1.length;
-					cluster(menu1,pos);
-					elem=elem.prev();
+					elem=cluster(menu1,pos,elem,dir);
+										dir=false;
+
 				}
 			}
 			else if(event.keyCode==38){
@@ -195,8 +204,8 @@
 				else{
 					count++;
 					pos=count%menu1.length;
-					cluster(menu1,pos,elem);
-					elem=elem.next();
+					dir=true;
+					elem=cluster(menu1,pos,elem,dir);
 				}
 			}	
 			else if(event.keyCode==40){

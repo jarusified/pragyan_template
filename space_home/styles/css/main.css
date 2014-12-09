@@ -187,11 +187,11 @@ html,body{
 	z-index: 3;
 	opacity: 0;
 	display: none;
-	-webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    -ms-transition: all  1s ease-out;
-    transition: all 1s ease-out;
+	-webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    -ms-transition: all  .5s ease-out;
+    transition: all .5s ease-out;
 }
 
 .cluster-section{
