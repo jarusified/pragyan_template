@@ -149,6 +149,9 @@ html,body{
   color: #1B3A53;
    box-shadow: 6px -6px 12px -7px #A0DDFF,inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE,0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF;  
 }
+.hide{
+  display: none;
+}
 #events{
   display: block;
 }
