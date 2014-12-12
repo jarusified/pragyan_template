@@ -2,6 +2,7 @@
 	var sections = $('.section');
 	var press =false;
 	var menuOpen=false;
+	var animationEnd=false;
 	var mapper={
 		0:"events-menu",
 		1:"workshops-menu",
@@ -16,45 +17,37 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
-			if($('#menu').css("opacity")!=1.0){
+			if($('#menu').css("opacity")){
 				for(var i=0;i<5;i++){
 					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 				}
-				$('#menu').css('-webkit-transform', 'translateY(40%)');
-				$('#menu').css('-moz-transform', 'translateY(40%)');
-				$('#menu').css('-o-transform', 'translateY(40%)');
-				$('#menu').css('-ms-transform', 'translateY(40%)');
-				$('#menu').css('transform', 'translateY(40%)');
-				$('#cluster-menu').css("visibility","hidden");
-				var value =$(this).index();
-				var selector = mapper[value];
-				console.log(selector);
-				$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
-				$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-					$(this).css("opacity","0.4");
-					$('#menu').css('-webkit-transform', 'translateY(4%)');
-					$('#menu').css('-moz-transform', 'translateY(4%)');
-					$('#menu').css('-o-transform', 'translateY(4%)');
-					$('#menu').css('-ms-transform', 'translateY(4%)');
-					$('#menu').css('transform', 'translateY(4%)');
-					$('#cluster-menu').css("visibility","visible");
-				});
-
-			}
-			else{
 				$('#menu').css('-webkit-transform', 'translateY(4%)');
 				$('#menu').css('-moz-transform', 'translateY(4%)');
 				$('#menu').css('-o-transform', 'translateY(4%)');
 				$('#menu').css('-ms-transform', 'translateY(4%)');
 				$('#menu').css('transform', 'translateY(4%)');
 				$('#menu').css("opacity","0.4");
-
-				for(var i=0;i<5;i++){
-					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
-				}
 				var value =$(this).index();
 				var selector = mapper[value];
 				$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
+				$('#cluster_menu').css({"visibility":"visible","opacity":"0.4"})
+				$('[id='+selector+']').css('-webkit-transform', 'scale(0)');
+				$('[id='+selector+']').css('-moz-transform', 'scale(0)');
+				$('[id='+selector+']').css('-o-transform', 'scale(0)');
+				$('[id='+selector+']').css('-ms-transform', 'scale(0)');
+				$('[id='+selector+']').css('transform', 'scale(0)');
+				$('[id='+selector+']').children().css("box-shadow","inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF" );
+				$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+					$(this).css("opacity","0.4");
+					$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
+					$('[id='+selector+']').css('-moz-transform', 'scale(1)');
+					$('[id='+selector+']').css('-o-transform', 'scale(1)');
+					$('[id='+selector+']').css('-ms-transform', 'scale(1)');
+					$('[id='+selector+']').css('transform', 'scale(1)');
+					$('[id='+selector+']').children().css("box-shadow","0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF" );
+
+				});
+
 			}
 		});
 		$('#toggle').click(function(){
@@ -81,7 +74,9 @@
 		$('#menu').css('-ms-transform', 'translateY(40%)');
 		$('#menu').css('transform', 'translateY(40%)');
 		for(var i=0;i<5;i++){
-			$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
+			$('[id='+menu[i]+']').removeClass('hover1');
+
 		}
 		press=false;
 	}
@@ -105,7 +100,7 @@
 			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
 				$(this).removeClass('hover').addClass('cluster-section');
 			});
-		}
+		}	
 		press=false;
 	}
 
@@ -140,17 +135,32 @@
 		$('#menu').css('transform', 'translateY(4%)');
 		$('#menu').css("opacity","0.4");
 		for(var i=0;i<5;i++){
-			$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
 		}
 		var selector = mapper[value];
 		$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
+		$('[id='+selector+']').css('-webkit-transform', 'scale(0)');
+		$('[id='+selector+']').css('-moz-transform', 'scale(0)');
+		$('[id='+selector+']').css('-o-transform', 'scale(0)');
+		$('[id='+selector+']').css('-ms-transform', 'scale(0)');
+		$('[id='+selector+']').css('transform', 'scale(0)');
+		$('[id='+selector+']').children().css("box-shadow","inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF" );
+		$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+			$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
+			$('[id='+selector+']').css('-moz-transform', 'scale(1)');
+			$('[id='+selector+']').css('-o-transform', 'scale(1)');
+			$('[id='+selector+']').css('-ms-transform', 'scale(1)');
+			$('[id='+selector+']').css('transform', 'scale(1)');
+			$('[id='+selector+']').children().css("box-shadow","0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF" );
+
+		});
 		var length = $('[id='+selector+']').length;
 		var id = $('[id='+selector+']').attr('id');
 		menu1=[];
 		for(var i=0;i<length;i++){
 			menu1[i]=id;
 		}
-		
+		$('#'+menu[0]).addClass('hover1');
 		press=false;
 		return menu1;
 	}
@@ -161,9 +171,10 @@
 		$('#menu').css('-o-transform', 'translateY(40%)');
 		$('#menu').css('-ms-transform', 'translateY(40%)');
 		$('#menu').css('transform', 'translateY(40%)');
-		$('#menu').css('opacity',1);
+		$('#menu').css("opacity","1.0");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css("display","none");
+			$('[id='+menu[i]+']').removeClass('hover1');
 		}
 		press=false;
 		return menu;
@@ -178,7 +189,6 @@
 					left(menu);
 				}
 				else{
-					console.log(cluster_menu);
 					cluster_menu=toggleLeft(cluster_menu,cluster_index,1);
 					left(cluster_menu);
 				}
