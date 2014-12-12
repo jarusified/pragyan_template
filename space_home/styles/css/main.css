@@ -31,7 +31,7 @@ html,body{
     filter: blur(1px);
 }
 
-#line{
+.line{
   position: absolute;
   z-index: 4;
   color:#000;

@@ -17,6 +17,22 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').bind('click',function(){
+			var item=$(this);
+			console.log($(this).nextUntil('line').length);
+			menu[0]=item.attr('id');
+			/*var i=1;
+			while(i<5){
+				var length=$(this).nextUntil('line').length;
+				for(var j=0;j<length-1;j++){
+					menu[i]=$(this).nextUntil('line')[j].id;
+					i++;
+				}
+				for(var j=0;j<$(this).prevUntil('line').length-1;j++){
+					menu[i]=$(this).prevUntil('line')[j].id;	
+					i++				
+				}
+			}*/
+			console.log(menu);
 			$('.section').removeClass('hover1');
 			if($('#menu').css("opacity")){
 				for(var i=0;i<5;i++){
