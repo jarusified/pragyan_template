@@ -68,6 +68,7 @@ html,body{
   display: inline-block;
   vertical-align: middle;
   margin-top: 5%;
+   margin-right: 2%;
   margin-bottom: 15%;
   width:180px;
   height:180px;
@@ -107,15 +108,16 @@ html,body{
 .section:focus{
   outline: none !important;  
 }
-.hover{
+.hover,.hover1{
   display: inline-block;
   vertical-align: middle;
   margin-top: 5%;
+  margin-right:2%;
   margin-bottom: 15%;
   width:180px;
   height:180px;
   cursor: pointer;
-  box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #010202, 0 0 0px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
+  box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
   border-color: #7FA9DB;
   border-left-color: #BEC7CE; 
   border-radius: 2px;
@@ -210,6 +212,7 @@ html,body{
     display: inline-block;
     vertical-align: middle;
     margin-top: 5%;
+    margin-right: 2%;
     margin-bottom: 15%;
     width:180px;
     height:180px;
