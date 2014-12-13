@@ -39,11 +39,11 @@
 					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 				}
 				$(this).addClass('hover1');
-				$('#menu').css('-webkit-transform', 'translateY(4%)');
-				$('#menu').css('-moz-transform', 'translateY(4%)');
-				$('#menu').css('-o-transform', 'translateY(4%)');
-				$('#menu').css('-ms-transform', 'translateY(4%)');
-				$('#menu').css('transform', 'translateY(4%)');
+				$('#menu').css('-webkit-transform', 'translateY(10%)');
+				$('#menu').css('-moz-transform', 'translateY(10%)');
+				$('#menu').css('-o-transform', 'translateY(10%)');
+				$('#menu').css('-ms-transform', 'translateY(1%)');
+				$('#menu').css('transform', 'translateY(10%)');
 				//$('#menu').css("opacity","0.4");
 				var value =$(this).index();
 				var selector = mapper[value];
@@ -107,17 +107,20 @@
 	}
 
 	function left(arr){
+		for (var i = 0; i < arr.length; i++) {
+			if($('#'+arr[0]).hasClass('section')){
+				$('#'+arr[i]).removeClass('hover').addClass('section');
+			}
+			else{
+				$('#'+arr[i]).removeClass('hover').addClass('cluster-section');
+			}
+		};
 		if($('#'+arr[0]).hasClass('section')){
 			$('#'+arr[0]).removeClass('section').addClass('hover');
-			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-				$(this).removeClass('hover').addClass('section');
-			});
+			
 		}
 		else{
 			$('#'+arr[0]).removeClass('cluster-section').addClass('hover');
-			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-				$(this).removeClass('hover').addClass('cluster-section');
-			});
 		}	
 		press=false;
 	}
@@ -130,17 +133,20 @@
 	}
 
 	function right(arr){
+		for (var i = 0; i < arr.length; i++) {
+			if($('#'+arr[0]).hasClass('section')){
+				$('#'+arr[i]).removeClass('hover').addClass('section');
+			}
+			else{
+				$('#'+arr[i]).removeClass('hover').addClass('cluster-section');
+			}
+		};
 		if($('#'+arr[0]).hasClass('section')){
 			$('#'+arr[0]).removeClass('section').addClass('hover');
-			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-				$(this).removeClass('hover').addClass('section');
-			});
+			
 		}
 		else{
 			$('#'+arr[0]).removeClass('cluster-section').addClass('hover');
-			$('#'+arr[0]).bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-				$(this).removeClass('hover').addClass('cluster-section');
-			});
 		}
 		press=false;
 	}
