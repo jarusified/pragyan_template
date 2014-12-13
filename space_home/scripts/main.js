@@ -11,44 +11,40 @@
 		4:"sponsorships-menu"
 	};
 	var menu=['events','workshops','gl','exhibitions','sponsorships'];
+	var state_define={
+		"events":['events','workshops','gl','exhibitions','sponsorships'],
+		"workshops":['workshops','gl','exhibitions','sponsorships','events'],
+		"gl":['gl','exhibitions','sponsorships','events','workshops'],
+		"exhibitions":['exhibitions','sponsorships','events','workshops','gl'],
+		"sponsorships":['sponsorships','events','workshops','gl','exhibitions']
+	}
 	var index=[0,1,2,3,4];
 	var level=false;
 	var count =0;
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
+		$('.section').hover(function(){
+			$('.section').removeClass('hover');
+			console.log(this);
+			$(this).addClass('hover');
+		});
 		$('.section').bind('click',function(){
-			var item=$(this);
-			console.log($(this).nextUntil('line').length);
-			menu[0]=item.attr('id');
-			/*var i=1;
-			while(i<5){
-				var length=$(this).nextUntil('line').length;
-				for(var j=0;j<length-1;j++){
-					menu[i]=$(this).nextUntil('line')[j].id;
-					i++;
-				}
-				for(var j=0;j<$(this).prevUntil('line').length-1;j++){
-					menu[i]=$(this).prevUntil('line')[j].id;	
-					i++				
-				}
-			}*/
-			console.log(menu);
-			$('.section').removeClass('hover1');
+			var item=$(this).attr('id');
+			menu=state_define[item];
+			$('.section').removeClass('hover');
 			if($('#menu').css("opacity")){
 				for(var i=0;i<5;i++){
 					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 				}
-				$(this).addClass('hover1');
+				$(this).addClass('hover');
 				$('#menu').css('-webkit-transform', 'translateY(10%)');
 				$('#menu').css('-moz-transform', 'translateY(10%)');
 				$('#menu').css('-o-transform', 'translateY(10%)');
 				$('#menu').css('-ms-transform', 'translateY(1%)');
 				$('#menu').css('transform', 'translateY(10%)');
-				//$('#menu').css("opacity","0.4");
 				var value =$(this).index();
 				var selector = mapper[value];
 				$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
-				//$('#cluster_menu').css({"visibility":"visible","opacity":"0.4"})
 				$('[id='+selector+']').css('-webkit-transform', 'scale(0)');
 				$('[id='+selector+']').css('-moz-transform', 'scale(0)');
 				$('[id='+selector+']').css('-o-transform', 'scale(0)');
@@ -56,7 +52,6 @@
 				$('[id='+selector+']').css('transform', 'scale(0)');
 				$('[id='+selector+']').children().css("box-shadow","inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF" );
 				$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-					//$(this).css("opacity","0.4");
 					$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
 					$('[id='+selector+']').css('-moz-transform', 'scale(1)');
 					$('[id='+selector+']').css('-o-transform', 'scale(1)');
@@ -93,7 +88,7 @@
 		$('#menu').css('transform', 'translateY(40%)');
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
-			$('[id='+menu[i]+']').removeClass('hover1');
+			$('[id='+menu[i]+']').removeClass('hover');
 
 		}
 		press=false;
@@ -107,6 +102,7 @@
 	}
 
 	function left(arr){
+		$('.section').removeClass('hover');
 		for (var i = 0; i < arr.length; i++) {
 			if($('#'+arr[0]).hasClass('section')){
 				$('#'+arr[i]).removeClass('hover').addClass('section');
@@ -133,6 +129,7 @@
 	}
 
 	function right(arr){
+		$('.section').removeClass('hover');
 		for (var i = 0; i < arr.length; i++) {
 			if($('#'+arr[0]).hasClass('section')){
 				$('#'+arr[i]).removeClass('hover').addClass('section');
@@ -157,7 +154,6 @@
 		$('#menu').css('-o-transform', 'translateY(4%)');
 		$('#menu').css('-ms-transform', 'translateY(4%)');
 		$('#menu').css('transform', 'translateY(4%)');
-		//$('#menu').css("opacity","0.4");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
 		}
@@ -179,7 +175,7 @@
 		for(var i=0;i<length;i++){
 			menu1[i]=id;
 		}
-		$('#'+menu[0]).addClass('hover1');
+		$('#'+menu[0]).addClass('hover');
 		press=false;
 		return menu1;
 	}
@@ -193,7 +189,7 @@
 		$('#menu').css("opacity","1.0");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css("display","none");
-			$('[id='+menu[i]+']').removeClass('hover1');
+			$('[id='+menu[i]+']').removeClass('hover');
 		}
 		press=false;
 		return menu;
