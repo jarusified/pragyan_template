@@ -24,19 +24,18 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').hover(function(){
-			$('.section').removeClass('hover');
-			console.log(this);
-			$(this).addClass('hover');
+			$('.section').removeClass('hover1');
+			$(this).addClass('hover1');
 		});
 		$('.section').bind('click',function(){
 			var item=$(this).attr('id');
 			menu=state_define[item];
-			$('.section').removeClass('hover');
+			$('.section').removeClass('hover1');
 			if($('#menu').css("opacity")){
 				for(var i=0;i<5;i++){
 					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 				}
-				$(this).addClass('hover');
+				$(this).addClass('hover1');
 				$('#menu').css('-webkit-transform', 'translateY(10%)');
 				$('#menu').css('-moz-transform', 'translateY(10%)');
 				$('#menu').css('-o-transform', 'translateY(10%)');
@@ -52,6 +51,7 @@
 				$('[id='+selector+']').css('transform', 'scale(0)');
 				$('[id='+selector+']').children().css("box-shadow","inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF" );
 				$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+					//$(this).css("opacity","0.4");
 					$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
 					$('[id='+selector+']').css('-moz-transform', 'scale(1)');
 					$('[id='+selector+']').css('-o-transform', 'scale(1)');
@@ -88,7 +88,7 @@
 		$('#menu').css('transform', 'translateY(40%)');
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
-			$('[id='+menu[i]+']').removeClass('hover');
+			$('[id='+menu[i]+']').removeClass('hover1');
 
 		}
 		press=false;
@@ -103,6 +103,7 @@
 
 	function left(arr){
 		$('.section').removeClass('hover');
+		$('.section').removeClass('hover1');
 		for (var i = 0; i < arr.length; i++) {
 			if($('#'+arr[0]).hasClass('section')){
 				$('#'+arr[i]).removeClass('hover').addClass('section');
@@ -130,6 +131,7 @@
 
 	function right(arr){
 		$('.section').removeClass('hover');
+		$('.section').removeClass('hover1');
 		for (var i = 0; i < arr.length; i++) {
 			if($('#'+arr[0]).hasClass('section')){
 				$('#'+arr[i]).removeClass('hover').addClass('section');
@@ -154,6 +156,7 @@
 		$('#menu').css('-o-transform', 'translateY(4%)');
 		$('#menu').css('-ms-transform', 'translateY(4%)');
 		$('#menu').css('transform', 'translateY(4%)');
+		//$('#menu').css("opacity","0.4");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
 		}
@@ -175,7 +178,7 @@
 		for(var i=0;i<length;i++){
 			menu1[i]=id;
 		}
-		$('#'+menu[0]).addClass('hover');
+		$('#'+menu[0]).addClass('hover1');
 		press=false;
 		return menu1;
 	}
@@ -189,7 +192,7 @@
 		$('#menu').css("opacity","1.0");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css("display","none");
-			$('[id='+menu[i]+']').removeClass('hover');
+			$('[id='+menu[i]+']').removeClass('hover1');
 		}
 		press=false;
 		return menu;

@@ -108,7 +108,7 @@ html,body{
 .section:focus{
   outline: none !important;  
 }
-.hover{
+.hover,.hover1{
   display: inline-block;
   vertical-align: middle;
   margin-top: 5%;
