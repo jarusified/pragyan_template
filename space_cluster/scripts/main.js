@@ -16,11 +16,12 @@
 			$(this).removeClass('highlight');
 		});
 		$('.cluster-section').bind('click',function(){
-			$('.cluster-section').css({"left":"0%","opacity":"0","z-index":2,"width":"10%"});
-			//$('.cluster-section').addClass('hide');
-			//$('[id=sub-cluster-menu]').removeClass('hide');
+			$('.cluster-section').css({"left":"0%","opacity":"0","z-index":2,"width":"10%","position":"absolute"});
 			$(this).siblings('#sub-cluster-menu').css({"left":"0%","opacity":"1","z-index":2,"width":"50%"});
+			$(this).parent().siblings().css("display","block");
+			$('.image-main').css("display","none");
 			$('.cluster-section').css({"left":"25%","width":"75%"});
+			$(this).parent().siblings('.cluster-content').css("display","block");
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){
@@ -32,6 +33,14 @@
 				menuOpen=true;
 			}
 		});
+		$('.back').bind('click',function(){
+			$('[id=sub-cluster-menu]').css({"left":"0%","opacity":"0","z-index":2,"width":"10%"});
+			$('[id=sub-cluster-menu]').css({"left":"25%","width":"75%"});
+			$('.image').css("display","none");
+			$('.image-main').css("display","block");
+			$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
+			$('.cluster-content').css("display","none");
+		})
 		
 
 	}
@@ -40,11 +49,17 @@
 		$('#sub-menu').css("opacity","0");
 		menuOpen=false;
 		press=false;
-		//$('.cluster-section').removeClass('hide');
-		//$('[id=sub-cluster-menu]').addClass('hide');
-		$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%"});
 		$('[id=sub-cluster-menu]').css({"left":"0%","opacity":"0","z-index":2,"width":"10%"});
 		$('[id=sub-cluster-menu]').css({"left":"25%","width":"75%"});
+		$('.image').css("display","none");
+		$('.image-main').css("display","block");
+		/*$('[id=sub-cluster-menu]').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
+			$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
+
+		});*/
+		$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
+		$('.cluster-content').css("display","none");
+
 
 	}
 	
