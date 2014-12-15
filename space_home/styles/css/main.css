@@ -24,11 +24,11 @@ html,body{
     -o-background-size: cover;
     -ms-background-size:cover;
     background-size: cover;
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter:blur(1px);
-    filter: blur(1px);
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter:blur(0px);
+    filter: blur(0px);
 }
 
 .line{
@@ -71,7 +71,7 @@ html,body{
    margin-right: 2%;
   margin-bottom: 15%;
   width:180px;
-  height:180px;
+  height:200px;
   cursor: pointer;
   box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #010202, 0 0 4px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF;  
   /*background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25)), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25));
@@ -92,7 +92,7 @@ html,body{
     -webkit-transform:scale(0.9);
   -moz-transform:scale(0.9);
   -o-transform:scale(0.9);
-  -ms-transform:scale(1.1);
+  -ms-transform:scale(0.9);
   transform: scale(0.9); 
 }
 .section:hover{
@@ -103,25 +103,36 @@ html,body{
   -moz-transform:scale(1.1);
   -o-transform:scale(1.1);
   -ms-transform:scale(1.1);
-  transform: scale(1.1); 
+  transform: scale(1.1);
+
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter:blur(0px);
+    filter: blur(0px);
 }
 .section:focus{
   outline: none !important;  
 }
-.hover,.hover1{
+.hover, .hover1{
   display: inline-block;
   vertical-align: middle;
   margin-top: 5%;
   margin-right:2%;
   margin-bottom: 15%;
   width:180px;
-  height:180px;
+  height:200px;
   cursor: pointer;
+<<<<<<< HEAD
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
   border-color: #7FA9DB;
   border-left-color: #BEC7CE; 
+=======
+  box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #010202, 0 0 0px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
+>>>>>>> 1d60cc54da51e2af9a1616ad1d39f065c1947165
   border-radius: 2px;
-  border: 1px solid gray;
+  border: 1px solid #7FA9DB;
+  border-left-color: #BEC7CE; 
   border-left-width: 10px;
   -webkit-transition: -webkit-transform 0.5s ease-out;
     -moz-transition: -moz-transform 0.5s ease-out;
@@ -132,20 +143,44 @@ html,body{
   -moz-transform:scale(1.1);
   -o-transform:scale(1.1);
   -ms-transform:scale(1.1);
-  transform: scale(1.1)
+  transform: scale(1.1);
+
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter:blur(0px);
+    filter: blur(0px);
 }
-.hover .icon-normal{
+.hover .icon-normal, .hover1 .icon-normal{
   display: none;
   visibility: hidden;
 }
-.hover .icon-glow{
+.hover .icon-glow, .hover1 .icon-glow{
   visibility: visible;
 }
+.section-title{
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  text-align: left;
+  width: 180px; 
+  color: #576E80;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: Voyager;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  text-shadow: 1px 1px black;
+}
+.section:hover .section-title, .hover .section-title, .hover1 .section-title{
+  color: #A0DDFF;
+}
 
-.section img{
+.section img, .hover img{
   position: absolute;
-  width:100%;
-  height: 100%;
+  width:180px;
+  height: 180px;
+  margin-top: 20px;  
   z-index: 1;
 }
 .icon-normal{
@@ -215,7 +250,7 @@ html,body{
     margin-right: 2%;
     margin-bottom: 15%;
     width:180px;
-    height:180px;
+    height:200px;
     cursor: pointer;
     box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF;  
   /*background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25)), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25));
