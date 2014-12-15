@@ -22,7 +22,7 @@ html,body{
   width: 100%;
   position: absolute;
   height: 100%;
-  background: url(./../../media/bg.jpg) no-repeat center center fixed;
+  background: url('../../../media/bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -76,7 +76,7 @@ html,body{
   width:195px;
   height:200px;
   cursor: pointer;
-  background: url('../../media/icons/texture.png'); 
+  background: url('../../../media/icons/texture.png'); 
   box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #010202, 0 0 4px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF;
   border-radius: 6px;
   border: 1px solid #131F24;
@@ -103,7 +103,7 @@ html,body{
 .hover, .hover1{
   width: 184px;
   cursor: pointer;
-  background: url('../../media/icons/texture.png');
+  background: url('../../../media/icons/texture.png');
   box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
   border-radius: 3px;
   border: 1px solid #7FA9DB;
