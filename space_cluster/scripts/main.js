@@ -17,7 +17,7 @@
 		});
 		$('.cluster-section').bind('click',function(){
 			$('.cluster-section').css({"left":"0%","opacity":"0","z-index":2,"width":"10%","position":"absolute"});
-			$(this).siblings('#sub-cluster-menu').css({"left":"0%","opacity":"1","z-index":2,"width":"50%"});
+			$(this).siblings('#sub-cluster-menu').css({"left":"0%","opacity":"1","z-index":2,"width":"50%","display":"block"});
 			$(this).parent().siblings().css("display","block");
 			$('.image-main').css("display","none");
 			$('.cluster-section').css({"left":"25%","width":"75%"});
@@ -35,7 +35,7 @@
 		});
 		$('.back').bind('click',function(){
 			$('[id=sub-cluster-menu]').css({"left":"0%","opacity":"0","z-index":2,"width":"10%"});
-			$('[id=sub-cluster-menu]').css({"left":"25%","width":"75%"});
+			$('[id=sub-cluster-menu]').css({"left":"25%","width":"75%","display":"none"});
 			$('.image').css("display","none");
 			$('.image-main').css("display","block");
 			$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
@@ -50,14 +50,10 @@
 		menuOpen=false;
 		press=false;
 		$('[id=sub-cluster-menu]').css({"left":"0%","opacity":"0","z-index":2,"width":"10%"});
-		$('[id=sub-cluster-menu]').css({"left":"25%","width":"75%"});
+		$('[id=sub-cluster-menu]').css({"left":"25%","width":"75%","display":"none"});
 		$('.image').css("display","none");
 		$('.image-main').css("display","block");
-		/*$('[id=sub-cluster-menu]').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-			$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
-
-		});*/
-		$('.cluster-section').delay(100).css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
+		$('.cluster-section').delay(1000).css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
 		$('.cluster-content').css("display","none");
 
 
