@@ -57,7 +57,7 @@
 			$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
 
 		});*/
-		$('.cluster-section').css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
+		$('.cluster-section').delay(100).css({"left":"15%","opacity":"1","z-index":2,"width":"50%","position":"static"});
 		$('.cluster-content').css("display","none");
 
 
