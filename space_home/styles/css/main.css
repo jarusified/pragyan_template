@@ -6,6 +6,10 @@
   font-family: Geosans;
   src: url('../fonts/Geosans.ttf');  
 }
+@font-face{
+  font-family: Prime;
+  src: url('../fonts/Prime_light.otf');  
+}
 html,body{
   padding:0;
   margin:0;
@@ -20,96 +24,106 @@ html,body{
   height: 100%;
   background: url(./../../media/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size:cover;
-    background-size: cover;
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter:blur(0px);
-    filter: blur(0px);
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size:cover;
+  background-size: cover;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter:blur(0px);
+  filter: blur(0px);
 }
 
 .line{
   position: absolute;
   z-index: 4;
   color:#000;
-  background: white;
-  width:98%;
-  height: 1px;
-  box-shadow: -1px 6px 15px 2px black;
-  top:99%;
+  background: #224F60;
+  width: 1025px;
+  height: 2px;
+  box-shadow: 0px -1px 8px 3px black;
+/*  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;*/
+
 }
 #menu{
   z-index: 1;
   position: fixed;
-    width: 975px;
-    margin-left: -487px;
-    padding: 5px 10px;
+  width: 1050px;
+  margin-left: -525px;
+  top: 35%;
+  margin-top: -125px;
+  padding: 5px 10px;
   left: 50%;
   opacity: 1; 
-    height: auto;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-transform:translateY(40%);
-    -moz-transform:translateY(40%);
-    -o--transform:translateY(40%);
-    -ms--transform:translateY(40%);
-    transform:translateY(40%);
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    -ms-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
+  height: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-transform:translateY(40%);
+  -moz-transform:translateY(40%);
+  -o--transform:translateY(40%);
+  -ms--transform:translateY(40%);
+  transform:translateY(40%);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .section {
   display: inline-block;
   vertical-align: middle;
-  margin-top: 5%;
-   margin-right: 2%;
-  margin-bottom: 15%;
-  width:180px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width:195px;
   height:200px;
   cursor: pointer;
+  background: url('../../media/icons/texture.png'); 
   box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #010202, 0 0 4px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF;  
   /*background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25)), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25));
     background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, .25)), -webkit-linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, .25));
     background-position: 0 0pt, 4px 4px;
     background-size: 3px 3px;
     background-color: #152D5F;*/
-    border: none;
-    border-radius: 2px;
-    border: 1px solid #131F24;
-    border-left-width: 10px;
-    border-left-color: #224F60;
-    -webkit-transition: -webkit-transform 0.5s ease-out;
-    -moz-transition: -moz-transform 0.5s ease-out;
-    -o-transition: -o-transform 0.5s ease-out;
-    -ms-transition: -o-transform 0.5s ease-out;
-    transition: transform 0.5s ease-out;
-    -webkit-transform:scale(0.9);
+  border: none;
+  border-radius: 2px;
+  border: 1px solid #131F24;
+  border-left-width: 5px;
+  border-left-color: #224F60;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  -ms-transition: -ms-transform 0.5s ease-out;
+  transition: all 0.5s ease-in-out;
+
+  -webkit-transform:scale(0.9);
   -moz-transform:scale(0.9);
   -o-transform:scale(0.9);
   -ms-transform:scale(0.9);
   transform: scale(0.9); 
 }
 .section:hover{
+  width: 180px;
+  border-left-width: 20px; 
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #010202, 0 0 0px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
+  box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
   border-color: #7FA9DB;
   border-left-color: #BEC7CE; 
-    -webkit-transform:scale(1.1);
+  -webkit-transform:scale(1.1);
   -moz-transform:scale(1.1);
   -o-transform:scale(1.1);
   -ms-transform:scale(1.1);
   transform: scale(1.1);
-
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter:blur(0px);
-    filter: blur(0px);
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter:blur(0px);
+  filter: blur(0px);
 }
 .section:focus{
   outline: none !important;  
@@ -117,39 +131,35 @@ html,body{
 .hover, .hover1{
   display: inline-block;
   vertical-align: middle;
-  margin-top: 5%;
-  margin-right:2%;
-  margin-bottom: 15%;
-  width:180px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   height:200px;
+  width: 180px;
   cursor: pointer;
-<<<<<<< HEAD
-  box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
+  box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
   border-color: #7FA9DB;
   border-left-color: #BEC7CE; 
-=======
-  box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #010202, 0 0 0px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
->>>>>>> 1d60cc54da51e2af9a1616ad1d39f065c1947165
   border-radius: 2px;
   border: 1px solid #7FA9DB;
   border-left-color: #BEC7CE; 
-  border-left-width: 10px;
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-    -moz-transition: -moz-transform 0.5s ease-out;
-    -o-transition: -o-transform 0.5s ease-out;
-    -ms-transition: -ms-transform 0.5s ease-out;
-    transition: transform 0.5s ease-out;
-    -webkit-transform:scale(1.1);
+  border-left-width: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  -ms-transition: -ms-transform 0.5s ease-out;
+  transition: all 0.5s ease-in-out;
+
+  -webkit-transform:scale(1.1);
   -moz-transform:scale(1.1);
   -o-transform:scale(1.1);
   -ms-transform:scale(1.1);
   transform: scale(1.1);
 
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter:blur(0px);
-    filter: blur(0px);
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter:blur(0px);
+  filter: blur(0px);
 }
 .hover .icon-normal, .hover1 .icon-normal{
   display: none;
@@ -158,16 +168,35 @@ html,body{
 .hover .icon-glow, .hover1 .icon-glow{
   visibility: visible;
 }
+.section-key{
+  opacity: 0;
+  position: fixed;
+  text-align: center;
+  top: 2px;
+  left: -20px;
+  text-align: left;
+  font-size: 27px;
+  border-radius: 50%;
+  color: #010202;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.section:hover .section-key, .hover .section-key, .hover1 .section-key{
+  opacity: 1;
+}
 .section-title{
   position: fixed;
-  top: 12px;
-  left: 12px;
-  text-align: left;
+  top: 10px;
+  left: 10px;
   width: 180px; 
   color: #576E80;
   font-size: 14px;
   text-transform: uppercase;
-  font-family: Voyager;
+  font-weight: bolder;
+  font-family: Prime;
   letter-spacing: 1px;
   font-weight: bolder;
   text-shadow: 1px 1px black;
@@ -177,10 +206,11 @@ html,body{
 }
 
 .section img, .hover img{
-  position: absolute;
+  position: fixed;
   width:180px;
   height: 180px;
-  margin-top: 20px;  
+  margin-top: 20px; 
+  right: 0; 
   z-index: 1;
 }
 .icon-normal{
@@ -279,16 +309,17 @@ html,body{
   transform: scale(1.1); 
 }
 #controls{
-  position: absolute;
+  position: fixed;
   z-index: 5;
-  top:80%;
-  left:20%;
-  width: 5%;
+  top: 50%;
+  right: 0%;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
   height: auto;
   font-family: Geosans;
   font-size: 18px;
-  cursor: crosshair;
-  color:white;
+  color: white;
 }
 
 #logo{
@@ -320,24 +351,23 @@ html,body{
   border-right: 3px solid #34546F;
   box-shadow: inset 0 0 30px black;
   opacity: 0;
-    background-color: #040F1E;
+  background-color: #010710;
   color: #92CCFC;
-   -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    -ms-transition:all 0.5s ease-out;
-    transition: all 0.5s ease-out;
+ -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition:all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 .sub-section{
   position: relative;
   float: top;
-  top: 10%;
   width: 100%;
   height: 40px;
   z-index: 4;
   white-space: nowrap;
-  font-family:  Geosans;
-  font-size: 15px;
+  font-family:  Prime;
+  font-size: 12px;
   font-weight: bolder;
   text-transform: uppercase;
   text-align: center;

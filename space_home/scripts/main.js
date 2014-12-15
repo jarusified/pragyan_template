@@ -36,11 +36,12 @@
 					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 				}
 				$(this).addClass('hover1');
-				$('#menu').css('-webkit-transform', 'translateY(10%)');
-				$('#menu').css('-moz-transform', 'translateY(10%)');
-				$('#menu').css('-o-transform', 'translateY(10%)');
-				$('#menu').css('-ms-transform', 'translateY(1%)');
-				$('#menu').css('transform', 'translateY(10%)');
+				$('#menu').css('-webkit-transform', 'translateY(-5%)');
+				$('#menu').css('-moz-transform', 'translateY(-5%)');
+				$('#menu').css('-o-transform', 'translateY(-5%)');
+				$('#menu').css('-ms-transform', 'translateY(-5%)');
+				$('#menu').css('transform', 'translateY(-5%)');
+				//$('.line').css('width', '975px');
 				var value =$(this).index();
 				var selector = mapper[value];
 				$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
