@@ -36,11 +36,11 @@
 					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 				}
 				$(this).addClass('hover1');
-				$('#menu').css('-webkit-transform', 'translateY(-5%)');
-				$('#menu').css('-moz-transform', 'translateY(-5%)');
-				$('#menu').css('-o-transform', 'translateY(-5%)');
-				$('#menu').css('-ms-transform', 'translateY(-5%)');
-				$('#menu').css('transform', 'translateY(-5%)');
+				$('#menu').css('-webkit-transform', 'translateY(-45%)');
+				$('#menu').css('-moz-transform', 'translateY(-45%)');
+				$('#menu').css('-o-transform', 'translateY(-45%)');
+				$('#menu').css('-ms-transform', 'translateY(-45%)');
+				$('#menu').css('transform', 'translateY(-45%)');
 				//$('.line').css('width', '975px');
 				var value =$(this).index();
 				var selector = mapper[value];
@@ -82,11 +82,11 @@
 		$('#sub-menu').css("opacity","0");
 		menuOpen=false;
 		$("#menu").css("opacity","1.0");
-		$('#menu').css('-webkit-transform', 'translateY(40%)');
-		$('#menu').css('-moz-transform', 'translateY(40%)');
-		$('#menu').css('-o-transform', 'translateY(40%)');
-		$('#menu').css('-ms-transform', 'translateY(40%)');
-		$('#menu').css('transform', 'translateY(40%)');
+		$('#menu').css('-webkit-transform', 'translateY(0%)');
+		$('#menu').css('-moz-transform', 'translateY(0%)');
+		$('#menu').css('-o-transform', 'translateY(0%)');
+		$('#menu').css('-ms-transform', 'translateY(0%)');
+		$('#menu').css('transform', 'translateY(0%)');
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
 			$('[id='+menu[i]+']').removeClass('hover1');
@@ -152,11 +152,11 @@
 	}
 
 	function toggleDown(value){
-		$('#menu').css('-webkit-transform', 'translateY(4%)');
-		$('#menu').css('-moz-transform', 'translateY(4%)');
-		$('#menu').css('-o-transform', 'translateY(4%)');
-		$('#menu').css('-ms-transform', 'translateY(4%)');
-		$('#menu').css('transform', 'translateY(4%)');
+		$('#menu').css('-webkit-transform', 'translateY(-45%)');
+		$('#menu').css('-moz-transform', 'translateY(-45%)');
+		$('#menu').css('-o-transform', 'translateY(-45%)');
+		$('#menu').css('-ms-transform', 'translateY(-45%)');
+		$('#menu').css('transform', 'translateY(-45%)');
 		//$('#menu').css("opacity","0.4");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
@@ -185,11 +185,11 @@
 	}
 
 	function toggleUp(){
-		$('#menu').css('-webkit-transform', 'translateY(40%)');
-		$('#menu').css('-moz-transform', 'translateY(40%)');
-		$('#menu').css('-o-transform', 'translateY(40%)');
-		$('#menu').css('-ms-transform', 'translateY(40%)');
-		$('#menu').css('transform', 'translateY(40%)');
+		$('#menu').css('-webkit-transform', 'translateY(0%)');
+		$('#menu').css('-moz-transform', 'translateY(0%)');
+		$('#menu').css('-o-transform', 'translateY(0%)');
+		$('#menu').css('-ms-transform', 'translateY(0%)');
+		$('#menu').css('transform', 'translateY(0%)');
 		$('#menu').css("opacity","1.0");
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css("display","none");

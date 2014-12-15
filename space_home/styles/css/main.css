@@ -34,7 +34,6 @@ html,body{
   -ms-filter:blur(0px);
   filter: blur(0px);
 }
-
 .line{
   position: absolute;
   z-index: 4;
@@ -48,34 +47,28 @@ html,body{
   -o-transition: all 1s ease-in-out;
   -ms-transition: all 1s ease-in-out;
   transition: all 0.5s ease-in-out;*/
-
 }
 #menu{
   z-index: 1;
   position: fixed;
   width: 1050px;
   margin-left: -525px;
-  top: 35%;
   margin-top: -125px;
-  padding: 5px 10px;
+  top: 50%;
   left: 50%;
+  padding: 5px 10px;
   opacity: 1; 
   height: auto;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  -webkit-transform:translateY(40%);
-  -moz-transform:translateY(40%);
-  -o--transform:translateY(40%);
-  -ms--transform:translateY(40%);
-  transform:translateY(40%);
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-.section {
+.section, .hover, .hover1{
   display: inline-block;
   vertical-align: middle;
   margin-top: 25px;
@@ -84,17 +77,11 @@ html,body{
   height:200px;
   cursor: pointer;
   background: url('../../media/icons/texture.png'); 
-  box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #010202, 0 0 4px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF;  
-  /*background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25)), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25));
-    background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, .25)), -webkit-linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, .25));
-    background-position: 0 0pt, 4px 4px;
-    background-size: 3px 3px;
-    background-color: #152D5F;*/
-  border: none;
-  border-radius: 2px;
+  box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #010202, 0 0 4px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF;
+  border-radius: 6px;
   border: 1px solid #131F24;
-  border-left-width: 5px;
   border-left-color: #224F60;
+  border-left-width: 5px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: -o-transform 0.5s ease-out;
@@ -106,6 +93,28 @@ html,body{
   -o-transform:scale(0.9);
   -ms-transform:scale(0.9);
   transform: scale(0.9); 
+
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter:blur(0px);
+  filter: blur(0px);
+}
+.hover, .hover1{
+  width: 180px;
+  cursor: pointer;
+  background: url('../../media/icons/texture.png');
+  box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
+  border-radius: 3px;
+  border: 1px solid #7FA9DB;
+  border-left-color: #BEC7CE; 
+  border-left-width: 20px;
+
+  -webkit-transform:scale(1.1);
+  -moz-transform:scale(1.1);
+  -o-transform:scale(1.1);
+  -ms-transform:scale(1.1);
+  transform: scale(1.1);
 }
 .section:hover{
   width: 180px;
@@ -114,52 +123,15 @@ html,body{
   box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
   border-color: #7FA9DB;
   border-left-color: #BEC7CE; 
+
   -webkit-transform:scale(1.1);
   -moz-transform:scale(1.1);
   -o-transform:scale(1.1);
   -ms-transform:scale(1.1);
   transform: scale(1.1);
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter:blur(0px);
-  filter: blur(0px);
 }
 .section:focus{
   outline: none !important;  
-}
-.hover, .hover1{
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  height:200px;
-  width: 180px;
-  cursor: pointer;
-  box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
-  border-color: #7FA9DB;
-  border-left-color: #BEC7CE; 
-  border-radius: 2px;
-  border: 1px solid #7FA9DB;
-  border-left-color: #BEC7CE; 
-  border-left-width: 20px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: -o-transform 0.5s ease-out;
-  -ms-transition: -ms-transform 0.5s ease-out;
-  transition: all 0.5s ease-in-out;
-
-  -webkit-transform:scale(1.1);
-  -moz-transform:scale(1.1);
-  -o-transform:scale(1.1);
-  -ms-transform:scale(1.1);
-  transform: scale(1.1);
-
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter:blur(0px);
-  filter: blur(0px);
 }
 .hover .icon-normal, .hover1 .icon-normal{
   display: none;
