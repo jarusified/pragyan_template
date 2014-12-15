@@ -93,6 +93,7 @@
 
 		}
 		press=false;
+		return menu;
 	}
 
 	function toggleLeft(arr,index,count){
@@ -243,7 +244,8 @@
 			}
 			else if(event.keyCode==66 || event.keyCode==27){
 				press=true;
-				back();
+				level=false;
+				menu=back();
 			}
 		}
 	}
