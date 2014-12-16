@@ -28,6 +28,8 @@
 			$('.section').removeClass('hover1');
 			$(this).addClass('hover1');
 			activeMenu = $(this).index();
+			var item=$(this).attr('id');
+			menu=state_define[item];
 		});
 		$('.section').bind('mouseout',function(){
 			
