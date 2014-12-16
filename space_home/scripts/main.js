@@ -262,7 +262,6 @@
 		}
 		$('#'+menu[0]).addClass('hover1');
 		press=false;
-		console.log(menu1);
 		return menu1;
 	}
 
@@ -315,7 +314,6 @@
 			else if(event.keyCode==40 || event.keyCode==13){
 				press=true;
 				level=true;
-				console.log(index[0]);
 				menu1=toggleDown(index[0]);
 				elem=$('#'+menu1[0]);
 				tag=$('#'+menu1[0]+'> div');
