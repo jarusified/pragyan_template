@@ -2,7 +2,7 @@
 	var sections = $('.section');
 	var press =false;
 	var menuOpen=false;
-	var animationEnd=false;
+	var animationEnd=false, activeMenu = 0;
 	var mapper={
 		0:"events-menu",
 		1:"workshops-menu",
@@ -24,41 +24,50 @@
 	window.onload=function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').hover(function(){
+			$('.section').removeClass('hover');
 			$('.section').removeClass('hover1');
 			$(this).addClass('hover1');
+			activeMenu = $(this).index();
+		});
+		$('.section').bind('mouseout',function(){
+			
 		});
 		$('.section').bind('click',function(){
 			var item=$(this).attr('id');
 			menu=state_define[item];
+			$('.section').removeClass('hover');
 			$('.section').removeClass('hover1');
 			if($('#menu').css("opacity")){
-				for(var i=0;i<5;i++){
-					$('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
-				}
 				$(this).addClass('hover1');
 				$('#menu').css('-webkit-transform', 'translateY(-45%)');
 				$('#menu').css('-moz-transform', 'translateY(-45%)');
 				$('#menu').css('-o-transform', 'translateY(-45%)');
 				$('#menu').css('-ms-transform', 'translateY(-45%)');
 				$('#menu').css('transform', 'translateY(-45%)');
-				//$('.line').css('width', '975px');
 				var value =$(this).index();
 				var selector = mapper[value];
-				$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
-				$('[id='+selector+']').css('-webkit-transform', 'scale(0)');
-				$('[id='+selector+']').css('-moz-transform', 'scale(0)');
+				activeMenu = value;
+				for(var i=0;i<5;i++){
+					if(i!=value)
+					  $('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+					else
+					  $('[id='+mapper[i]+']').css({"display":"inline-block"});	
+				}
+				$('[id='+selector+']').removeClass('fadeInDown fadeOut').addClass('fadeInDown');
+				//$('[id='+selector+']').css('-webkit-transform', 'translateY(0%)');
+				/*$('[id='+selector+']').css('-moz-transform', 'scale(0)');
 				$('[id='+selector+']').css('-o-transform', 'scale(0)');
 				$('[id='+selector+']').css('-ms-transform', 'scale(0)');
-				$('[id='+selector+']').css('transform', 'scale(0)');
-				$('[id='+selector+']').children().css("box-shadow","inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF" );
+				$('[id='+selector+']').css('transform', 'scale(0)');*/
 				$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
 					//$(this).css("opacity","0.4");
-					$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
+					/*$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
 					$('[id='+selector+']').css('-moz-transform', 'scale(1)');
 					$('[id='+selector+']').css('-o-transform', 'scale(1)');
 					$('[id='+selector+']').css('-ms-transform', 'scale(1)');
-					$('[id='+selector+']').css('transform', 'scale(1)');
-					$('[id='+selector+']').children().css("box-shadow","0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF" );
+					$('[id='+selector+']').css('transform', 'scale(1)');*/
+					//$('[id='+selector+']').css('opacity', '1');
+					//$('[id='+selector+']').css({"opacity":1, "display":"inline-block"});
 				});
 
 
@@ -86,10 +95,13 @@
 		$('#menu').css('-moz-transform', 'translateY(0%)');
 		$('#menu').css('-o-transform', 'translateY(0%)');
 		$('#menu').css('-ms-transform', 'translateY(0%)');
-		$('#menu').css('transform', 'translateY(0%)');
+		$('#menu').css('transform', 'translateY(0%)');;
 		for(var i=0;i<5;i++){
-			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
-			$('[id='+menu[i]+']').removeClass('hover1');
+			$('[id='+mapper[i]+']').css({"opacity":"0", 'display': 'none'});
+			$('[id='+mapper[i]+']').removeClass('fadeInDown fadeOut').addClass('fadeOut');
+			//else
+			//	$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
+			//$('[id='+menu[i]+']').removeClass('hover1');
 
 		}
 		press=false;
@@ -104,22 +116,27 @@
 	}
 
 	function left(arr){
-		$('.section').removeClass('hover');
-		$('.section').removeClass('hover1');
 		for (var i = 0; i < arr.length; i++) {
 			if($('#'+arr[0]).hasClass('section')){
-				$('#'+arr[i]).removeClass('hover').addClass('section');
+				if(i!=activeMenu && menuOpen==true){
+					$('#'+arr[i]).removeClass('hover').addClass('section');
+				    $('#'+arr[i]).removeClass('hover1').addClass('section');
+				}
+				else{
+					$('#'+arr[i]).removeClass('hover').addClass('section');
+				    $('#'+arr[i]).removeClass('hover1').addClass('section');
+				}
 			}
 			else{
-				$('#'+arr[i]).removeClass('hover').addClass('cluster-section');
+				$('#'+arr[i]).removeClass('cluster-hover').addClass('cluster-section');
 			}
 		};
 		if($('#'+arr[0]).hasClass('section')){
-			$('#'+arr[0]).removeClass('section').addClass('hover');
+			$('#'+arr[0]).addClass('hover');
 			
 		}
 		else{
-			$('#'+arr[0]).removeClass('cluster-section').addClass('hover');
+			$('#'+arr[0]).removeClass('cluster-section').addClass('cluster-hover');
 		}	
 		press=false;
 	}
@@ -132,22 +149,23 @@
 	}
 
 	function right(arr){
-		$('.section').removeClass('hover');
-		$('.section').removeClass('hover1');
 		for (var i = 0; i < arr.length; i++) {
 			if($('#'+arr[0]).hasClass('section')){
-				$('#'+arr[i]).removeClass('hover').addClass('section');
+				if(i!=activeMenu){
+				  $('#'+arr[i]).removeClass('hover').addClass('section');
+				  $('#'+arr[i]).removeClass('hover1').addClass('section');
+				}
 			}
 			else{
-				$('#'+arr[i]).removeClass('hover').addClass('cluster-section');
+				$('#'+arr[i]).removeClass('cluster-hover').addClass('cluster-section');
 			}
 		};
 		if($('#'+arr[0]).hasClass('section')){
-			$('#'+arr[0]).removeClass('section').addClass('hover');
+			$('#'+arr[0]).addClass('hover');
 			
 		}
 		else{
-			$('#'+arr[0]).removeClass('cluster-section').addClass('hover');
+			$('#'+arr[0]).removeClass('cluster-section').addClass('cluster-hover');
 		}
 		press=false;
 	}
@@ -158,21 +176,23 @@
 		$('#menu').css('-o-transform', 'translateY(-45%)');
 		$('#menu').css('-ms-transform', 'translateY(-45%)');
 		$('#menu').css('transform', 'translateY(-45%)');
-		//$('#menu').css("opacity","0.4");
-		for(var i=0;i<5;i++){
-			$('[id='+mapper[i]+']').css({"opacity":"0","display":"none"});
-		}
+		
 		var selector = mapper[value];
-		$('[id='+selector+']').css({"opacity":1,"display":"inline-block"});
-		$('[id='+selector+']').children().css("box-shadow","inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF" );
+		for(var i=0;i<5;i++){
+			if(i!=value)
+			  $('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
+			else
+			  $('[id='+mapper[i]+']').css({"display":"inline-block"});	
+		}
+
+		$('[id='+selector+']').removeClass('fadeInDown fadeOut').addClass('fadeInDown');
+		
 		$('#menu').bind('transitionend mozTransitionEnd webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
-			$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
+			/*$('[id='+selector+']').css('-webkit-transform', 'scale(1)');
 			$('[id='+selector+']').css('-moz-transform', 'scale(1)');
 			$('[id='+selector+']').css('-o-transform', 'scale(1)');
 			$('[id='+selector+']').css('-ms-transform', 'scale(1)');
-			$('[id='+selector+']').css('transform', 'scale(1)');
-			$('[id='+selector+']').children().css("box-shadow","0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF" );
-
+			$('[id='+selector+']').css('transform', 'scale(1)');*/
 		});
 		var length = $('[id='+selector+']').length;
 		var id = $('[id='+selector+']').attr('id');
@@ -192,10 +212,12 @@
 		$('#menu').css('-ms-transform', 'translateY(0%)');
 		$('#menu').css('transform', 'translateY(0%)');
 		$('#menu').css("opacity","1.0");
+		
 		for(var i=0;i<5;i++){
-			$('[id='+mapper[i]+']').css("display","none");
-			$('[id='+menu[i]+']').removeClass('hover1');
+			$('[id='+mapper[i]+']').css({"opacity":"0", 'display': 'none'});
+			$('[id='+mapper[i]+']').removeClass('fadeInDown fadeOut').addClass('fadeOut');
 		}
+
 		press=false;
 		return menu;
 	}
@@ -229,7 +251,7 @@
 					right(cluster_menu)
 				}
 			}	
-			else if(event.keyCode==40){
+			else if(event.keyCode==40 || event.keyCode==13){
 				press=true;
 				level=true;
 				menu1=toggleDown(index[0]);

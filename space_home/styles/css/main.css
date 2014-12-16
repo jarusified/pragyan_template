@@ -28,6 +28,7 @@ html,body{
   -o-background-size: cover;
   -ms-background-size:cover;
   background-size: cover;
+
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
@@ -40,35 +41,33 @@ html,body{
   color:#000;
   background: #224F60;
   width: 1025px;
+  margin-left: -510px;
+  left: 50%;
   height: 2px;
   box-shadow: 0px -1px 8px 3px black;
-/*  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 0.5s ease-in-out;*/
 }
 #menu{
-  z-index: 1;
+  z-index: 3;
   position: fixed;
-  width: 1050px;
-  margin-left: -525px;
+  width: 100%;
   margin-top: -125px;
   top: 50%;
-  left: 50%;
+  /*margin-left: -525px;
+  left: 50%;*/
   padding: 5px 10px;
   opacity: 1; 
   height: auto;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-.section, .hover, .hover1{
+.section, .hover, .hover1, .cluster-hover{
   display: inline-block;
   vertical-align: middle;
   margin-top: 25px;
@@ -76,6 +75,7 @@ html,body{
   width:195px;
   height:200px;
   cursor: pointer;
+  text-align: left;
   background: url('../../../media/icons/texture.png'); 
   box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #010202, 0 0 4px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF;
   border-radius: 6px;
@@ -100,7 +100,7 @@ html,body{
   -ms-filter:blur(0px);
   filter: blur(0px);
 }
-.hover, .hover1{
+.hover, .hover1, .cluster-hover{
   width: 184px;
   cursor: pointer;
   background: url('../../../media/icons/texture.png');
@@ -150,6 +150,7 @@ html,body{
   font-size: 22px;
   border-radius: 50%;
   color: #010202;
+
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   -ms-transition: opacity 0.5s ease-in-out;
@@ -176,7 +177,6 @@ html,body{
 .section:hover .section-title, .hover .section-title, .hover1 .section-title{
   color: #A0DDFF;
 }
-
 .section img, .hover img{
   position: fixed;
   width:180px;
@@ -187,10 +187,10 @@ html,body{
 }
 .icon-normal{
   -webkit-transition: visibility 0.5s ease-out;
-    -moz-transition: visibility 0.5s ease-out;
-    -o-transition: visibility 0.5s ease-out;
-    -ms-transition: visibility  0.5s ease-out;
-    transition: visibility 0.5s ease-out;
+  -moz-transition: visibility 0.5s ease-out;
+  -o-transition: visibility 0.5s ease-out;
+  -ms-transition: visibility  0.5s ease-out;
+  transition: visibility 0.5s ease-out;
 }
 .icon-normal{
   visibility: visible;
@@ -198,37 +198,59 @@ html,body{
 .icon-glow{
   visibility: hidden;
 }
-.section:hover .icon-normal{
+.section:hover .icon-normal, .social-icons:hover .icon-normal{
   visibility: hidden;
 }
-.section:hover .icon-glow{
+.section:hover .icon-glow, .social-icons:hover .icon-glow{
   visibility: visible;
 }
+#social{
+  position: fixed;
+  bottom: 20px;
+  left: 0px;
+  z-index: 4;
+  width: 160px;
+  padding: 0 60px; 
+}
+.social-icons{
+  position: relative;
+  height: 40px;
+  width: 40px;   
+  float: left;
+}
+.social-icons img{
+  position: absolute;
+  width: 40px;
+  cursor: pointer;
+}
 #cluster-menu{
-  z-index: 3;
+  z-index: 2;
   position: absolute;
   width: 975px;
   margin-left: -487px;
   padding: 5px 10px;
-  top: 60%;
+  margin-top: 25px;
+  top: 50%;
   left: 50%;  
   height: auto;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   visibility: visible;
+
   -webkit-transition: all .5s ease-out;
   -moz-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;
-    -ms-transition: all  .5s ease-out;
-    transition: all .5s ease-out
-   
+  -ms-transition: all  .5s ease-out;
+  transition: all .5s ease-out;  
 }
-#events-menu,#workshops-menu,#gl-menu,#exhibitions-menu,#sponsorships-menu{
+.categories-menu{
+}
+#events-menu, #workshops-menu, #gl-menu, #exhibitions-menu, #sponsorships-menu{
   position: relative;
   z-index: 3;
   opacity: 0;
-  -webkit-transform-origin:0% 50%;
+  /*-webkit-transform-origin:0% 50%;
   -moz-transform-origin:0% 50%;
   -ms-transform-origin:0% 50%;
   -o-transform-origin:0% 50%;
@@ -237,29 +259,25 @@ html,body{
   -moz-transform:scale(0);
   -o-transform:scale(0);
   -ms-transform:scale(0);
-  transform: scale(0); 
-  -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
-    -ms-transition: all  .5s ease-out;
-    transition: all .5s ease-out;
-}
+  transform: scale(0);*/ 
 
-.cluster-section{
+  -webkit-transform: translateY(-40%);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  -ms-transition: all  .5s ease-out;
+  transition: all 0.5s ease-in-out;
+}
+.cluster-section, .cluster-hover{
     display: inline-block;
     vertical-align: middle;
     margin-top: 5%;
     margin-right: 2%;
     margin-bottom: 15%;
-    width:180px;
-    height:200px;
+    width:120px;
+    height:120px;
     cursor: pointer;
-    box-shadow: 0 0 0px #000, inset 0px 0 0px #228DFF, inset -20px 0 300px #122c36, 0 0 4px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF;  
-  /*background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25)), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.25));
-    background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, .25)), -webkit-linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, .25) 75%, rgba(0, 0, 0, .25));
-    background-position: 0 0pt, 4px 4px;
-    background-size: 3px 3px;
-    background-color: #152D5F;*/
+    box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
     border: none;
     border-radius: 2px;
     border: 1px solid gray;
@@ -269,6 +287,18 @@ html,body{
     -o-transition: all  0.5s ease-out;
     -ms-transition: all  0.5s ease-out;
     transition: all 0.5s ease-out;
+}
+.cluster-hover{  
+  background: url('../../../media/icons/texture.png');
+  box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
+  border: 1px solid #7FA9DB;
+  border-left-color: #BEC7CE; 
+  border-left-width: 16px;
+  -webkit-transform: none;
+  -moz-transform:scale(1.1);
+  -o-transform:scale(1.1);
+  -ms-transform:scale(1.1);
+  transform: none;
 }
 .cluster-section:hover{
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
@@ -293,7 +323,6 @@ html,body{
   font-size: 18px;
   color: white;
 }
-
 #logo{
   position: fixed;
   right:0;
@@ -461,4 +490,45 @@ html,body{
 }
 .lines-button:hover .lines:after {
   top: -.64rem;
+}
+
+
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.fadeInDown {
+  display: inline-block;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeOut {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
 }
