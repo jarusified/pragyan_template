@@ -18,6 +18,13 @@
 		"exhibitions":['exhibitions','sponsorships','events','workshops','gl'],
 		"sponsorships":['sponsorships','events','workshops','gl','exhibitions']
 	}
+	var index_define={
+		"events":[0,1,2,3,4],
+		"workshops":[1,2,3,4,0],
+		"gl":[2,3,4,0,1],
+		"exhibitions":[3,4,0,1,2],
+		"sponsorships":[4,0,1,2,3]
+	};
 	var index=[0,1,2,3,4];
 	var level=false;
 	var count =0;
@@ -30,6 +37,7 @@
 			activeMenu = $(this).index();
 			var item=$(this).attr('id');
 			menu=state_define[item];
+			index=index_define[item];
 		});
 		$('.section').bind('mouseout',function(){
 			
@@ -37,6 +45,7 @@
 		$('.section').bind('click',function(){
 			var item=$(this).attr('id');
 			menu=state_define[item];
+			index=index_define[item];
 			$('.section').removeClass('hover');
 			$('.section').removeClass('hover1');
 			if($('#menu').css("opacity")){
@@ -204,6 +213,7 @@
 		}
 		$('#'+menu[0]).addClass('hover1');
 		press=false;
+		console.log(menu1);
 		return menu1;
 	}
 
@@ -250,12 +260,13 @@
 				}
 				else{
 					cluster_menu=toggleRight(cluster_menu,cluster_index,1);
-					right(cluster_menu)
+					right(cluster_menu);
 				}
 			}	
 			else if(event.keyCode==40 || event.keyCode==13){
 				press=true;
 				level=true;
+				console.log(index[0]);
 				menu1=toggleDown(index[0]);
 				elem=$('#'+menu1[0]);
 				tag=$('#'+menu1[0]+'> div');
