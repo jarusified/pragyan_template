@@ -1,5 +1,54 @@
 !function($){
-	var sections = $('.section');
+	var baseUrl="./../media/",
+		progress = $('#percent'),
+		loader = new PxLoader();
+	var images=["bg.jpg","logo.png",
+				"icons/Contacts.png",
+				"icons/Contacts_Off.png",
+				"icons/Contacts_On.png",
+				"icons/Events.png",
+				"icons/Events_Off.png",
+				"icons/Events_On.png",
+				"icons/Exhibitions.png",
+				"icons/Exhibitions_Off.png",
+				"icons/Exhibitions_On.png",
+				"icons/GL.png",
+				"icons/GL_Off.png",
+				"icons/GL_On.png",
+				"icons/Hospitality.png",
+				"icons/Hospitality_Off.png"
+				"icons/Hospitality_On.png",
+				"icons/Infotainment.png",
+				"icons/Infotainment_Off.png",
+				"icons/Infotainment_On.png",
+				"icons/Outreach.png",
+				"icons/Outreach_Off.png",
+				"icons/Outreach_On.png",
+				"icons/PSR.png",
+				"icons/PSR_Off.png",
+				"icons/PSR_On.png",
+				"icons/Sponsorships.png",
+				"icons/Sponsorships_Off.png",
+				"icons/Sponsorships_On.png",
+				"icons/texture.png",
+				"icons/texture2.png",
+				"icons/Workshops.png",
+				"icons/Workshops_Off.png",
+				"icons/Workshops_On.png"
+	];
+
+	for(var i=0;i<images.length;i++){
+		var pxImage = new PxLoaderImage(baseUrl+images[i]); 
+       	pxImage.imageNumber = i + 1; 
+ 		loader.add(pxImage); 
+	}
+
+	loader.addProgressListener(function(e) { 
+    	var completed=(e.completedCount/e.totalCount)*100; // calculates the percentage loaded
+    	$progress.text(Math.floor(completed)); 
+    	initialise(e.completedCount/e.totalCount); 
+	});
+
 	var press =false;
 	var menuOpen=false;
 	var animationEnd=false, activeMenu = 0;
@@ -45,7 +94,7 @@
 		$('.section').bind('click',function(){
 			var item=$(this).attr('id');
 			menu=state_define[item];
-			index=index_define[item];
+			index=index_define[item];	
 			$('.section').removeClass('hover');
 			$('.section').removeClass('hover1');
 			if($('#menu').css("opacity")){
