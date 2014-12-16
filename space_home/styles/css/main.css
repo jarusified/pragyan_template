@@ -100,6 +100,7 @@ html,body{
   -ms-filter:blur(0px);
   filter: blur(0px);
 }
+
 .hover, .hover1, .cluster-hover{
   width: 184px;
   cursor: pointer;
@@ -116,6 +117,18 @@ html,body{
   -ms-transform:scale(1.1);
   transform: scale(1.1);
 }
+.cluster-hover{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  border: 1px solid #131F24;
+  border-left-color: #224F60;
+  border-left-width: 5px;
+ }
+
 .section:hover{
   width: 184px;
   border-left-width: 16px; 
@@ -177,7 +190,7 @@ html,body{
 .section:hover .section-title, .hover .section-title, .hover1 .section-title{
   color: #A0DDFF;
 }
-.section img, .hover img{
+.section img, .hover img, .cluster-section img{
   position: fixed;
   width:180px;
   height: 180px;
@@ -225,29 +238,20 @@ html,body{
 }
 #cluster-menu{
   z-index: 2;
-  position: absolute;
-  width: 975px;
-  margin-left: -487px;
-  padding: 5px 10px;
+  position: fixed;
+  width: 100%;
   margin-top: 25px;
-  top: 50%;
-  left: 50%;  
+  top: 50%; 
   height: auto;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   visibility: visible;
-
-  -webkit-transition: all .5s ease-out;
-  -moz-transition: all .5s ease-out;
-  -o-transition: all .5s ease-out;
-  -ms-transition: all  .5s ease-out;
-  transition: all .5s ease-out;  
 }
 .categories-menu{
 }
 #events-menu, #workshops-menu, #gl-menu, #exhibitions-menu, #sponsorships-menu{
-  position: relative;
+  position: initial;
   z-index: 3;
   opacity: 0;
   /*-webkit-transform-origin:0% 50%;
@@ -262,54 +266,74 @@ html,body{
   transform: scale(0);*/ 
 
   -webkit-transform: translateY(-40%);
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all .5s ease-out;
-  -o-transition: all .5s ease-out;
-  -ms-transition: all  .5s ease-out;
-  transition: all 0.5s ease-in-out;
 }
 .cluster-section, .cluster-hover{
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: 5%;
-    margin-right: 2%;
-    margin-bottom: 15%;
-    width:120px;
-    height:120px;
-    cursor: pointer;
-    box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
-    border: none;
-    border-radius: 2px;
-    border: 1px solid gray;
-    border-left-width: 10px;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all  0.5s ease-out;
-    -ms-transition: all  0.5s ease-out;
-    transition: all 0.5s ease-out;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5% 1% 5% 1%;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  /*box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;*/
+  border: none;
+  border-radius: 2px;
+  border: 3px solid #224F60;
+  border: 2px solid #8E8E8E;
+  color: #A0DDFF;
+  font-family: Geosans;
+  font-size: 15px;
+  font-weight: bolder;
+  text-transform: uppercase;
+
+  -webkit-transition: none;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  -ms-transition: -ms-transform 0.5s ease-out;
+  transition: none;
 }
-.cluster-hover{  
-  background: url('../../../media/icons/texture.png');
-  box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
-  border: 1px solid #7FA9DB;
-  border-left-color: #BEC7CE; 
-  border-left-width: 16px;
+.cluster-section:hover, .cluster-hover{ 
+  width: 90px;
+  height: 90px; 
+  border-color: #9FDDFF;
+  background: #021A28;
+  box-shadow: inset 0px 0 20px #000000, 3px -4px 9px -4px #A0DDFF;
+  text-align: center;
+  
   -webkit-transform: none;
-  -moz-transform:scale(1.1);
-  -o-transform:scale(1.1);
-  -ms-transform:scale(1.1);
-  transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+  transform: none; 
+
+  -webkit-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  -ms-filter: none;
+  filter: none;
 }
+.cluster-section img, .cluster-hover img{
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0; 
+}
+.clusters-title{
+  visibility: hidden;
+}
+.cluster-section:hover .clusters-title, .cluster-hover .clusters-title{
+  visibility: visible;
+}
+/*
 .cluster-section:hover{
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
   border-color: #7FA9DB;
   border-left-color: #BEC7CE; 
-    -webkit-transform:scale(1.1);
+  -webkit-transform:scale(1.1);
   -moz-transform:scale(1.1);
   -o-transform:scale(1.1);
   -ms-transform:scale(1.1);
   transform: scale(1.1); 
-}
+}*/
 #controls{
   position: fixed;
   z-index: 5;

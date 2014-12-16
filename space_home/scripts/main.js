@@ -51,7 +51,7 @@
 					if(i!=value)
 					  $('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 					else
-					  $('[id='+mapper[i]+']').css({"display":"inline-block"});	
+					  $('[id='+mapper[i]+']').css({"display":"block"});	
 				}
 				$('[id='+selector+']').removeClass('fadeInDown fadeOut').addClass('fadeInDown');
 				//$('[id='+selector+']').css('-webkit-transform', 'translateY(0%)');
@@ -182,7 +182,7 @@
 			if(i!=value)
 			  $('[id='+mapper[i]+']').css({"opacity":0,"display":"none"});
 			else
-			  $('[id='+mapper[i]+']').css({"display":"inline-block"});	
+			  $('[id='+mapper[i]+']').css({"display":"block"});	
 		}
 
 		$('[id='+selector+']').removeClass('fadeInDown fadeOut').addClass('fadeInDown');
