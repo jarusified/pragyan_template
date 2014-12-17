@@ -252,6 +252,7 @@ a:hover{
   position: absolute;
   width: 40px;
   cursor: pointer;
+  border-radius: 17px;
 }
 .social-plugin{
   position: fixed;
@@ -473,7 +474,7 @@ a:hover{
 #toggle{
   z-index: 5;
   position: absolute;
-
+  cursor: pointer;
 }
 #toggle button {
   display: inline-block;
@@ -488,6 +489,8 @@ a:hover{
 .lines-button {
   padding: 2rem 1rem;
   transition: .3s;
+  -webkit-transition:0.3s;
+  -moz-transition:0.3;
   cursor: pointer;
   user-select: none;
   border-radius: 0.57143rem;
@@ -538,8 +541,18 @@ a:hover{
 .lines-button:hover .lines:after {
   top: -.64rem;
 }
-
-
+.close{
+  position: fixed;
+  display: none;
+  width: 70px;
+  top: 24px;
+  left: 23px;
+}
+.close img{
+  width: 18px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
 
 @-webkit-keyframes fadeInDown {
   0% {
@@ -643,53 +656,12 @@ a:hover{
   animation-name: slideOut;
 }
 
-@-webkit-keyframes slider{
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
-}
-
-@keyframes slider {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
-}
 .sponsor-slider{
   z-index: 4;
   position: fixed;
   width: 150px;
   top: 5px;
   right: 0%;
-}
-#slider{ 
-  overflow: hidden;
-}
-#slider figure img { 
-  width: 150px;
-  float: left;
-  opacity: 0.95;
-}
-#slider figure{
-  position: relative;
-  width: 600%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  -webkit-animation: 10s slider infinite; 
-  animation: 10s slider infinite; 
 }
 .sponsor-slider div{
   width: 100%;
@@ -699,6 +671,15 @@ a:hover{
   text-align: center;
   font-weight: bolder;
   letter-spacing: 1px;
+}
+#slideshow { 
+    position: relative; 
+    width: 150px; 
+    height: auto; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+#slideshow > div { 
+    position: absolute; 
 }
 
 .action-menu{
@@ -715,7 +696,6 @@ a:hover{
   width: 50px;   
   float: left;
 }
-
 .action-menu img{
   width: 50px;
   cursor: pointer;
