@@ -77,7 +77,7 @@
 	var index=[0,1,2,3,4];
 	var level=false;
 	var count =0;
-	window.onload=function(){
+	$(document).ready(function(){
 		document.addEventListener('keydown',onkeydown,false);
 		$('.section').hover(function(){
 			$('.section').removeClass('hover');
@@ -99,11 +99,11 @@
 			$('.section').removeClass('hover1');
 			if($('#menu').css("opacity")){
 				$(this).addClass('hover1');
-				$('#menu').css('-webkit-transform', 'translateY(-45%)');
-				$('#menu').css('-moz-transform', 'translateY(-45%)');
-				$('#menu').css('-o-transform', 'translateY(-45%)');
-				$('#menu').css('-ms-transform', 'translateY(-45%)');
-				$('#menu').css('transform', 'translateY(-45%)');
+				$('#menu').css('-webkit-transform', 'translateY(-30%)');
+				$('#menu').css('-moz-transform', 'translateY(-30%)');
+				$('#menu').css('-o-transform', 'translateY(-30%)');
+				$('#menu').css('-ms-transform', 'translateY(-30%)');
+				$('#menu').css('transform', 'translateY(-30%)');
 
 				$('.cluster-section').removeClass('cluster-hover');
 				for(var j=0; j<5; j++)
@@ -150,10 +150,9 @@
 		});
 		
 
-	}
+	});
 
 	function back(){
-		$('#sub-menu').removeClass('slideIn slideOut').addClass('slideOut');
 		menuOpen=false;
 		$("#menu").css("opacity","1.0");
 		$('#menu').css('-webkit-transform', 'translateY(0%)');
@@ -239,11 +238,11 @@
 	}
 
 	function toggleDown(value){
-		$('#menu').css('-webkit-transform', 'translateY(-45%)');
-		$('#menu').css('-moz-transform', 'translateY(-45%)');
-		$('#menu').css('-o-transform', 'translateY(-45%)');
-		$('#menu').css('-ms-transform', 'translateY(-45%)');
-		$('#menu').css('transform', 'translateY(-45%)');
+		$('#menu').css('-webkit-transform', 'translateY(-30%)');
+		$('#menu').css('-moz-transform', 'translateY(-30%)');
+		$('#menu').css('-o-transform', 'translateY(-30%)');
+		$('#menu').css('-ms-transform', 'translateY(-30%)');
+		$('#menu').css('transform', 'translateY(-30%)');
 
 		$('.cluster-section').removeClass('cluster-hover');
 		for(var j=0; j<5; j++)
