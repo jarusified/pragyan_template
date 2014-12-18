@@ -701,3 +701,82 @@ a:hover{
   cursor: pointer;
   position: absolute;
 }
+
+#search-overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 10;
+  display: none;
+}
+#search-box{
+  position: relative;
+  width: 85%;
+  margin-left: 7.5%;
+  margin-top: 75px;
+  height: 100px;
+}
+#search-box input{
+  width: 98%;
+  height: 45px;
+  font-size: 30px;
+  line-height: 60px;
+  font-family: Prime;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: white;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-top: 5px;
+  color: #92CCFC;
+}
+#search-box input:focus, #search-box input:active{
+  outline-offset: none;
+}
+#search-result{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10px;
+  height: 60%;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+}
+#search-result div{
+  width: 100%;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: Prime;
+  text-transform: uppercase;
+  margin: 5px 0px;
+  cursor: pointer;
+  padding: 10px;
+}
+#search-result div:hover{
+  background: #94C3E9;
+}
+#search-result a{
+  color: #94C3E9;
+}
+#search-result div:hover a{
+  color: black;
+}
+#search-result a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+::-webkit-input-placeholder{
+  color: gray;
+}
+::-moz-input-placeholder{
+  color: gray;
+}
+:-moz-input-placeholder{
+  color: gray;
+}
+:-ms-input-placeholder{
+  color: gray;
+}

@@ -50,7 +50,7 @@
 	});
 
 	var press =false;
-	var menuOpen=false;
+	var menuOpen=false, search=false;
 	var animationEnd=false, activeMenu = 0;
 	var mapper={
 		0:"events-menu",
@@ -312,7 +312,9 @@
 	}
 	
 	function onkeydown(event){
+		console.log(event.keyCode);
 		if(!press){
+		  if(search==false){	
 			if(event.keyCode==37){
 				press=true;
 				if(!level){
@@ -358,6 +360,18 @@
 				level=false;
 				menu=back();
 			}
+	        if(event.keyCode == 83){
+		      $('#search-box input').val('');
+		      $('#search-overlay').fadeIn('500');
+		      search = true;
+		    }
+		  }
+		  else{
+		  	if(event.keyCode == 27){
+		      $('#search-overlay').fadeOut('300');
+		      search = false;
+		  	}
+		  } 
 		}
 	}
 }(window.jQuery);
