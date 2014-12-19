@@ -64,7 +64,6 @@ html,body{
   transition: all 0.5s ease-out;
 }
 #cluster-menu{
-  position: relative;
   z-index: 3;
   width: 50%;
   height: 100%;
@@ -87,7 +86,6 @@ html,body{
 }
 .cluster-section{
   float: top;
-  left:15%;
   width: 50%;
   height: 40px;
   z-index: 4;
@@ -113,7 +111,28 @@ html,body{
   -ms-transition:all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-
+.cluster-section img{
+  width:40px;
+  height:40px; 
+  padding-right: 2%;
+}
+.left-image{
+  float: top;
+  width: 50%;
+  height: 40px;
+  z-index: 4;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  display: none;
+}
+.left-image img{
+  width:40px;
+  height:40px; 
+  padding-right: 2%;
+}
+.hide{
+  opacity: 1;
+}
 .sub-cluster-section{
   float: top;
   left:30%;
@@ -145,9 +164,10 @@ html,body{
 #sub-cluster-menu{
   z-index: 2;
   position: absolute;
-  width: 75%;
+  width: 25%;
   height: 100%;
   color: #fff;
+  padding-left:4%; 
   left:25%;
   opacity: 0;
   -webkit-transition: all 1.0s ease-out;
@@ -155,6 +175,9 @@ html,body{
   -o-transition: all 1.0s ease-out;
   -ms-transition:all 1.0s ease-out;
   transition: all 1.0s ease-out
+}
+.inner{
+  position: relative;
 }
 .image{
   position: absolute;
