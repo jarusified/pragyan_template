@@ -104,6 +104,7 @@ html,body{
   align-items: center;
   justify-content: left;
   cursor: pointer;
+  color:#fff;
   box-shadow:  inset 4px 0 10px #68A1CE, inset -20px 0 30px #122c36, 6px -6px 12px -7px #A0DDFF;  
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
@@ -124,12 +125,13 @@ html,body{
   z-index: 4;
   white-space: nowrap;
   margin-bottom: 5px;
-  display: none;
+  opacity: 0;
 }
-.left-image img{
+.left-image > img{
   width:40px;
   height:40px; 
   padding-right: 2%;
+
 }
 .hide{
   opacity: 1;
@@ -169,7 +171,7 @@ html,body{
   height: 100%;
   color: #fff;
   padding-left:4%; 
-  left:25%;
+  left:10%;
   opacity: 0;
   -webkit-transition: all 1.0s ease-out;
   -moz-transition: all 1.0s ease-out;
