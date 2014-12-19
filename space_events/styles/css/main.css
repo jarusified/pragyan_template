@@ -86,7 +86,7 @@ html,body{
 }
 .cluster-section{
   float: top;
-  width: 50%;
+  width: 25%;
   height: 40px;
   z-index: 4;
   white-space: nowrap;
@@ -114,7 +114,8 @@ html,body{
 .cluster-section img{
   width:40px;
   height:40px; 
-  padding-right: 2%;
+  position: relative;
+  padding-right: 1%;
 }
 .left-image{
   float: top;
@@ -178,6 +179,24 @@ html,body{
 }
 .inner{
   position: relative;
+}
+.outer{
+  position: relative;
+  height: 0px;
+}
+.boom{
+  position: relative;
+  width: 10%;
+  height:40px;
+  color:transparent;
+  box-shadow: none;
+}
+.boom img{
+  width: 100%;
+  height: 100%;
+}
+.boom:hover{
+  background-color: transparent;
 }
 .image{
   position: absolute;
