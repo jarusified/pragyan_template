@@ -33,6 +33,7 @@
 			$('.cluster-section').removeClass('highlight');
 			$('.cluster-section').css({"left":"0%","z-index":"1","width":"20%","box-shadow":"none"});
 			$('.inner').css({"opacity":"1","left":"0%","width":"4%","z-index":1,"display":"none"});
+			$('.outer').css("opacity","1");
 			$(outer).children('.left-image').css({"opacity":"1","left":"0"});
 			$('.cluster-section p').css("opacity","0");
 			$(outer).children().siblings('#sub-cluster-menu').css({"opacity":"1","left":"0%","width":"25%","z-index":"1"});
@@ -56,7 +57,7 @@
 			$('.cluster-section').first().addClass('highlight');
 			$('.cluster-section').css({"left":"0%","z-index":1,"width":"50%","box-shadow":"inset 4px 0 10px #68A1CE, inset -20px 0 30px #122c36, 6px -6px 12px -7px #A0DDFF"});
 			$('.inner').css({"display":"block","width":"50%"});
-			$('.outer').css({"left":"50%","z-index":1,"opacity":"0","width":"25%"});
+			$('.outer').css("opacity","0");
 			$('.cluster-section p').css("opacity","1");
 
 		});
