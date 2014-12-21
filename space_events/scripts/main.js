@@ -19,6 +19,8 @@
 			var section=$(this).parent().attr('id');
 			var outer  =$('#'+section+'.outer');
 			var inner  =$('#'+section+'.inner');
+			$('.sub-cluster-menu').css("opacity","0");
+			$('.image').css("display","none");
 			$('.cluster-section').removeClass('highlight');
 			$(this).addClass('highlight');
 			$('.cluster-section').css({"width":"40px","box-shadow":"none"});
