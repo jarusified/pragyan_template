@@ -76,8 +76,8 @@ html,body{
     transition: all 1.0s ease-out;
 }
 .cluster-content{
-  position: absolute;
-  top:60%;
+  position: fixed;
+  top:50%;
   left:50%;
   font-family: Geosans;
   font-size: 14px;
@@ -85,7 +85,9 @@ html,body{
   display: none;
 }
 .cluster-section{
-  width: 25%;
+  float: top;
+  overflow: hidden;
+  width: 250px;
   height: 40px;
   z-index: 4;
   white-space: nowrap;
@@ -112,10 +114,23 @@ html,body{
   transition: all 0.5s ease-out;
 }
 .cluster-section img{
+  position: fixed;
   width:40px;
   height:40px; 
   position: relative;
   padding-right: 1%;
+}
+.cluster-section p{
+  position: fixed;
+}
+#codeit > .outer ,#manigma > .outer,#chillpill > .outer{
+  display: none;
+}
+#codeit > .inner ,#manigma > .inner,#chillpill > .inner{
+  display: none;
+}
+#icons{
+  display: none;
 }
 .left-image{
   float: top;
@@ -136,6 +151,7 @@ html,body{
   opacity: 1;
 }
 .sub-cluster-section{
+  left:50%;
   width: 100%;
   height: 40px;
   z-index: 4;
@@ -162,7 +178,7 @@ html,body{
   -ms-transition:all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-#sub-cluster-menu{
+.sub-cluster-menu{
   z-index: 2;
   position: absolute;
   width: 25%;
@@ -183,6 +199,7 @@ html,body{
 .outer{
   position: relative;
   height: 0px;
+  left:25%;
 }
 .boom{
   position: relative;
@@ -199,21 +216,20 @@ html,body{
   background-color: transparent;
 }
 .image{
-  position: absolute;
+  position: fixed;
   display: none;
-  top: 10%;
+  top: 20%;
   left: 60%;
 }
 .image-main{
-  position: absolute;
+  position: fixed;
   display: block;
   left: 60%;
-  top:10%
+  top:20%
 }
 .highlight{
    background-color: #DCEAF5;
   color: #1B3A53;
-   box-shadow: 6px -6px 12px -7px #A0DDFF,inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE,0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF;  
 }
 .hide{
   display: none;
