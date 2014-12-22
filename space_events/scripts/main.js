@@ -22,15 +22,20 @@
 			$('.sub-cluster-menu').css("opacity","0");
 			$('.image').css("display","none");
 			$('.cluster-section').removeClass('highlight');
+			$('.icon-glow').css("visibility","hidden");
+			$(this).siblings('.icon-glow').css("visibility","visible");
+			$(this).children('.icon-glow').css("visibility","visible");
 			$(this).addClass('highlight');
 			$('.cluster-section').css({"width":"40px","box-shadow":"none"});
 			$('.inner').css({"opacity":"1","left":"0%","width":"0px"});
 			$(inner).children().siblings('.cluster-content').css("display","block");
 			$('.cluster-section p').css("opacity","0");
 			$('.outer').css({"left":"0%","opacity":"1"})
-			$(outer).children('.sub-cluster-menu').css({"opacity":"1","left":"0%","width":"25%"});
+			$(outer).children('.sub-cluster-menu').css({"opacity":"1","width":"25%"});
 			$(inner).children('.image').css("display","block");
 			$('.image-main').css("display","none");
+			$('.cluster-content').css("display","none");
+			$(this).siblings('.cluster-content').css("display","block");
 		});
 		$('#toggle').click(function(){
 			if(menuOpen){

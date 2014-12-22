@@ -34,17 +34,6 @@ html,body{
     -ms-filter:blur(1px);
     filter: blur(1px);
 }
-
-#line{
-  position: absolute;
-  z-index: 4;
-  color:#000;
-  background: white;
-  width:98%;
-  height: 1px;
-  box-shadow: -1px 6px 15px 2px black;
-  top:99%;
-}
 #cluster{
   z-index: 2;
   position: absolute;
@@ -117,11 +106,11 @@ html,body{
   position: fixed;
   width:40px;
   height:40px; 
-  position: relative;
   padding-right: 1%;
 }
 .cluster-section p{
   position: fixed;
+  padding-left: 4%;
 }
 #codeit > .outer ,#manigma > .outer,#chillpill > .outer{
   display: none;
@@ -132,24 +121,7 @@ html,body{
 #icons{
   display: none;
 }
-.left-image{
-  float: top;
-  width: 50%;
-  height: 40px;
-  z-index: 4;
-  white-space: nowrap;
-  margin-bottom: 5px;
-  opacity: 0;
-}
-.left-image > img{
-  width:40px;
-  height:40px; 
-  padding-right: 2%;
 
-}
-.hide{
-  opacity: 1;
-}
 .sub-cluster-section{
   left:50%;
   width: 100%;
@@ -185,7 +157,7 @@ html,body{
   height: 100%;
   color: #fff;
   padding-left:4%; 
-  left:10%;
+  left:0%;
   opacity: 0;
   -webkit-transition: all 1.0s ease-out;
   -moz-transition: all 1.0s ease-out;
@@ -208,13 +180,6 @@ html,body{
   color:transparent;
   box-shadow: none;
 }
-.boom img{
-  width: 100%;
-  height: 100%;
-}
-.boom:hover{
-  background-color: transparent;
-}
 .image{
   position: fixed;
   display: none;
@@ -231,15 +196,7 @@ html,body{
    background-color: #DCEAF5;
   color: #1B3A53;
 }
-.hide{
-  display: none;
-}
-#events{
-  display: block;
-}
-#workshops,#gl,#exhibitions,#infotainment,#outreach,#psr,#hospitality,#sposorships,#contacts{
-  display: none;
-}
+
 .icon-normal{
   -webkit-transition: visibility 0.5s ease-out;
     -moz-transition: visibility 0.5s ease-out;
