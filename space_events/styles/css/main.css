@@ -66,13 +66,18 @@ html,body{
 }
 .cluster-content{
   position: fixed;
-  top:50%;
+  top:40%;
   left:50%;
+  width:30%;
+  height: 30%;
   font-family: Geosans;
-  font-size: 14px;
+  font-size: 15px;
   color:#fff;
+  white-space: normal;
+  overflow-x:hidden;
   display: none;
 }
+
 .cluster-section{
   float: top;
   overflow: hidden;
@@ -149,6 +154,20 @@ html,body{
   -o-transition: all 0.5s ease-out;
   -ms-transition:all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+.sub-cluster-content{
+  position: fixed;
+  top:40%;
+  left:50%;
+  width:30%;
+  height: 30%;
+  font-family: Geosans;
+  font-size: 15px;
+  color:#fff;
+  white-space: normal;
+  overflow-x:hidden;
+  display: none;
 }
 .sub-cluster-menu{
   z-index: 2;
