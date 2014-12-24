@@ -78,6 +78,9 @@
 	var level=false;
 	var count =0;
 	$(document).ready(function(){
+		
+		$("#bg-music").prop("volume", 0.1);
+		
 		document.addEventListener('keydown',onkeydown,false);
 
 		$("#slideshow > div:gt(0)").hide();

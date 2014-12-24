@@ -51,13 +51,14 @@ a:hover{
 }
 .line{
   position: absolute;
+  display: none;
   z-index: 4;
   color:#000;
   background: #224F60;
   width: 1025px;
   margin-left: -510px;
   top: 98%;
-  left: 50%;
+  left: 53%;
   height: 2px;
   box-shadow: 0px -5px 20px 6px black;
 }
@@ -376,10 +377,11 @@ a:hover{
   position: fixed;
   z-index: 4;
   height: auto;
-  left:50%;
+  left: inherit;
+  right: 2%;
   top: 2%;
   margin-left: -100px;
-  width: 200px;
+  width: 150px;
   display: block;
 }
 @media (max-width: 800px){
@@ -394,7 +396,7 @@ a:hover{
   display: block;
 }
 #sub-menu{
-  position: absolute;
+  position: fixed;
   z-index: 4;
   width: 300px;
   height: 100%;
@@ -473,7 +475,6 @@ a:hover{
 }
 
 #toggle{
-  display: none;
   z-index: 5;
   position: absolute;
   cursor: pointer;
@@ -664,6 +665,7 @@ a:hover{
   width: 150px;
   top: 5px;
   right: 0%;
+  display: none;
 }
 .sponsor-slider div{
   width: 100%;
@@ -783,25 +785,15 @@ a:hover{
   color: gray;
 }
 
-@media screen and (max-width: 1200px) {
-    .sponsor-slider{
-      top:5px;
-      width:100px;
-    }
-    #slideshow{
-      width: 100px;
-    }
+
+
     .section{
       height: 190px;
     }
     #cluster-menu{
       top:65%;
     }
-    #logo{
-      width:100px;
-    }
     .action-menu{
       height:60px;
       width: 60px;
     }
-}

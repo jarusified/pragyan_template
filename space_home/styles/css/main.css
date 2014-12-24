@@ -681,6 +681,9 @@ a:hover{
 #slideshow > div { 
     position: absolute; 
 }
+#slideshow img{
+  border-radius: 3%;
+}
 
 .action-menu{
   position: fixed;
