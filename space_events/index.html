@@ -23,17 +23,18 @@
         HOME
 	</div>
 	<div id="sub-menu">
-	  <div style='position: fixed; width: 300px; height: 450px; top: 50%; margin-top: -225px; overflow-y: auto;'>	
-		<div class="sub-section"><img src='./../media/icons/Events.png' class='menu-icons'/><p>Events</p></div>
-		<div class="sub-section"><img src='./../media/icons/Workshops.png' class='menu-icons'/><p>Workshops</p></div>
-		<div class="sub-section"><img src='./../media/icons/GL.png' class='menu-icons'/><p>Guest Lectures and Crossfire</p></div>
-		<div class="sub-section"><img src='./../media/icons/Exhibitions.png' class='menu-icons'/><p>Exhibitions and Sangam</p></div>
-		<div class="sub-section"><img src='./../media/icons/Infotainment.png' class='menu-icons'/><p>Infotainment</p></div>
-		<div class="sub-section"><img src='./../media/icons/Outreach.png' class='menu-icons'/><p>Outreach</p></div>
-		<div class="sub-section"><img src='./../media/icons/PSR.png' class='menu-icons'/><p>Pragyan Social Responsibility</p></div>
-		<div class="sub-section"><img src='./../media/icons/Hospitality.png' class='menu-icons'/><p>Hospitality</p></div>
-		<div class="sub-section"><img src='./../media/icons/Sponsorships.png' class='menu-icons'/><p>Sponsorships</p></div>
-		<div class="sub-section"><img src='./../media/icons/Contacts.png' class='menu-icons'/><p>Contacts</p></div>
+	  <text class="search-trigger" id="search-trigger">Search [S]</text>
+	  <div class='sub-menu-inner'>	
+		<div class="sub-section"><img src='../media/icons/Events.png' class='menu-icons'/><p>Events</p></div>
+		<div class="sub-section"><img src='../media/icons/Workshops.png' class='menu-icons'/><p>Workshops</p></div>
+		<div class="sub-section"><img src='../media/icons/GL.png' class='menu-icons'/><p>Guest Lectures and Crossfire</p></div>
+		<div class="sub-section"><img src='../media/icons/Exhibitions.png' class='menu-icons'/><p>Exhibitions and Sangam</p></div>
+		<div class="sub-section"><img src='../media/icons/Infotainment.png' class='menu-icons'/><p>Infotainment</p></div>
+		<div class="sub-section"><img src='../media/icons/Outreach.png' class='menu-icons'/><p>Outreach</p></div>
+		<div class="sub-section"><img src='../media/icons/PSR.png' class='menu-icons'/><p>Pragyan Social Responsibility</p></div>
+		<div class="sub-section"><img src='../media/icons/Hospitality.png' class='menu-icons'/><p>Hospitality</p></div>
+		<div class="sub-section"><img src='../media/icons/Sponsorships.png' class='menu-icons'/><p>Sponsorships</p></div>
+		<div class="sub-section"><img src='../media/icons/Contacts.png' class='menu-icons'/><p>Contacts</p></div>
 	  </div>	
 	</div>
 	<div id="cluster">
@@ -387,6 +388,58 @@
 		</div>
 	</div>
 
+	<div id='controls'>
+		<div id='music'>
+			<div><audio id='bg-music' preload='none' src='../media/music/bg.mp3' autoplay loop></audio></div>
+			<div><audio id='escape-music' src='../media/music/escape.mp3'></audio></div>
+		</div>
+		<div id='controls-guide-trigger'>
+			Controls Help
+		</div>
+		<div id='controls-guide' align="center">
+			<h3 style='background: #0E2B43;padding: 10px 0; cursor: pointer;'> Controls <img id='controls-close' src='../media/icons/close.png' style='width: 15px; right: 5px; position: absolute;'/></h3>
+			<div>
+				<div class='controls-icon' style="height:50px"><img src='../media/icons/controls/arrow-key.png' style="width:60px; padding: 0" /></div>
+				<div class='controls-text' style="height:30px;margin-top: 20px;">Navigation</div>
+			</div>
+			<div>
+				<div class='controls-icon'><img src='../media/icons/controls/enter-key.png' /></div>
+				<div class='controls-text'>Select / Go To</div>
+			</div>
+			<div>
+				<div class='controls-icon'><img src='../media/icons/controls/s-key.png' /></div>
+				<div class='controls-text'>Search</div>
+			</div>
+			<div>
+				<div class='controls-icon'><img src='../media/icons/controls/l-key.png' /></div>
+				<div class='controls-text'>Login</div>
+			</div>
+			<div>
+				<div class='controls-icon'><img src='../media/icons/controls/m-key.png' /></div>
+				<div class='controls-text'>Mute BG Music</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='action-menu'>
+		<div class='action-button'>
+			<img class='icon-normal' src="../media/icons/Login_On.png" alt="">
+			<img class='icon-glow' src="../media/icons/Login_Off.png" alt="">
+			<p style="font-weight: bolder;font-size: 12px;text-align: center; margin-top: 50px">ACTIONS</p>
+		</div>
+	</div>
+
+	<div id='search-overlay'>
+		<div id='search-box'>
+			<input type='text' id='search-query' autofocus placeholder='SEARCH' spellcheck="false"/>
+		</div>
+		<div id='search-result'>
+			<div><a>aksjdn a nakds</a></div>
+			<div><a>asa asda sd</a></div>
+			<div><a>aksjdn a nakds</a></div>
+			<div><a>aksjdn a nakds</a></div>
+		</div>
+	</div>
 	
 	
 </body>
