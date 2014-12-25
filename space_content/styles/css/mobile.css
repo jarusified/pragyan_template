@@ -31,13 +31,6 @@ a:hover{
   color: #D3EBFE;
   text-decoration: underline;
 }
-h1, h2, h3{
-  font-family: Prime;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-h3{
-}
 #bg{
   z-index: 1;
   width: 100%;
@@ -58,13 +51,14 @@ h3{
 }
 .line{
   position: absolute;
+  display: none;
   z-index: 4;
   color:#000;
   background: #224F60;
   width: 1025px;
   margin-left: -510px;
   top: 98%;
-  left: 50%;
+  left: 53%;
   height: 2px;
   box-shadow: 0px -5px 20px 6px black;
 }
@@ -73,9 +67,7 @@ h3{
   position: fixed;
   width: 100%;
   margin-top: -125px;
-  top: 50%;
-  /*margin-left: -525px;
-  left: 50%;*/
+  top: 53%;
   padding: 5px 10px;
   opacity: 1; 
   height: 270px;
@@ -110,145 +102,50 @@ h3{
   visibility: visible;
 }
 
-.action-button img{
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-}
-.action-button:hover p{
-  color: #92CCFC;
-}
-.action-button:hover img{
-  -webkit-transform: rotateZ(90deg);
-}
-
-#content{
-  width: 94%;
-  height: 65%;
-  position: fixed;
-  top: 130px;
-  left: 50%;
-  margin-left: -48%;
-  padding: 10px;
-  z-index: 3;
-  box-shadow: inset 0px 0px 10px 10px black; 
-  border: 1px solid #010C15;
-  background-color: #000205;
-}
-
 #social{
   position: fixed;
-  bottom: 30px;
-  left: 0px;
+  bottom: 18px;
+  left: 30px;
   z-index: 4;
   width: 160px;
-  padding: 0 60px;
+  padding: 0 10px;
 }
 .social-icons{
   position: relative;
-  height: 40px;
-  width: 40px;   
+  height: 30px;
+  width: 30px;   
   float: left;
+  margin-left: 5px; 
 }
 .social-icons img{
   position: absolute;
-  width: 40px;
+  width: 30px;
   cursor: pointer;
   border-radius: 17px;
 }
 .social-plugin{
   position: fixed;
-  bottom: 0px;
-  left: 7px;
+  bottom: -3px;
+  left: 37px;
   z-index: 4;
   width: 160px;
-  padding: 0px 60px;
+  padding: 0px 5px;
 }
 
 #controls{
-  position: fixed;
-  z-index: 3;
   bottom: 10px;
   left: 50%;
-  width: 180px;
-  margin-left: -90px;
-  text-align: center;
-  height: auto;
-  font-family: Prime;
-  color: #A0DDFF;
-  text-transform: uppercase;
-  font-size: 14px;
-  padding-top: 5px;
-}
-#controls-guide-trigger{
-  font-family: Prime;
-  font-size: 13px; 
-  letter-spacing: 1px;
-  font-weight: bolder;
-  cursor: pointer;
-}
-#controls-guide-trigger:hover{
-  color: white;
-}
-#controls-guide{
-  position: fixed;
-  z-index: 5;
-  bottom: 0px;
-  left: 50%;
-  width: 602px;
-  height: 280px;
-  margin-left: -301px;
-  background-color: #000204;
-  border: 2px solid #224F60;
-  box-shadow: 0px 0px 10px 6px black;
-  border-bottom: none;
-  border-radius: 2px;
-  -webkit-transform: translateY(400px);
-  -moz-transform: translateY(400px);
-  -o-transform: translateY(400px);
-  -ms-transform: translateY(400px);
-  transform: translateY(400px);
- -webkit-transition: -webkit-transform 0.8s ease-in-out;
-  -moz-transition: -moz-transform 0.8s ease-out;
-  -o-transition: -o-transform 0.8s ease-out;
-  -ms-transition: -ms-transform 0.8s ease-out;
-  transition: transform 0.8s ease-in-out;
-}
-#controls-guide .controls-guide-inner{
-  width: 300px;
-  float: left;
-}
-#controls-guide img{
-  width: 30px;
-}
-.controls-icon{
-  width: 80px;
-  height: 30px;
-  margin: 0 10px 0 20px; 
-  text-align: center;
-}
-.controls-icon img{
-  padding: 0 15px; 
-}
-.controls-text{
-  width: 170px;
-  text-align: left;
-  height: 30px;
-  margin: 0 10px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 8px;
-}
-.controls-icon, .controls-text{
-  position: relative;
-  float: left;
+  width: 150px;
 }
 #logo{
   position: fixed;
   z-index: 4;
   height: auto;
-  left:50%;
+  left: inherit;
+  right: 2%;
   top: 2%;
   margin-left: -100px;
-  width: 200px;
+  width: 150px;
   display: block;
 }
 #logo img{
@@ -258,7 +155,7 @@ h3{
   display: block;
 }
 #sub-menu{
-  position: absolute;
+  position: fixed;
   z-index: 4;
   width: 300px;
   height: 100%;
@@ -268,9 +165,9 @@ h3{
   background-color: #010710;
   color: #92CCFC;
  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition:all 0.5s ease-out;
   transition: opacity 0.5s ease-out;
 }
 .sub-menu-inner{
@@ -306,15 +203,9 @@ h3{
     color: white;
 }
 .sub-section p{
-  font-family: Prime;
-  float: left;
   padding: 0 10px;
 }
-#sub-menu a:hover{
-  text-decoration: none;
-}
 .menu-icons{
-  float: left;
   width: 30px; 
   height: auto;
 }
@@ -365,19 +256,6 @@ h3{
 }
 #toggle button span {
   display: block;
-}
-.breadcrumb{
-  position: fixed;
-  width: auto;
-  height: 100px;
-  top: 25px;
-  left: 60px;
-  padding-top: 5px;
-  font-weight: bold;
-  font-family: Prime;
-  font-size: 12px;
-  vertical-align: sub;
-  z-index: 5;
 }
 .lines-button {
   padding: 2rem 1rem;
@@ -438,7 +316,7 @@ h3{
   position: fixed;
   display: none;
   width: 70px;
-  top: 24px;
+  top: 15px;
   left: 23px;
 }
 .close img{
@@ -446,20 +324,7 @@ h3{
   margin-right: 5px;
   vertical-align: bottom;
 }
-.search-trigger{
-  position: fixed;
-  text-transform: uppercase;
-  font-family: Prime;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 1px;
-  top: 30px;
-  left: 200px;
-  cursor: pointer;
-}
-.search-trigger:hover{
-  color: white;
-}
+
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -568,6 +433,7 @@ h3{
   width: 150px;
   top: 5px;
   right: 0%;
+  display: none;
 }
 .sponsor-slider div{
   width: 100%;
@@ -579,7 +445,7 @@ h3{
   letter-spacing: 1px;
 }
 #slideshow { 
-    position: relative; 
+    position: relative;
     width: 150px; 
     height: auto; 
     box-shadow: 0 0 20px rgba(0,0,0,0.4); 
@@ -587,25 +453,11 @@ h3{
 #slideshow > div { 
     position: absolute; 
 }
-#slideshow img{
-  border-radius: 3%;
-}
-
-.credits{
-  position: fixed;
-  bottom: 5px;
-  width: 215px;
-  margin-left: 210px;
-  z-index: 2;
-  font-family: Petita;
-  text-align: center;
-  font-size: 12px;
-}
 
 .action-menu{
   position: fixed;
   bottom: 25px;
-  right: 50px;
+  right: 10px;
   width: 50px;
   height: 50px;
   z-index: 3;
@@ -613,10 +465,8 @@ h3{
 .action-button{
   position: relative;
   height: 50px;
-  width: 60px;   
+  width: 50px;   
   float: left;
-  color: white;
-  cursor: pointer;
 }
 .action-menu img{
   width: 50px;
@@ -631,17 +481,6 @@ h3{
   background: rgba(0,0,0,0.9);
   z-index: 10;
   display: none;
-}
-.search-close{
-  position: fixed;
-  top: 40px;
-  margin-left: 5%;
-  cursor: pointer;
-}
-.search-close img{
-  width: 20px;
-  vertical-align: -5px;
-  margin-right: 5px;
 }
 #search-box{
   position: relative;
@@ -722,33 +561,64 @@ h3{
 }
 
 .ticker {
-  position: fixed;
-  top: 85px;
+  top: 20px;
   left: 50%;
-  margin-left: -300px;
-  width: 600px;
-  height: 30px;
-  font-size: 15px;
-  font-family: Petita;
-  overflow: hidden;
-  border-radius: 4px;
-  border: 1px solid black;
-  box-shadow: inset 0px 0px 3px 0px black;
-  background: url('../../../media/icons/texture.png');
-  text-align: left;
-  z-index: 3;
+  margin-left: -330px;
 }
-.ticker h3 {
-  padding: 0 0 10px 10px;
+.search-trigger{
+  top: 20px;
 }
-.ticker ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+#content{
+  width: 90%;
+  height: 70%;
+  top: 90px;
 }
-.ticker ul li {
- list-style: none;
-  height:50px;
-  padding:7px;
-  text-align: center;
+
+@media(max-width: 900px){
+  .ticker {
+    width: 450px;
+    font-size: 12px;
+    margin-left: -260px;
+  }
+  #controls-guide-trigger{
+    display: none;  
+  }
+  .credits{
+    display: none;
+  }
+}
+@media(max-width: 700px){
+  .ticker{
+    display: none;  
+  }
+}
+@media(max-width: 350px){
+  #content{
+    top: 60px;
+  }
+  .social-plugin{
+    display: none;
+  }
+  #social{
+    display: none;
+  }
+  .sub-menu-inner{
+    top: inherit;
+    bottom: 0;
+  }
+  .close{
+    top: 8px;
+    left: 12px;
+  }
+  #logo{
+    width: 120px;
+    top: 3%;
+  }
+  #menu{
+    top: 55%;
+  }
+  .cluster-menu{
+    top: 60%;
+  }
 }
