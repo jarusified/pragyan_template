@@ -352,6 +352,10 @@ h3{
   -ms-filter: none;
   filter: none;
 }
+.cluster-section a:hover{
+  text-decoration: none;
+  color: inherit;
+}
 .cluster-section img, .cluster-hover img{
   position: relative;
   width: 90px;
@@ -380,8 +384,8 @@ h3{
   z-index: 5;
   bottom: 10px;
   left: 50%;
-  width: 150px;
-  margin-left: -50px;
+  width: 180px;
+  margin-left: -90px;
   text-align: center;
   height: auto;
   font-family: Prime;
@@ -397,14 +401,17 @@ h3{
   font-weight: bolder;
   cursor: pointer;
 }
+#controls-guide-trigger:hover{
+  color: white;
+}
 #controls-guide{
   position: fixed;
   z-index: 5;
   bottom: 0px;
   left: 50%;
-  width: 400px;
-  height: 280px;
-  margin-left: -200px;
+  width: 602px;
+  height: 240px;
+  margin-left: -301px;
   background-color: #000204;
   border: 2px solid #224F60;
   box-shadow: 0px 0px 10px 6px black;
@@ -421,24 +428,28 @@ h3{
   -ms-transition: -ms-transform 0.8s ease-out;
   transition: transform 0.8s ease-in-out;
 }
+#controls-guide .controls-guide-inner{
+  width: 300px;
+  float: left;
+}
 #controls-guide img{
   width: 30px;
 }
 .controls-icon{
-  width: 180px;
+  width: 80px;
   height: 30px;
-  margin: 0 10px; 
-  text-align: right;
+  margin: 0 10px 0 20px; 
+  text-align: center;
 }
 .controls-icon img{
   padding: 0 15px; 
 }
 .controls-text{
-  width: 180px;
+  width: 170px;
   text-align: left;
   height: 30px;
   margin: 0 10px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   margin-top: 8px;
 }
@@ -511,9 +522,15 @@ h3{
     color: white;
 }
 .sub-section p{
+  font-family: Prime;
+  float: left;
   padding: 0 10px;
 }
+#sub-menu a:hover{
+  text-decoration: none;
+}
 .menu-icons{
+  float: left;
   width: 30px; 
   height: auto;
 }
@@ -801,9 +818,10 @@ h3{
 .action-button{
   position: relative;
   height: 50px;
-  width: 50px;   
+  width: 60px;   
   float: left;
   color: #92CCFC;
+  cursor: pointer;
 }
 .action-menu img{
   width: 50px;
@@ -818,6 +836,17 @@ h3{
   background: rgba(0,0,0,0.9);
   z-index: 10;
   display: none;
+}
+.search-close{
+  position: fixed;
+  top: 40px;
+  margin-left: 5%;
+  cursor: pointer;
+}
+.search-close img{
+  width: 20px;
+  vertical-align: -5px;
+  margin-right: 5px;
 }
 #search-box{
   position: relative;
