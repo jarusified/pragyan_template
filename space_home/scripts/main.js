@@ -155,13 +155,14 @@
 		$('#toggle').click(function(){
 			if(menuOpen){
 				$('#toggle button').show();
+				$('.breadcrumb').show();
 				$('#toggle .close').hide();
-				console.log($('#toggle .close'));
 				$('#sub-menu').removeClass('slideIn slideOut').addClass('slideOut');
 				menuOpen=false;
 			}
 			else{
 				$('#toggle button').hide();
+				$('.breadcrumb').hide();
 				$('#toggle .close').show();
 				$("#sub-menu").removeClass('slideIn slideOut').addClass('slideIn');
 				menuOpen=true;

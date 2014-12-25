@@ -68,8 +68,6 @@ a:hover{
   width: 100%;
   margin-top: -125px;
   top: 50%;
-  /*margin-left: -525px;
-  left: 50%;*/
   padding: 5px 10px;
   opacity: 1; 
   height: 270px;
@@ -88,8 +86,8 @@ a:hover{
   vertical-align: middle;
   margin-top: 25px;
   margin-bottom: 25px;
-  width:195px;
-  height:200px;
+  width:165px;
+  height:170px;
   cursor: pointer;
   text-align: left;
   background: url('../../../media/icons/texture.png'); 
@@ -118,7 +116,7 @@ a:hover{
 }
 
 .hover, .hover1, .cluster-hover{
-  width: 184px;
+  width: 154px;
   cursor: pointer;
   background: url('../../../media/icons/texture.png');
   box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
@@ -146,7 +144,7 @@ a:hover{
  }
 
 .section:hover{
-  width: 184px;
+  width: 154px;
   border-left-width: 16px; 
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #010202, 0 0 0px #3D4469, 0px 0 0px #010202, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
   box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;
@@ -209,8 +207,8 @@ a:hover{
 }
 .section img, .hover img, .cluster-section img{
   position: fixed;
-  width:180px;
-  height: 180px;
+  width:150px;
+  height: 150px;
   margin-top: 20px; 
   right: 0; 
   z-index: 1;
@@ -236,23 +234,23 @@ a:hover{
 }
 
 #social{
-  display: none;
   position: fixed;
   bottom: 30px;
   left: 0px;
   z-index: 4;
   width: 160px;
-  padding: 0 60px;
+  padding: 0 10px;
 }
 .social-icons{
   position: relative;
-  height: 40px;
-  width: 40px;   
+  height: 30px;
+  width: 30px;   
   float: left;
+  margin-left: 5px; 
 }
 .social-icons img{
   position: absolute;
-  width: 40px;
+  width: 30px;
   cursor: pointer;
   border-radius: 17px;
 }
@@ -262,14 +260,14 @@ a:hover{
   left: 7px;
   z-index: 4;
   width: 160px;
-  padding: 0px 60px;
+  padding: 0px 5px;
 }
 #cluster-menu{
   z-index: 2;
   position: fixed;
   width: 100%;
   top: 58%;
-  height: auto;
+  height: 130px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -297,8 +295,8 @@ a:hover{
   display: inline-block;
   vertical-align: middle;
   margin: 5% 1% 5% 1%;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
   /*box-shadow: inset 4px 0 10px #68A1CE, 3px -6px 15px -7px #A0DDFF;*/
   border: none;
@@ -307,19 +305,19 @@ a:hover{
   border: 2px solid #8E8E8E;
   color: #A0DDFF;
   font-family: Petita;
-  font-size: 15px;
+  font-size: 11px;
   font-weight: bolder;
   text-transform: uppercase;
 
   -webkit-transition: none;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: -o-transform 0.5s ease-out;
-  -ms-transition: -ms-transform 0.5s ease-out;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
   transition: none;
 }
 .cluster-section:hover, .cluster-hover{ 
-  width: 90px;
-  height: 90px; 
+  width: 80px;
+  height: 80px; 
   border-color: #9FDDFF;
   background: #021A28;
   box-shadow: inset 0px 0 20px #000000, 3px -4px 9px -4px #A0DDFF;
@@ -339,12 +337,13 @@ a:hover{
 }
 .cluster-section img, .cluster-hover img{
   position: relative;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   margin: 0; 
 }
 .clusters-title{
   visibility: hidden;
+  visibility: visible;
 }
 .cluster-section:hover .clusters-title, .cluster-hover .clusters-title{
   visibility: visible;
@@ -384,11 +383,6 @@ a:hover{
   width: 150px;
   display: block;
 }
-@media (max-width: 800px){
-  /*#logo{
-    width: 200px;
-  }*/
-}
 #logo img{
   max-height: 100%;
   max-width: 100%;
@@ -411,10 +405,18 @@ a:hover{
   -ms-transition:all 0.5s ease-out;
   transition: opacity 0.5s ease-out;
 }
+.sub-menu-inner{
+  position: fixed; 
+  width: 300px; 
+  height: 450px; 
+  top: 50%; 
+  margin-top: -225px; 
+  overflow-y: auto;
+}
 .sub-section{
   position: relative;
   float: top;
-  width: 100%;
+  width: 99%;
   height: 40px;
   z-index: 4;
   white-space: nowrap;
@@ -424,7 +426,8 @@ a:hover{
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
-  margin-top: 5px;
+  margin: 5px 0 0 0;
+  padding-left: 1%;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -690,9 +693,9 @@ a:hover{
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 80px;
-  height: 80px;
-  z-index: 5;
+  width: 60px;
+  height: 60px;
+  z-index: 3;
 }
 .action-button{
   position: relative;
@@ -785,15 +788,29 @@ a:hover{
   color: gray;
 }
 
-
-
-    .section{
-      height: 190px;
-    }
-    #cluster-menu{
-      top:65%;
-    }
-    .action-menu{
-      height:60px;
-      width: 60px;
-    }
+@media(max-width: 350px){
+  .social-plugin{
+    display: none;
+  }
+  #social{
+    display: none;
+  }
+  .sub-menu-inner{
+    top: inherit;
+    bottom: 0;
+  }
+  .close{
+    top: 8px;
+    left: 12px;
+  }
+  #logo{
+    width: 120px;
+    top: 3%;
+  }
+  #menu{
+    top: 55%;
+  }
+  .cluster-menu{
+    top: 60%;
+  }
+}
