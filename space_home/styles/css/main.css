@@ -179,8 +179,8 @@ h3{
   opacity: 0;
   position: fixed;
   text-align: center;
-  top: 4px;
-  left: -14px;
+  top: 7px;
+  left: 0px;
   text-align: left;
   font-size: 20px;
   border-radius: 50%;
@@ -245,7 +245,7 @@ h3{
   -webkit-transition: -webkit-transform 0.4s ease-in-out;
 }
 .action-button:hover p{
-  color: white;
+  color: #92CCFC;
 }
 .action-button:hover img{
   -webkit-transform: rotateZ(90deg);
@@ -381,7 +381,7 @@ h3{
 }*/
 #controls{
   position: fixed;
-  z-index: 5;
+  z-index: 3;
   bottom: 10px;
   left: 50%;
   width: 180px;
@@ -410,7 +410,7 @@ h3{
   bottom: 0px;
   left: 50%;
   width: 602px;
-  height: 240px;
+  height: 280px;
   margin-left: -301px;
   background-color: #000204;
   border: 2px solid #224F60;
@@ -807,6 +807,17 @@ h3{
   border-radius: 3%;
 }
 
+.credits{
+  position: fixed;
+  bottom: 5px;
+  width: 215px;
+  margin-left: 210px;
+  z-index: 2;
+  font-family: Petita;
+  text-align: center;
+  font-size: 12px;
+}
+
 .action-menu{
   position: fixed;
   bottom: 25px;
@@ -820,7 +831,7 @@ h3{
   height: 50px;
   width: 60px;   
   float: left;
-  color: #92CCFC;
+  color: white;
   cursor: pointer;
 }
 .action-menu img{
@@ -917,6 +928,13 @@ h3{
 }
 :-ms-input-placeholder{
   color: gray;
+}
+
+.section-key img{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin-top: 0;
 }
 
 .ticker {

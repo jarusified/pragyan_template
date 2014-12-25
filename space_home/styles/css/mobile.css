@@ -171,8 +171,8 @@ a:hover{
   opacity: 0;
   position: fixed;
   text-align: center;
-  top: 4px;
-  left: -14px;
+  top: 7px;
+  left: 0px;
   text-align: left;
   font-size: 20px;
   border-radius: 50%;
@@ -235,8 +235,8 @@ a:hover{
 
 #social{
   position: fixed;
-  bottom: 30px;
-  left: 0px;
+  bottom: 18px;
+  left: 30px;
   z-index: 4;
   width: 160px;
   padding: 0 10px;
@@ -256,8 +256,8 @@ a:hover{
 }
 .social-plugin{
   position: fixed;
-  bottom: 0px;
-  left: 7px;
+  bottom: -3px;
+  left: 37px;
   z-index: 4;
   width: 160px;
   padding: 0px 5px;
@@ -695,7 +695,7 @@ a:hover{
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
   z-index: 10;
   display: none;
 }
@@ -770,6 +770,13 @@ a:hover{
   color: gray;
 }
 
+.section-key img{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin-top: 0;
+}
+
 .ticker {
   top: 20px;
   left: 50%;
@@ -787,6 +794,9 @@ a:hover{
   }
   #controls-guide-trigger{
     display: none;  
+  }
+  .credits{
+    display: none;
   }
 }
 @media(max-width: 700px){

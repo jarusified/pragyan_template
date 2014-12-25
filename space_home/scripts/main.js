@@ -219,7 +219,9 @@
 		divide = false;
 
 		$('.cluster-section').removeClass('cluster-hover');
-		$('#escape-music')[0].play();		
+		
+		if(mobile == false)
+			$('#escape-music')[0].play();		
 		
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0", 'display': 'none'});
