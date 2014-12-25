@@ -144,7 +144,7 @@ html,body{
   z-index: 4;
   white-space: nowrap;
   margin-bottom: 5px;
-  font-family:  Geosans;
+  font-family:  Petita;
   font-size: 15px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -502,10 +502,10 @@ html,body{
   width: 160px;
   padding: 0px 60px;
 }
-.icon-normal, .social-icons:hover .icon-normal, .action-button:hover .icon-normal{
+ .social-icons:hover .icon-normal, .action-button:hover{
   visibility: hidden;
 }
-.icon-glow, .social-icons:hover .icon-glow, .action-button:hover .icon-glow{
+.social-icons:hover,.action-button:hover {
   visibility: visible;
 }
 
