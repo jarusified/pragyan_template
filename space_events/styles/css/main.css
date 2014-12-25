@@ -16,6 +16,17 @@ html,body{
   font-family: Petita;
   font-size: 16px;
 }
+a{
+  text-decoration: none;
+  color: #92CCFC;
+  font-family: Petita;
+  font-weight: bolder;
+  cursor: pointer;
+}
+a:hover{
+  color: #D3EBFE;
+  text-decoration: underline;
+}
 #bg{
   z-index: 1;
   width: 100%;
@@ -795,4 +806,16 @@ html,body{
 }
 .search-trigger:hover{
   color: white;
+}
+
+/*credits */
+.credits{
+  position: fixed;
+  bottom: 5px;
+  width: 215px;
+  margin-left: 210px;
+  z-index: 2;
+  font-family: Petita;
+  text-align: center;
+  font-size: 12px;
 }
