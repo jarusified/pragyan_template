@@ -159,6 +159,15 @@
 			}
 		});
 
+		function ticker() {
+		    $('#ticker li:first').slideUp(function() {
+		        $(this).appendTo($('#ticker')).slideDown();
+		    });
+		}
+		if($('.ticker').css('display') == 'block')
+			setInterval(function(){ ticker(); }, 4000);
+	
+	
 		$('.search-trigger').bind('click',function(){
             $('#search-box input').css('color', 'black');
             $('#search-overlay').fadeIn('500', function(){
