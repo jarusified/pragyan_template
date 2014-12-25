@@ -1,14 +1,10 @@
 @font-face{
-  font-family: Voyager;
-  src: url('../fonts/voyager.ttf');
-}
-@font-face{
-  font-family: Geosans;
-  src: url('../fonts/Geosans.ttf');  
+  font-family: Petita;
+  src: url('../fonts/Petita.ttf');  
 }
 @font-face{
   font-family: Prime;
-  src: url('../fonts/Prime_light.otf');  
+  src: url('../fonts/Prime.otf');  
 }
 html,body{
   padding:0;
@@ -16,6 +12,8 @@ html,body{
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-family: Petita;
+  font-size: 16px;
 }
 #bg{
   z-index: 1;
@@ -34,16 +32,29 @@ html,body{
     -ms-filter:blur(1px);
     filter: blur(1px);
 }
+.breadcrumb{
+  position: fixed;
+  width: auto;
+  height: 100px;
+  top: 25px;
+  left: 60px;
+  padding-top: 5px;
+  font-weight: bold;
+  font-family: Prime;
+  font-size: 12px;
+  vertical-align: sub;
+  z-index: 5;
+}
 #cluster{
   z-index: 2;
-  position: absolute;
-  width: 70%;
-  height: 50%;
+  position: fixed;
+  width: 75%;
   padding: 5px 10px;
-  left: 50%;
-  margin-left: -35%;
+  height: 450px;
   opacity: 1; 
-  top:20%;
+  margin-top: -125px;
+  top:40%;
+  left:15%;
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
   white-space: nowrap;
   -webkit-transition: all 0.5s ease-out;
@@ -66,11 +77,12 @@ html,body{
 }
 .cluster-content{
   position: fixed;
-  top:40%;
+  margin-bottom: 125px;  
+  bottom:0%;
   left:50%;
   width:30%;
   height: 30%;
-  font-family: Geosans;
+  font-family: Petita;
   font-size: 15px;
   color:#fff;
   white-space: normal;
@@ -83,12 +95,10 @@ html,body{
   overflow: hidden;
   width: 250px;
   height: 40px;
+  font-size: bolder;
   z-index: 4;
   white-space: nowrap;
   margin-bottom: 5px;
-  font-family:  Geosans;
-  font-size: 15px;
-  font-weight: bolder;
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
@@ -202,14 +212,16 @@ html,body{
 .image{
   position: fixed;
   display: none;
-  top: 20%;
+  top: 45%;
+  margin-top: -125px;
   left: 60%;
 }
 .image-main{
   position: fixed;
   display: block;
   left: 60%;
-  top:20%
+  top:45%;
+  margin-top:-125px;  
 }
 .highlight{
    background-color: #DCEAF5;
@@ -250,11 +262,11 @@ html,body{
 
 #logo{
   position: fixed;
-  right:0;
-  z-index: 2;
+  z-index: 4;
   height: auto;
-  right:1%;
-  top: 1%;
+  left:50%;
+  top: 2%;
+  margin-left: -100px;
   width: 200px;
   display: block;
 }
@@ -363,6 +375,19 @@ html,body{
 #toggle button span {
   display: block;
 }
+
+.close{
+  position: fixed;
+  display: none;
+  width: 70px;
+  top: 24px;
+  left: 23px;
+}
+.close img{
+  width: 18px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
 .lines-button {
   padding: 2rem 1rem;
   transition: .3s;
@@ -415,4 +440,174 @@ html,body{
 }
 .lines-button:hover .lines:after {
   top: -.64rem;
+}
+
+/*sponsors slider*/
+
+.sponsor-slider{
+  z-index: 4;
+  position: fixed;
+  width: 150px;
+  top: 5px;
+  right: 0%;
+}
+.sponsor-slider div{
+  width: 100%;
+  font-size: 14px;
+  font-family: Prime;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+#slideshow { 
+    position: relative; 
+    width: 150px; 
+    height: auto; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+#slideshow > div { 
+    position: absolute; 
+}
+#slideshow img{
+  border-radius: 3%;
+}
+
+/* social icons */
+#social{
+  position: fixed;
+  bottom: 30px;
+  left: 0px;
+  z-index: 4;
+  width: 160px;
+  padding: 0 60px;
+}
+.social-icons{
+  position: relative;
+  height: 40px;
+  width: 40px;   
+  float: left;
+}
+.social-icons img{
+  position: absolute;
+  width: 40px;
+  cursor: pointer;
+  border-radius: 17px;
+}
+.social-plugin{
+  position: fixed;
+  bottom: 0px;
+  left: 7px;
+  z-index: 4;
+  width: 160px;
+  padding: 0px 60px;
+}
+.icon-normal, .social-icons:hover .icon-normal, .action-button:hover .icon-normal{
+  visibility: hidden;
+}
+.icon-glow, .social-icons:hover .icon-glow, .action-button:hover .icon-glow{
+  visibility: visible;
+}
+
+/* css3 animations */
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.fadeInDown {
+  display: inline-block;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.fadeOut {
+  -webkit-transform: translate3d(0, -25%, 0);
+  transform: translate3d(0, -25%, 0);
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@-webkit-keyframes slideOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+.slideIn, .slideOut {
+  display: block !important;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.slideIn{
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+.slideOut {
+  -webkit-animation-name: slideOut;
+  animation-name: slideOut;
 }
