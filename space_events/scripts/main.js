@@ -34,8 +34,43 @@
 	};
 	var index=[0,1,2,3,4,5,6,7];
 	var search=false,mobile=false;
-	
-	window.onload=function(){
+
+	$(document).ready(function(){
+
+		var isMobile = {
+		    Android: function() {
+		        return /Android/i.test(navigator.userAgent);
+		    },
+		    BlackBerry: function() {
+		        return /BlackBerry/i.test(navigator.userAgent);
+		    },
+		    iOS: function() {
+		        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+		    },
+		    Windows: function() {
+		        return /IEMobile/i.test(navigator.userAgent);
+		    },
+		    any: function() {
+		        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+		    }
+		};
+		
+		$("#bg-music").prop("volume", 0.1);
+		$('#escape-music').prop("volume", 0.1);
+
+		window.onload = function(){
+			$("#bg-music")[0].play();
+			if(isMobile['any']()==true){
+				mobile = true;
+				$("#bg-music").remove();
+			}
+		}
+
+		if(isMobile['any']()==true){
+			mobile = true;
+			$("#escape-music")[0].remove();
+			$(".menu-sound").remove();
+		}
 
 		document.addEventListener('keydown',onkeydown,false);
 			
@@ -95,6 +130,7 @@
 			for(var i=0;i<length;i++){
 				sub_menu[i]='sub-'+(i+1);
 			}
+			sub_index=[];
 			for(var i=0;i<sub_menu.length;i++){
 				sub_index[i]=i;
 			}
@@ -163,7 +199,7 @@
 		});
 
 
-	}
+	});
 
 	function back(){
 		menuOpen=false;
