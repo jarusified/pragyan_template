@@ -419,6 +419,32 @@ html,body{
 .lines-button:hover .lines:after {
   top: -.64rem;
 }
-.sub-1{
-  color:#1B3A53;
+
+.sponsor-slider{
+  z-index: 4;
+  position: fixed;
+  width: 150px;
+  top: 5px;
+  right: 0%;
+}
+.sponsor-slider div{
+  width: 100%;
+  font-size: 14px;
+  font-family: Prime;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+#slideshow { 
+    position: relative; 
+    width: 150px; 
+    height: auto; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+#slideshow > div { 
+    position: absolute; 
+}
+#slideshow img{
+  border-radius: 3%;
 }
