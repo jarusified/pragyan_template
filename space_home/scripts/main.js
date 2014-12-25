@@ -84,14 +84,23 @@
 		document.addEventListener('keydown',onkeydown,false);
 
 		$("#slideshow > div:gt(0)").hide();
-		setInterval(function() { 
-		  $('#slideshow > div:first')
-		    .fadeOut(800)
-		    .next()
-		    .fadeIn(800)
-		    .end()
-		    .appendTo('#slideshow');
-		},  2000);
+		if($('.sponsor-slider').css('display') == 'block')
+			setInterval(function() { 
+		  		$('#slideshow > div:first')
+		    	.fadeOut(800)
+			    .next()
+			    .fadeIn(800)
+			    .end()
+			    .appendTo('#slideshow');
+			},  2000);
+
+		function ticker() {
+		    $('#ticker li:first').slideUp(function() {
+		        $(this).appendTo($('#ticker')).slideDown();
+		    });
+		}
+		if($('.ticker').css('display') == 'block')
+			setInterval(function(){ ticker(); }, 4000);
 
 		$('.section').hover(function(){
 			$('.section').removeClass('hover');

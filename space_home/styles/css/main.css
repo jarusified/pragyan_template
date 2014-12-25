@@ -570,7 +570,20 @@ a:hover{
   margin-right: 5px;
   vertical-align: bottom;
 }
-
+.search-trigger{
+  position: fixed;
+  text-transform: uppercase;
+  font-family: Prime;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+  top: 30px;
+  left: 200px;
+  cursor: pointer;
+}
+.search-trigger:hover{
+  color: white;
+}
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -799,4 +812,36 @@ a:hover{
 }
 :-ms-input-placeholder{
   color: gray;
+}
+
+.ticker {
+  position: fixed;
+  top: 85px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  height: 30px;
+  font-size: 15px;
+  font-family: Petita;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: inset 0px 0px 3px 0px black;
+  background: url('../../../media/icons/texture.png');
+  text-align: left;
+  z-index: 3;
+}
+.ticker h3 {
+  padding: 0 0 10px 10px;
+}
+.ticker ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ticker ul li {
+ list-style: none;
+  height:50px;
+  padding:7px;
+  text-align: center;
 }
