@@ -67,7 +67,7 @@ a:hover{
   position: fixed;
   width: 100%;
   margin-top: -125px;
-  top: 50%;
+  top: 53%;
   padding: 5px 10px;
   opacity: 1; 
   height: 270px;
@@ -172,11 +172,11 @@ a:hover{
   position: fixed;
   text-align: center;
   top: 4px;
-  left: -16px;
+  left: -14px;
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 50%;
-  color: #010202;
+  color: #38383B;
 
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
@@ -266,7 +266,7 @@ a:hover{
   z-index: 2;
   position: fixed;
   width: 100%;
-  top: 58%;
+  top: 59%;
   height: 130px;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -360,17 +360,9 @@ a:hover{
   transform: scale(1.1); 
 }*/
 #controls{
-  position: fixed;
-  z-index: 5;
-  top: 50%;
-  right: 0%;
-  width: 100px;
-  text-align: center;
-  cursor: pointer;
-  height: auto;
-  font-family: Petita;
-  font-size: 18px;
-  color: white;
+  bottom: 10px;
+  left: 50%;
+  width: 150px;
 }
 #logo{
   position: fixed;
@@ -551,7 +543,7 @@ a:hover{
   position: fixed;
   display: none;
   width: 70px;
-  top: 24px;
+  top: 15px;
   left: 23px;
 }
 .close img{
@@ -691,10 +683,10 @@ a:hover{
 
 .action-menu{
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 60px;
-  height: 60px;
+  bottom: 25px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
   z-index: 3;
 }
 .action-button{
@@ -793,6 +785,9 @@ a:hover{
   left: 50%;
   margin-left: -330px;
 }
+.search-trigger{
+  top: 20px;
+}
 
 @media(max-width: 900px){
   .ticker {
@@ -800,9 +795,12 @@ a:hover{
     font-size: 12px;
     margin-left: -260px;
   }
+  #controls-guide-trigger{
+    display: none;  
+  }
 }
 @media(max-width: 700px){
-  .ticker {
+  .ticker{
     display: none;  
   }
 }

@@ -31,6 +31,13 @@ a:hover{
   color: #D3EBFE;
   text-decoration: underline;
 }
+h1, h2, h3{
+  font-family: Prime;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h3{
+}
 #bg{
   z-index: 1;
   width: 100%;
@@ -173,11 +180,11 @@ a:hover{
   position: fixed;
   text-align: center;
   top: 4px;
-  left: -16px;
+  left: -14px;
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 50%;
-  color: #010202;
+  color: #38383B;
 
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
@@ -232,6 +239,16 @@ a:hover{
 }
 .section:hover .icon-glow, .social-icons:hover .icon-glow, .action-button:hover .icon-glow{
   visibility: visible;
+}
+
+.action-button img{
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+}
+.action-button:hover p{
+  color: white;
+}
+.action-button:hover img{
+  -webkit-transform: rotateZ(90deg);
 }
 
 #social{
@@ -361,15 +378,73 @@ a:hover{
 #controls{
   position: fixed;
   z-index: 5;
-  top: 50%;
-  right: 0%;
-  width: 100px;
+  bottom: 10px;
+  left: 50%;
+  width: 150px;
+  margin-left: -50px;
   text-align: center;
-  cursor: pointer;
   height: auto;
-  font-family: Petita;
-  font-size: 18px;
-  color: white;
+  font-family: Prime;
+  color: #A0DDFF;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 5px;
+}
+#controls-guide-trigger{
+  font-family: Prime;
+  font-size: 13px; 
+  letter-spacing: 1px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+#controls-guide{
+  position: fixed;
+  z-index: 5;
+  bottom: 0px;
+  left: 50%;
+  width: 400px;
+  height: 280px;
+  margin-left: -200px;
+  background-color: #000204;
+  border: 2px solid #224F60;
+  box-shadow: 0px 0px 10px 6px black;
+  border-bottom: none;
+  border-radius: 2px;
+  -webkit-transform: translateY(400px);
+  -moz-transform: translateY(400px);
+  -o-transform: translateY(400px);
+  -ms-transform: translateY(400px);
+  transform: translateY(400px);
+ -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  -moz-transition: -moz-transform 0.8s ease-out;
+  -o-transition: -o-transform 0.8s ease-out;
+  -ms-transition: -ms-transform 0.8s ease-out;
+  transition: transform 0.8s ease-in-out;
+}
+#controls-guide img{
+  width: 30px;
+}
+.controls-icon{
+  width: 180px;
+  height: 30px;
+  margin: 0 10px; 
+  text-align: right;
+}
+.controls-icon img{
+  padding: 0 15px; 
+}
+.controls-text{
+  width: 180px;
+  text-align: left;
+  height: 30px;
+  margin: 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.controls-icon, .controls-text{
+  position: relative;
+  float: left;
 }
 #logo{
   position: fixed;
@@ -398,9 +473,9 @@ a:hover{
   background-color: #010710;
   color: #92CCFC;
  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -ms-transition:all 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
   transition: opacity 0.5s ease-out;
 }
 .sub-menu-inner{
@@ -717,10 +792,10 @@ a:hover{
 
 .action-menu{
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 80px;
-  height: 80px;
+  bottom: 25px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
   z-index: 3;
 }
 .action-button{
@@ -728,6 +803,7 @@ a:hover{
   height: 50px;
   width: 50px;   
   float: left;
+  color: #92CCFC;
 }
 .action-menu img{
   width: 50px;
@@ -739,7 +815,7 @@ a:hover{
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
   z-index: 10;
   display: none;
 }
