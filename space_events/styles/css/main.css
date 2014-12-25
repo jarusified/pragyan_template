@@ -36,14 +36,14 @@ html,body{
 }
 #cluster{
   z-index: 2;
-  position: absolute;
-  width: 70%;
-  height: 50%;
+  position: fixed;
+  width: 75%;
   padding: 5px 10px;
-  left: 50%;
-  margin-left: -35%;
+  height: 450px;
   opacity: 1; 
-  top:20%;
+  margin-top: -125px;
+  top:40%;
+  left:15%;
   box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
   white-space: nowrap;
   -webkit-transition: all 0.5s ease-out;
@@ -66,7 +66,8 @@ html,body{
 }
 .cluster-content{
   position: fixed;
-  top:40%;
+  margin-bottom: 125px;  
+  bottom:0%;
   left:50%;
   width:30%;
   height: 30%;
@@ -202,14 +203,16 @@ html,body{
 .image{
   position: fixed;
   display: none;
-  top: 20%;
+  top: 45%;
+  margin-top: -125px;
   left: 60%;
 }
 .image-main{
   position: fixed;
   display: block;
   left: 60%;
-  top:20%
+  top:45%;
+  margin-top:-125px;  
 }
 .highlight{
    background-color: #DCEAF5;
@@ -250,11 +253,11 @@ html,body{
 
 #logo{
   position: fixed;
-  right:0;
-  z-index: 2;
+  z-index: 4;
   height: auto;
-  right:1%;
-  top: 1%;
+  left:50%;
+  top: 2%;
+  margin-left: -100px;
   width: 200px;
   display: block;
 }
@@ -415,4 +418,7 @@ html,body{
 }
 .lines-button:hover .lines:after {
   top: -.64rem;
+}
+.sub-1{
+  color:#1B3A53;
 }
