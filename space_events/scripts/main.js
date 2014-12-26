@@ -223,6 +223,24 @@
 			$('.image').css("display","none");
 			$('.icon-glow').css("visibility","hidden");
 		});
+
+		$(document).on('keydown.back',function(event){
+			if(event.which == 13){
+				control=true;
+				$('.sub-cluster-section').removeClass('highlight');
+				$('.cluster-section').first().addClass('highlight');
+				$('.cluster-section').css({"width":"250px"});
+				$('.inner').css({"width":"100%","opacity":"1"});
+				$('.outer').css({"opacity":"0","left":"18%"});
+				$('.cluster-section p').css("opacity","1");
+				$('.cluster-content').css("display","none");
+				$('.sub-cluster-menu').css({"opacity":"0","width":"25%"});
+				$('.image-main').css("display","block");
+				$('.image').css("display","none");
+				$('.icon-glow').css("visibility","hidden");
+			}	
+		});
+		
 	});
 
 	function toggleUp(arr,index,count){
@@ -453,6 +471,7 @@
 
 				if(event.keyCode == 72)
 					openHelp();
+
 		  	}	
 		  	else{
 		  		if(event.keyCode == 27)
