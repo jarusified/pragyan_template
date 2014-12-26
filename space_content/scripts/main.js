@@ -98,7 +98,6 @@
 		};
 		
 		$("#bg-music").prop("volume", 0.1);
-		$('#escape-music').prop("volume", 0.1);
 		
 		window.onload = function(){
 			$("#bg-music")[0].play();
@@ -110,7 +109,6 @@
 
 		if(isMobile['any']()==true){
 			mobile = true;
-			$("#escape-music")[0].remove();
 			$(".menu-sound").remove();
 		}
 
@@ -219,10 +217,7 @@
 		divide = false;
 
 		$('.cluster-section').removeClass('cluster-hover');
-		
-		if(mobile == false)
-			$('#escape-music')[0].play();		
-		
+				
 		for(var i=0;i<5;i++){
 			$('[id='+mapper[i]+']').css({"opacity":"0", 'display': 'none'});
 			$('[id='+mapper[i]+']').removeClass('fadeInDown fadeOut').addClass('fadeOut');
@@ -353,8 +348,6 @@
 		$('#menu').css("opacity","1.0");
 		divide = false;
 
-		if(mobile == false)
-			$('#escape-music')[0].play();
 		$('.cluster-section').removeClass('cluster-hover');
 		
 		for(var i=0;i<5;i++){
@@ -405,18 +398,6 @@
 			$('#bg-music')[0].muted = false;
 	  }
 	  else if(keyCode == 69){
-        if($('#escape-music')[0].muted == false){
-			$('#escape-music')[0].muted = true;
-			$('.menu-sound').each(function(){
-				$(this)[0].muted = true;
-			});
-        }
-		else{
-			$('#escape-music')[0].muted = false;
-			$('.menu-sound').each(function(){
-				$(this)[0].muted = false;
-			});
-		}
 	  }
 	}
 

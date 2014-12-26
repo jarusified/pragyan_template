@@ -129,9 +129,9 @@ h3{
   margin-left: -48%;
   padding: 10px;
   z-index: 3;
-  box-shadow: inset 0px 0px 10px 10px black; 
+  box-shadow: inset 0px 0px 10px 5px black; 
   border: 1px solid #010C15;
-  background-color: #000205;
+  background-color: rgba(5, 27, 46, 0.3);
 }
 
 #social{
@@ -184,6 +184,7 @@ h3{
   letter-spacing: 1px;
   font-weight: bolder;
   cursor: pointer;
+  width: 200px; 
 }
 #controls-guide-trigger:hover{
   color: white;

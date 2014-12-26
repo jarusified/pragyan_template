@@ -572,7 +572,12 @@ a:hover{
 #content{
   width: 90%;
   height: 70%;
-  top: 90px;
+  top: 70px;
+  margin-left: -46%;
+}
+
+.action-menu{
+  bottom: 15px;
 }
 
 @media(max-width: 900px){
@@ -587,11 +592,20 @@ a:hover{
   .credits{
     display: none;
   }
+  #content{
+    margin-left: -48%;
+  }
 }
 @media(max-width: 700px){
   .ticker{
     display: none;  
   }
+  .social-plugin{
+    display: none;
+  }
+  #social{
+    display: none;
+  }  
 }
 @media(max-width: 350px){
   #content{
