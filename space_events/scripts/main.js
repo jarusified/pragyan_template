@@ -35,8 +35,26 @@
 	var index=[0,1,2,3,4,5,6,7];
 	var search=false,mobile=false,control=true;
 
+	
 	$(document).ready(function(){
+		//var pathname = window.location.pathname,
+		var pathname = "/14/home/events/",
+			patharr  = pathname.split('/'),
+			pathlen  = patharr.length;
 
+		if(patharr[pathlen-1]=="" && patharr[pathlen-2]=="events"){
+			console.log('ds');
+		}
+		else if(patharr[pathlen-3]=="events"){
+			menu=state_define[patharr[pathlen-2]];
+			index=index_define[patharr[pathlen-2]];
+			level=true;
+			sub_index=[];
+			sub_menu=toggleRight(index[0]);
+			for(var i=0;i<sub_menu.length;i++){
+				sub_index[i]=i;
+			}
+		}
 		var isMobile = {
 		    Android: function() {
 		        return /Android/i.test(navigator.userAgent);
@@ -294,6 +312,7 @@
 		menu1=[];
 		outer  =$('#'+section1+'.outer');
 		inner  =$('#'+section1+'.inner');
+		console.log(inner);
 		$('.sub-cluster-menu').css("opacity","0");
 		$('.image').css("display","none");
 		$('.cluster-section').removeClass('highlight');
