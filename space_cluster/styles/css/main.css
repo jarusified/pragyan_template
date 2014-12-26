@@ -105,7 +105,7 @@ a:hover{
 .cluster-section{
   float: top;
   overflow: hidden;
-  width: 250px;
+  width: 400px;
   height: 40px;
   font-weight: bolder;
   z-index: 4;
@@ -215,13 +215,6 @@ a:hover{
   position: relative;
   height: 0px;
   left:25%;
-}
-.boom{
-  position: relative;
-  width: 10%;
-  height:40px;
-  color:transparent;
-  box-shadow: none;
 }
 .image{
   position: fixed;
@@ -725,6 +718,33 @@ a:hover{
   position: absolute;
 }
 
+.close{
+  position: fixed;
+  display: none;
+  width: 70px;
+  top: 24px;
+  left: 23px;
+}
+.close img{
+  width: 18px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+.search-trigger{
+  position: fixed;
+  text-transform: uppercase;
+  font-family: Prime;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+  top: 30px;
+  left: 200px;
+  cursor: pointer;
+}
+.search-trigger:hover{
+  color: white;
+}
+
 #search-overlay{
   position: fixed;
   width: 100%;
@@ -732,6 +752,17 @@ a:hover{
   background: rgba(0,0,0,0.9);
   z-index: 10;
   display: none;
+}
+.search-close{
+  position: fixed;
+  top: 40px;
+  margin-left: 5%;
+  cursor: pointer;
+}
+.search-close img{
+  width: 20px;
+  vertical-align: -5px;
+  margin-right: 5px;
 }
 #search-box{
   position: relative;
@@ -763,7 +794,7 @@ a:hover{
   width: 80%;
   margin-left: 10%;
   margin-top: 10px;
-  height: 60%;
+  height: 70%;
   overflow-x: hidden; 
   overflow-y: auto; 
 }
@@ -790,19 +821,18 @@ a:hover{
   color: black;
   text-decoration: none;
 }
-.search-trigger{
-  position: fixed;
-  text-transform: uppercase;
-  font-family: Prime;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 1px;
-  top: 30px;
-  left: 200px;
-  cursor: pointer;
+
+::-webkit-input-placeholder{
+  color: gray;
 }
-.search-trigger:hover{
-  color: white;
+::-moz-input-placeholder{
+  color: gray;
+}
+:-moz-input-placeholder{
+  color: gray;
+}
+:-ms-input-placeholder{
+  color: gray;
 }
 
 /*credits */
@@ -847,4 +877,27 @@ a:hover{
   height:50px;
   padding:7px;
   text-align: center;
+}
+
+.hover .icon-normal, .hover1 .icon-normal{
+  display: none;
+  visibility: hidden;
+}
+.hover .icon-glow, .hover1 .icon-glow{
+  visibility: visible;
+}
+.section:hover .icon-normal, .social-icons:hover .icon-normal, .action-button:hover .icon-normal{
+  visibility: hidden;
+}
+.section:hover .icon-glow, .social-icons:hover .icon-glow, .action-button:hover .icon-glow{
+  visibility: visible;
+}
+.action-button img{
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+}
+.action-button:hover p{
+  color: #92CCFC;
+}
+.action-button:hover img{
+  -webkit-transform: rotateZ(90deg);
 }

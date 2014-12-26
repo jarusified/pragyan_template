@@ -150,20 +150,10 @@
 		})
 		
 		$('#toggle').click(function(){
-			if(menuOpen){
-				$('#toggle button').show();
-				$('.breadcrumb').show();
-				$('#toggle .close').hide();
-				$('#sub-menu').removeClass('slideIn slideOut').addClass('slideOut');
-				menuOpen=false;
-			}
-			else{
-				$('#toggle button').hide();
-				$('.breadcrumb').hide();
-				$('#toggle .close').show();
-				$("#sub-menu").removeClass('slideIn slideOut').addClass('slideIn');
-				menuOpen=true;
-			}
+			if(menuOpen) 
+				closeMenu();
+			else 
+				openMenu();
 		});
 
 		function ticker() {
@@ -173,7 +163,24 @@
 		}
 		if($('.ticker').css('display') == 'block')
 			setInterval(function(){ ticker(); }, 4000);
-	
+		
+		$('.action-button').bind('click',function(){
+            openLogin();
+		});
+
+		$('.search-trigger').bind('click',function(){
+            openSearch();
+		});
+		$('.search-close').bind('click',function(){
+            closeSearch();
+		});
+
+		$('#controls-guide-trigger').bind('click',function(){
+			openHelp();
+		});
+		$('#controls-close').bind('click',function(){
+			closeHelp();
+        });
 
 		$('.search-trigger').bind('click',function(){
             $('#search-box input').css('color', 'black');
@@ -307,71 +314,149 @@
 		press=false;
 	}
 
+	function changeURL(){
+		var id = menu[0];
+		$('.cluster-hover').each(function(){
+			if(this.id.indexOf(id)!=-1 && $(this).children('a').length!=0)
+				window.location.href = $(this).find('a')[0].href;
+		});
+	}
+	
+		/*Menu*/
+	function openMenu(){
+		$('#toggle button').hide();
+		$('.breadcrumb').hide();
+		$('#toggle .close').show();
+		$("#sub-menu").removeClass('slideIn slideOut').addClass('slideIn');
+		menuOpen=true;
+	}
+	function closeMenu(){
+		$('#toggle button').show();
+		$('.breadcrumb').show();
+		$('#toggle .close').hide();
+		$('#sub-menu').removeClass('slideIn slideOut').addClass('slideOut');
+		menuOpen=false;	
+	}
+
+	/*Search*/
+	function openSearch(){
+		console.log('df');
+		$('#search-box input').css('color', 'black');	
+		$('#search-overlay').fadeIn('500', function(){
+			$('#search-box input').val('');
+			$('#search-box input').css('color', '#92CCFC');
+      	});
+	    search = true;
+	}
+	function closeSearch(){
+		$('#search-overlay').fadeOut('300');
+		search = false;
+	}
+
+	/*Sounds*/
+	function muteSounds(keyCode){	
+	  if(keyCode == 77){	
+		if($('#bg-music')[0].muted == false)
+			$('#bg-music')[0].muted = true;
+		else
+			$('#bg-music')[0].muted = false;
+	  }
+	  else if(keyCode == 69){
+        if($('#escape-music')[0].muted == false){
+			$('#escape-music')[0].muted = true;
+			$('.menu-sound').each(function(){
+				$(this)[0].muted = true;
+			});
+        }
+		else{
+			$('#escape-music')[0].muted = false;
+			$('.menu-sound').each(function(){
+				$(this)[0].muted = false;
+			});
+		}
+	  }
+	}
+
+	/*Help*/
+	function openHelp(){
+		$('#controls-guide').css('-webkit-transform', 'translateY(0px)');
+		$('#controls-guide').css('-moz-transform', 'translateY(0px)');
+		$('#controls-guide').css('-o-transform', 'translateY(0px)');
+		$('#controls-guide').css('-ms-transform', 'translateY(0px)');
+		$('#controls-guide').css('transform', 'translateY(0px)');
+	}
+	function closeHelp(){		
+        $('#controls-guide').css('-webkit-transform', 'translateY(400px)');
+		$('#controls-guide').css('-moz-transform', 'translateY(400px)');
+		$('#controls-guide').css('-o-transform', 'translateY(400px)');
+		$('#controls-guide').css('-ms-transform', 'translateY(400px)');
+		$('#controls-guide').css('transform', 'translateY(400px)');
+	}
+
 	function onkeydown(event){
 		if(!press){
-			if(event.keyCode==37){
-				press=true;
-				level=false;
-				control=true;
-				menu=state_define[menu[0]];
-				index=index_define[menu[0]];
-				toggleleft();
-			}
-			else if(event.keyCode==40){
-				press=true;
-				if(!level){
-					menu=toggleDown(menu,index,1);
-					down(menu);
+			if(search==false){
+				if(event.keyCode==65)
+					openMenu();
+
+				if(event.keyCode==76)
+					openLogin();
+
+				if(event.keyCode==37){
+					press=true;
+					level=false;
+					control=true;
+					menu=state_define[menu[0]];
+					index=index_define[menu[0]];
+					toggleleft();
 				}
-				else{
-					sub_menu=toggleDown(sub_menu,sub_index,1);
-					down_sub(sub_menu);
+				else if(event.keyCode==40){
+					press=true;
+					if(!level){
+						menu=toggleDown(menu,index,1);
+						down(menu);
+					}
+					else{
+						sub_menu=toggleDown(sub_menu,sub_index,1);
+						down_sub(sub_menu);
+					}
 				}
-			}
-			else if(event.keyCode==39 && control){
-				press=true;
-				level=true;
-				sub_index=[];
-				sub_menu=toggleRight(index[0]);
-				for(var i=0;i<sub_menu.length;i++){
-					sub_index[i]=i;
+				else if(event.keyCode==39 && control){
+					press=true;
+					level=true;
+					sub_index=[];
+					sub_menu=toggleRight(index[0]);
+					for(var i=0;i<sub_menu.length;i++){
+						sub_index[i]=i;
+					}
+				}	
+				else if(event.keyCode==38){
+					press=true;
+					if(!level){
+						menu=toggleUp(menu,index,1);
+						up(menu);
+					}
+					else{
+						sub_menu=toggleUp(sub_menu,sub_index,1);
+						down_sub(sub_menu);
+					}
 				}
-	
-			}	
-			else if(event.keyCode==38){
-				press=true;
-				if(!level){
-					menu=toggleUp(menu,index,1);
-					up(menu);
+				else if(event.keyCode==66 || event.keyCode==27){
+					press=true;
+					level=false;
 				}
-				else{
-					sub_menu=toggleUp(sub_menu,sub_index,1);
-					down_sub(sub_menu);
-				}
-			}
-			else if(event.keyCode==66 || event.keyCode==27){
-				press=true;
-				level=false;
-			}
-			if(event.keyCode == 83){
-	          $('#search-box input').css('color', 'black');	
-	          $('#search-overlay').fadeIn('500', function(){
-		        $('#search-box input').val('');
-	            $('#search-box input').css('color', '#92CCFC');
-		      });
-		      search = true;
-		    }
-		    else{
-		    	if(event.keyCode == 27){
-		      		$('#search-overlay').fadeOut('300');
-		      		search = false;
-		  		}
-		    }
-		    if(event.keyCode == 77){
-		  		if($('#bg-music')[0].muted == false)
-		  			$('#bg-music')[0].muted = true;
-		  		else
-		  			$('#bg-music')[0].muted = false;
+				if(event.keyCode == 83)
+	        		openSearch();
+
+				if(event.keyCode == 77 || event.keyCode == 69)
+					muteSounds(event.keyCode);
+
+				if(event.keyCode == 72)
+					openHelp();
+		  	}	
+		  	else{
+		  		if(event.keyCode == 27)
+		  			closeSearch();
 		  	}
 		}
 	}
