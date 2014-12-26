@@ -87,8 +87,6 @@
 			},  2000);
 
 
-		$('#sub-cluster-menu').children().first().addClass('highlight');
-
 		$('.cluster-section').hover(function(){
 			var item=$(this).parent().attr('id');
 			menu=state_define[item];
@@ -114,7 +112,8 @@
 			var inner  =$('#'+section+'.inner');
 			$('.sub-cluster-menu').css("opacity","0");
 			$('.image').css("display","none");
-			$('.cluster-section').removeClass('highlight');
+			$(inner).children('.cluster-section').addClass('highlight');
+			//('.cluster-section').removeClass('highlight');
 			$('.icon-glow').css("visibility","hidden");
 			$('.cluster-content').removeClass('highlight');
 			$('.icon-glow').removeClass('highlight');
@@ -133,6 +132,8 @@
 			$('.image-main').css("display","none");
 			$('.cluster-content').css("display","none");
 			$(this).siblings('.cluster-content').css("display","block");
+			$('.cluster-section').removeClass('selected');
+			$(inner).children('.cluster-section').addClass('selected');
 			menu1=[];
 			level=true;
 			var length= $(outer).children('.sub-cluster-menu').children().length;
@@ -311,6 +312,8 @@
 		$('.image-main').css("display","none");
 		$('.cluster-content').css("display","none");
 		$(inner).children('.cluster-content').css("display","block");
+		$('.cluster-section').removeClass('selected')
+		$(inner).children('.cluster-section').addClass('selected');
 		var length= $(outer).children('.sub-cluster-menu').children().length;
 		var id=$(outer).children('.sub-cluster-menu').children('.sub').attr('class');
 		for(var i=0;i<length;i++){
@@ -332,6 +335,7 @@
 		$('.icon-glow').css("visibility","hidden");
 		$('.sub-cluster-section').removeClass('highlight');
 		press=false;
+		return menu;
 	}
 
 	function changeURL(){
@@ -436,15 +440,14 @@
 					level=false;
 					control=true;
 					toggleleft();
-					menu=state_define[cluster];
-					index=index_define[cluster];
-					console.log(cluster);
+					selected=$('.selected').parent().attr('id');
 				}
+
 				else if(event.keyCode==40){
 					press=true;
 					if(!level){
 						menu=toggleDown(menu,index,1);
-						console.log(menu[0]);
+						console.log(menu);
 						down(menu);
 					}
 					else{
@@ -461,8 +464,7 @@
 						sub_index[i]=i;
 					}
 					cluster=mapper[index[0]];
-					menu=state_define[mapper[index[0]]];
-					index=state_define[mapper[index[0]]];
+					
 
 				}	
 				else if(event.keyCode==38){

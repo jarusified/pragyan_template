@@ -221,7 +221,7 @@ a:hover{
   background-color: #010B14;
   background: url('../../../media/icons/texture.png');
 }
-.highlight{
+.highlight,.selected{
   background-color: #DCEAF5;
   color: #1B3A53;
   box-shadow:  0px 6px 12px -10px #DCEAF5;
