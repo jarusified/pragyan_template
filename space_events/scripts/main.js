@@ -11,7 +11,7 @@
 		"outofbox":["outofbox", "robovigyan", "codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape"],
 		"robovigyan":["robovigyan", "codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape", "outofbox"]
 	};
-	var clicked="";
+	var cluster="";
 	var sub_menu=[];
 	var mapper={
 		0:"codeit",
@@ -106,7 +106,7 @@
 
 		$('.cluster-section').bind('click',function(){
 			control=false;
-			var item=$(this).parent().attr('id');
+			var item=cluster=$(this).parent().attr('id');
 			menu=state_define[item];
 			index=index_define[item];
 			var section=$(this).parent().attr('id');
@@ -211,6 +211,7 @@
 
 		$('.back').bind('click',function(){
 			control=true;
+			level=false;
 			$('.sub-cluster-section').removeClass('highlight');
 			$('.cluster-section').first().addClass('highlight');
 			$('.cluster-section').css({"width":"250px"});
@@ -227,6 +228,7 @@
 		$(document).on('keydown.back',function(event){
 			if(event.which == 13){
 				control=true;
+				level=false;
 				$('.sub-cluster-section').removeClass('highlight');
 				$('.cluster-section').first().addClass('highlight');
 				$('.cluster-section').css({"width":"250px"});
@@ -240,7 +242,7 @@
 				$('.icon-glow').css("visibility","hidden");
 			}	
 		});
-		
+
 	});
 
 	function toggleUp(arr,index,count){
@@ -347,6 +349,7 @@
 		$('#toggle .close').show();
 		$("#sub-menu").removeClass('slideIn slideOut').addClass('slideIn');
 		menuOpen=true;
+		press=false;
 	}
 	function closeMenu(){
 		$('#toggle button').show();
@@ -354,6 +357,7 @@
 		$('#toggle .close').hide();
 		$('#sub-menu').removeClass('slideIn slideOut').addClass('slideOut');
 		menuOpen=false;	
+		press=false;
 	}
 
 	/*Search*/
@@ -364,10 +368,12 @@
 			$('#search-box input').css('color', '#92CCFC');
       	});
 	    search = true;
+	    press=false
 	}
 	function closeSearch(){
 		$('#search-overlay').fadeOut('300');
 		search = false;
+		press=false;
 	}
 
 	/*Sounds*/
@@ -392,6 +398,7 @@
 			});
 		}
 	  }
+	  press=false;
 	}
 
 	/*Help*/
@@ -401,6 +408,7 @@
 		$('#controls-guide').css('-o-transform', 'translateY(0px)');
 		$('#controls-guide').css('-ms-transform', 'translateY(0px)');
 		$('#controls-guide').css('transform', 'translateY(0px)');
+		press=false;
 	}
 	function closeHelp(){		
         $('#controls-guide').css('-webkit-transform', 'translateY(400px)');
@@ -408,30 +416,35 @@
 		$('#controls-guide').css('-o-transform', 'translateY(400px)');
 		$('#controls-guide').css('-ms-transform', 'translateY(400px)');
 		$('#controls-guide').css('transform', 'translateY(400px)');
+		press=false;
 	}
 
 	function onkeydown(event){
 		if(!press){
 			if(search==false){
-				if(event.keyCode==65)
+				if(event.keyCode==65){
+					press=true;
 					openMenu();
+				}
 
-				if(event.keyCode==76)
+				if(event.keyCode==76){
+					press=true;
 					openLogin();
-
-				if(event.keyCode==37){
+				}	
+				if(event.keyCode==37 && level){
 					press=true;
 					level=false;
 					control=true;
-					menu=state_define[menu[0]];
-					console.log(clicked);
-					index=index_define[menu[0]];
 					toggleleft();
+					menu=state_define[cluster];
+					index=index_define[cluster];
+					console.log(cluster);
 				}
 				else if(event.keyCode==40){
 					press=true;
 					if(!level){
 						menu=toggleDown(menu,index,1);
+						console.log(menu[0]);
 						down(menu);
 					}
 					else{
@@ -447,6 +460,10 @@
 					for(var i=0;i<sub_menu.length;i++){
 						sub_index[i]=i;
 					}
+					cluster=mapper[index[0]];
+					menu=state_define[mapper[index[0]]];
+					index=state_define[mapper[index[0]]];
+
 				}	
 				else if(event.keyCode==38){
 					press=true;
@@ -463,19 +480,25 @@
 					press=true;
 					level=false;
 				}
-				if(event.keyCode == 83)
+				if(event.keyCode == 83){
+					press=true;
 	        		openSearch();
-
-				if(event.keyCode == 77 || event.keyCode == 69)
+	        	}
+				if(event.keyCode == 77 || event.keyCode == 69){
+					press=true;
 					muteSounds(event.keyCode);
-
-				if(event.keyCode == 72)
+				}
+				if(event.keyCode == 72){
+					press=true;
 					openHelp();
 
+				}
 		  	}	
 		  	else{
-		  		if(event.keyCode == 27)
+		  		if(event.keyCode == 27){
+		  			press=true;
 		  			closeSearch();
+		  		}
 		  	}
 		}
 	}
