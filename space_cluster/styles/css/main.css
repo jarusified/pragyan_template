@@ -34,15 +34,16 @@ a:hover{
   height: 100%;
   background: url(./../../../media/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size:cover;
-    background-size: cover;
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter:blur(1px);
-    filter: blur(1px);
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size:cover;
+  background-size: cover;
+
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter:blur(0px);
+  filter: blur(0px);
 }
 .breadcrumb{
   position: fixed;
@@ -58,16 +59,17 @@ a:hover{
   z-index: 5;
 }
 #cluster{
-  z-index: 2;
+  width: 84%;
+  height: 65%;
   position: fixed;
-  width: 75%;
-  padding: 5px 10px;
-  height: 450px;
-  opacity: 1; 
-  margin-top: -125px;
-  top:40%;
-  left:15%;
-  box-shadow: inset 0px 0px 5px #68A1CE, inset 4px 0 10px #68A1CE, inset -20px 0 300px #122c36, 0 0 0px #3D4469, 0px 0 0px #122c36, 0px 0 0px #228DFF, 6px -6px 12px -7px #A0DDFF;  
+  top: 130px;
+  left: 50%;
+  margin-left: -43%;
+  padding: 10px;
+  z-index: 3;
+  box-shadow: inset 0px 0px 10px 5px black; 
+  border: 1px solid #010C15;
+  background-color: rgba(5, 27, 46, 0.3);  
   white-space: nowrap;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
@@ -103,42 +105,42 @@ a:hover{
 }
 
 .cluster-section{
-  float: top;
   overflow: hidden;
-  width: 400px;
+  width: 250px;
   height: 40px;
   font-weight: bolder;
   z-index: 4;
-  font-family: Petita;
+  font-family: Petita, Prime;
   white-space: nowrap;
-  margin-bottom: 5px;
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
-  padding-left: 3%;
   letter-spacing: 1px;
-  margin-top: 5px;
+  padding: 0 5px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: left;
   cursor: pointer;
-  color:#fff;
-  box-shadow:  inset 4px 0 10px #68A1CE, inset -20px 0 30px #122c36, 6px -6px 12px -7px #A0DDFF;  
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -ms-transition:all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  background-color: #010B14;
+  color: white;
+  box-shadow:  0px -6px 12px -10px #A0DDFF;  
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition:all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .cluster-section img{
   position: fixed;
-  width:40px;
-  height:40px; 
-  padding-right: 1%;
+  width: 36px;
+  margin-top: 2px;
+  height: 36px;
+  padding: 0 10px;
 }
 .cluster-section p{
-  position: fixed;
-  padding-left: 4%;
+  position: relative;
+  margin-left: 60px;
 }
 #codeit > .outer ,#manigma > .outer,#chillpill > .outer{
   display: none;
@@ -151,32 +153,31 @@ a:hover{
 }
 
 .sub-cluster-section{
-  left:50%;
   width: 100%;
-  height: 40px;
+  height: 30px;
   z-index: 4;
   white-space: nowrap;
-  margin-bottom: 5px;
-  font-family:  Petita;
-  font-size: 15px;
+  font-family: Petita, Prime;
+  letter-spacing: 1px;
+  font-size: 13px;
   font-weight: bolder;
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
   padding-left: 4%;
-  letter-spacing: 1px;
-  margin-top: 5px;
+  margin: 10px 0 2px 0;
   display: flex;
   align-items: center;
   justify-content: left;
   cursor: pointer;
-  color:#fff;
-  box-shadow:  inset 4px 0 10px #68A1CE, inset -20px 0 30px #122c36, 6px -6px 12px -7px #A0DDFF;  
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  -ms-transition:all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  background-color: #010B14;
+  color: white;
+  box-shadow:  0px -6px 12px -10px #A0DDFF;  
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition:all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .sub-cluster-content{
@@ -199,7 +200,6 @@ a:hover{
   width: 25%;
   height: 100%;
   color: #fff;
-  padding-left:4%; 
   left:0%;
   opacity: 0;
   -webkit-transition: all 1.0s ease-out;
@@ -210,29 +210,36 @@ a:hover{
 }
 .inner{
   position: relative;
+  width: 300px;
+  margin: 0 10px 0 18%;
 }
 .outer{
   position: relative;
   height: 0px;
-  left:25%;
+  left: 18%;
+  margin-left: 80px;
 }
-.image{
-  position: fixed;
-  display: none;
-  top: 45%;
-  margin-top: -125px;
-  left: 60%;
-}
-.image-main{
+.image-main, .image{
   position: fixed;
   display: block;
-  left: 60%;
-  top:45%;
-  margin-top:-125px;  
+  right: 20%;
+  margin-right: 50px;
+  top: 130px;
+  margin-top: 40px;
+  width: 200px;
+  border: 1px solid #010B14;
+  box-shadow: 0px 0px 10px 4px black;
+  background-color: #010B14;
+  background: url('../../../media/icons/texture.png');
 }
-.highlight{
-   background-color: #DCEAF5;
+.highlight,.selected{
+  background-color: #DCEAF5;
   color: #1B3A53;
+  box-shadow:  0px 6px 12px -10px #DCEAF5;
+  -webkit-transform: scale(1.05);
+}
+.image{
+  display: none;
 }
 
 .icon-normal{
@@ -254,7 +261,6 @@ a:hover{
 .section:hover .icon-glow{
   visibility: visible;
 }
-
 #logo{
   position: fixed;
   z-index: 4;
