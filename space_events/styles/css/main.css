@@ -33,6 +33,17 @@ a:hover{
   position: absolute;
   height: 100%;
   background: url(./../../../media/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size:cover;
+  background-size: cover;
+
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter:blur(0px);
+  filter: blur(0px);
 }
 .breadcrumb{
   position: fixed;
