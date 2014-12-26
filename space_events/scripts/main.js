@@ -2,15 +2,16 @@
 	var press =false,menuOpen=false,level=false;
 	var menu=["codeit","manigma","chillpill","amalgam","core-e","landscape","outofbox","robovigyan"];
 	var state_define={
+		"codeit":["codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape", "outofbox", "robovigyan"],
 		"manigma":["manigma", "chillpill", "amalgam", "core-e", "landscape", "outofbox", "robovigyan", "codeit"],
 		"chillpill":["chillpill", "amalgam", "core-e", "landscape", "outofbox", "robovigyan", "codeit", "manigma"],
 		"amalgam":["amalgam", "core-e", "landscape", "outofbox", "robovigyan", "codeit", "manigma", "chillpill"],
 		"core-e":["core-e", "landscape", "outofbox", "robovigyan", "codeit", "manigma", "chillpill", "amalgam"],
 		"landscape":["landscape", "outofbox", "robovigyan", "codeit", "manigma", "chillpill", "amalgam", "core-e"],
 		"outofbox":["outofbox", "robovigyan", "codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape"],
-		"robovigyan":["robovigyan", "codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape", "outofbox"],
-		"codeit":["codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape", "outofbox", "robovigyan"]
+		"robovigyan":["robovigyan", "codeit", "manigma", "chillpill", "amalgam", "core-e", "landscape", "outofbox"]
 	};
+	var clicked="";
 	var sub_menu=[];
 	var mapper={
 		0:"codeit",
@@ -126,6 +127,7 @@
 			$(inner).children().siblings('.cluster-content').css("display","block");
 			$('.cluster-section p').css("opacity","0");
 			$('.outer').css({"opacity":"1"})
+			$('.sub-cluster-menu').css("z-index","2");
 			$(outer).children('.sub-cluster-menu').css({"opacity":"1","width":"25%","z-index":"3"});
 			$(inner).children('.image').css("display","block");
 			$('.image-main').css("display","none");
@@ -221,8 +223,6 @@
 			$('.image').css("display","none");
 			$('.icon-glow').css("visibility","hidden");
 		});
-
-
 	});
 
 	function toggleUp(arr,index,count){
@@ -340,7 +340,6 @@
 
 	/*Search*/
 	function openSearch(){
-		console.log('df');
 		$('#search-box input').css('color', 'black');	
 		$('#search-overlay').fadeIn('500', function(){
 			$('#search-box input').val('');
@@ -407,6 +406,7 @@
 					level=false;
 					control=true;
 					menu=state_define[menu[0]];
+					console.log(clicked);
 					index=index_define[menu[0]];
 					toggleleft();
 				}
@@ -421,7 +421,7 @@
 						down_sub(sub_menu);
 					}
 				}
-				else if(event.keyCode==39 && control){
+				else if(event.keyCode==39 && control || event.keyCode==13){
 					press=true;
 					level=true;
 					sub_index=[];
