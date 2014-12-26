@@ -59,6 +59,25 @@
 			<source src="../media/music/select.mp3"></source>
 			<script>
 			$(document).ready(function(){
+
+				var isMobile = {
+				    Android: function() {
+				        return /Android/i.test(navigator.userAgent);
+				    },
+				    BlackBerry: function() {
+				        return /BlackBerry/i.test(navigator.userAgent);
+				    },
+				    iOS: function() {
+				        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+				    },
+				    Windows: function() {
+				        return /IEMobile/i.test(navigator.userAgent);
+				    },
+				    any: function() {
+				        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+				    }
+				};
+
 				$("#menu .section").each(function(i){
 				    if(i!=0){ 
 				      $("#select-menu")
@@ -68,7 +87,8 @@
 				    }
 					$(this).data("beeper", i);
 				}).mouseenter(function() {
-				    $("#select-menu" + $(this).data("beeper"))[0].play();
+				    if(isMobile['any']()==false)
+				    	$("#select-menu" + $(this).data("beeper"))[0].play();
 				});
 				$("#select-menu").attr("id", "select-menu0");
 				$('.menu-sound').controls = false;

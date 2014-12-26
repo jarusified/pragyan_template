@@ -267,7 +267,7 @@ a:hover{
   position: fixed;
   width: 100%;
   top: 59%;
-  height: 130px;
+  height: 170px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -729,7 +729,7 @@ a:hover{
   width: 80%;
   margin-left: 10%;
   margin-top: 10px;
-  height: 60%;
+  height: 70%;
   overflow-x: hidden; 
   overflow-y: auto; 
 }
@@ -797,6 +797,12 @@ a:hover{
   }
   .credits{
     display: none;
+  }  
+  #search-box input{
+    font-size: 25px; 
+  }
+  #search-result div{
+    font-size: 20px;
   }
 }
 @media(max-width: 700px){

@@ -400,6 +400,7 @@ h3{
   letter-spacing: 1px;
   font-weight: bolder;
   cursor: pointer;
+  width: 200px;
 }
 #controls-guide-trigger:hover{
   color: white;
@@ -889,7 +890,7 @@ h3{
   width: 80%;
   margin-left: 10%;
   margin-top: 10px;
-  height: 60%;
+  height: 70%;
   overflow-x: hidden; 
   overflow-y: auto; 
 }
