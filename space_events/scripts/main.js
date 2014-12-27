@@ -32,6 +32,16 @@
 		"outofbox":[6,7,0,1,2,3,4,5],
 		"robovigyan":[7,0,1,2,3,4,5,6]
 	};
+	var length_define={
+		"codeit":9,
+		"manigma":6,
+		"chillpill":10,
+		"amalgam":5,
+		"core-e":10,
+		"landscape":4,
+		"outofbox":6,
+		"robovigyan":5
+	}
 	var index=[0,1,2,3,4,5,6,7];
 	var search=false,mobile=false,control=true;
 
@@ -126,6 +136,7 @@
 			var section=$(this).parent().attr('id');
 			var outer  =$('#'+section+'.outer');
 			var inner  =$('#'+section+'.inner');
+			$('.sub-cluster-section').removeClass('highlight');
 			$('.selected').addClass('highlight');
 			$('.sub-cluster-menu').css("opacity","0");
 			$('.back').addClass('highlight');
@@ -154,7 +165,8 @@
 			$(inner).children('.cluster-section').addClass('selected');
 			menu1=[];
 			level=true;
-			var length= $(outer).children('.sub-cluster-menu').children().length;
+			length=0;
+			var length= length_define[item];
 			for(var i=0;i<length;i++){
 				sub_menu[i]='sub-'+(i);
 			}
@@ -303,7 +315,16 @@
 		$('#'+arr[0]+'.inner').children().addClass('highlight');
 		press=false;
 	}
-
+	function up_sub(arr){
+		for(var i=0;i<arr.length;i++){
+			$('.'+arr[i]).children('a').children('.sub-cluster-section').removeClass('highlight');
+			$('.'+arr[i]).children('a').children('.sub-cluster-content').css("display","none");
+		}
+		$('.cluster-content').css("display","none");
+		$('.'+arr[0]).children('a').children('.sub-cluster-section').addClass('highlight');
+		$('.'+arr[0]).children('a').children('.sub-cluster-content').css("display","block");
+		press=false;
+	}
 	function toggleDown(arr,index,count){
 		for(i=0; i<count; i++)
 			arr.push(arr.shift(arr[0]));
@@ -321,19 +342,19 @@
 
 	function down_sub(arr){
 		for(var i=0;i<arr.length;i++){
-			$('.'+arr[i]).children('.sub-cluster-section').removeClass('highlight');
-			$('.'+arr[i]).children('.sub-cluster-content').css("display","none");
+			$('.'+arr[i]).children('a').children('.sub-cluster-section').removeClass('highlight');
+			$('.'+arr[i]).children('a').children('.sub-cluster-content').css("display","none");
 		}
 		$('.cluster-content').css("display","none");
-
-		$('.'+arr[0]).children('.sub-cluster-section').addClass('highlight');
-		$('.'+arr[0]).children('.sub-cluster-content').css("display","block");
+		$('.'+arr[0]).children('a').children('.sub-cluster-section').addClass('highlight');
+		$('.'+arr[0]).children('a').children('.sub-cluster-content').css("display","block");
 		press=false;
 	}
 
 	function toggleRight(val){
-		section1 = mapper[val]; // contains the name of the cluster selected
+		section1 = selected= mapper[val]; // contains the name of the cluster selected
 		menu1=[];
+		length=0;
 		outer  =$('#'+section1+'.outer');
 		inner  =$('#'+section1+'.inner');
 		$('.sub-cluster-menu').css("opacity","0");
@@ -360,7 +381,7 @@
 		$('.cluster-section').removeClass('selected')
 		$(inner).children('.cluster-section').addClass('selected');
 		var length= $(outer).children('.sub-cluster-menu').children().length;
-		var id=$(outer).children('.sub-cluster-menu').children('.sub').attr('class');
+		var id=length_define[section1];
 		for(var i=0;i<length;i++){
 			menu1[i]='sub-'+(i);
 		}
@@ -519,7 +540,7 @@
 					}
 					else{
 						sub_menu=toggleUp(sub_menu,sub_index,1);
-						down_sub(sub_menu);
+						up_sub(sub_menu);
 					}
 				}
 				
