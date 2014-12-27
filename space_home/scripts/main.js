@@ -141,6 +141,18 @@
             openLogin();
 		});
 
+		$('#music img').bind('click',function(){
+			if($('#bg-music')[0].muted == false){
+	            $('#music .icon-glow').css({'visibility':'visible'});
+				$('#music .icon-normal').css({'visibility':'hidden'});
+			}
+	        else{
+	        	$('#music .icon-glow').css({'visibility':'hidden'});
+	            $('#music .icon-normal').css({'visibility':'visible'});
+	        }
+            muteSounds(77);
+		});
+
 		$('.search-trigger').bind('click',function(){
             openSearch();
 		});

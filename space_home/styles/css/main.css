@@ -234,10 +234,10 @@ h3{
 .icon-glow{
   visibility: hidden;
 }
-.section:hover .icon-normal, .social-icons:hover .icon-normal, .action-button:hover .icon-normal{
+.section:hover .icon-normal, .social-icons:hover .icon-normal, .action-button:hover .icon-normal, #music:hover .icon-normal{
   visibility: hidden;
 }
-.section:hover .icon-glow, .social-icons:hover .icon-glow, .action-button:hover .icon-glow{
+.section:hover .icon-glow, .social-icons:hover .icon-glow, .action-button:hover .icon-glow, #music:hover .icon-glow{
   visibility: visible;
 }
 
