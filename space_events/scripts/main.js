@@ -147,6 +147,7 @@
 			$(inner).children('.image').css("display","block");
 			$('.image-main').css("display","none");
 			$('.cluster-content').css("display","none");
+			$('.sub-cluster-content').css("display","none");
 			$(this).siblings('.cluster-content').css("display","block");
 			$('.cluster-section').removeClass('selected');
 			$(inner).children('.cluster-section').addClass('selected');
